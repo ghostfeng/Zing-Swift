@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (4.4.0)
+  - AlicloudPush (1.9.1):
+    - AlicloudUtils
+  - AlicloudUTDID (1.1.0.16)
+  - AlicloudUtils (1.1.7):
+    - AlicloudUTDID
+  - AliyunOSSiOS (2.6.0)
+  - AVOSCloud (4.2.0)
+  - AVOSCloudIM (4.2.0):
+    - AVOSCloud (= 4.2.0)
+    - AVOSCloudIM/_ARC (= 4.2.0)
+    - AVOSCloudIM/_NOARC (= 4.2.0)
+  - AVOSCloudIM/_ARC (4.2.0):
+    - AVOSCloud (= 4.2.0)
+    - AVOSCloudIM/_NOARC (= 4.2.0)
+  - AVOSCloudIM/_NOARC (4.2.0):
+    - AVOSCloud (= 4.2.0)
+  - Protobuf (3.2.1)
+
+DEPENDENCIES:
+  - Alamofire (>= 4.4.0)
+  - AlicloudPush (>= 1.9.1)
+  - AliyunOSSiOS (>= 2.6.0)
+  - AVOSCloudIM (>= 4.0.0)
+  - Protobuf (>= 3.2.0)
+  - Protobuf (>= 3.2.1)
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlicloudPush: 4fbee1f82605adc3bfc7c6136dad4a57c6ad4049
+  AlicloudUTDID: f5a7bc1420c5f83e3bd40296e5ab2e5a804a12f8
+  AlicloudUtils: 28729eba18437f58000afb7657c5499c751a0826
+  AliyunOSSiOS: 058b038cc82000dadb8f8e3893a97243124f2898
+  AVOSCloud: 5446ad0320f4942cce1a036d131992cd1115db99
+  AVOSCloudIM: 69df8e8517247f3c2585e321f24e777d5b398843
+  Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+
+PODFILE CHECKSUM: fc844c7138653495ee834af760838a6b1f839488
+
+COCOAPODS: 1.0.0

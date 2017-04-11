@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B310F6C68577166916E9D78 /* Pods_ZingPBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54BC49667919EB16C64809 /* Pods_ZingPBModel.framework */; };
+		1C3A187E1E9A0D8D00E535C8 /* ZingPBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3A18741E9A0D8D00E535C8 /* ZingPBModel.framework */; };
+		1C3A18831E9A0D8D00E535C8 /* ZingPBModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A18821E9A0D8D00E535C8 /* ZingPBModelTests.swift */; };
+		1C3A18981E9A0DBF00E535C8 /* Composite.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A18901E9A0DBF00E535C8 /* Composite.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1C3A189A1E9A0DBF00E535C8 /* Plain.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A18921E9A0DBF00E535C8 /* Plain.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1C3A189C1E9A0DBF00E535C8 /* Response.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A18941E9A0DBF00E535C8 /* Response.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1C3A189E1E9A0DBF00E535C8 /* Storge.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A18961E9A0DBF00E535C8 /* Storge.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1C89946C1E9B31AB00DF1C57 /* AppConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89946B1E9B31AB00DF1C57 /* AppConfigManager.swift */; };
+		1CD2F36B1E9A183B00861387 /* ApplicationProfileContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2F36A1E9A183B00861387 /* ApplicationProfileContext.swift */; };
+		1CD2F37B1E9A20E900861387 /* ZingPBModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A18771E9A0D8D00E535C8 /* ZingPBModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CD2F3801E9A241000861387 /* Composite.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A188F1E9A0DBF00E535C8 /* Composite.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CD2F3811E9A241000861387 /* Plain.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A18911E9A0DBF00E535C8 /* Plain.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CD2F3821E9A241000861387 /* Response.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A18931E9A0DBF00E535C8 /* Response.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CD2F3831E9A241000861387 /* Storge.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A18951E9A0DBF00E535C8 /* Storge.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C3A187F1E9A0D8D00E535C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C3A186B1E9A0D8D00E535C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C3A18731E9A0D8D00E535C8;
+			remoteInfo = ZingPBModel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C3A18741E9A0D8D00E535C8 /* ZingPBModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZingPBModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C3A18771E9A0D8D00E535C8 /* ZingPBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZingPBModel.h; sourceTree = "<group>"; };
+		1C3A18781E9A0D8D00E535C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C3A187D1E9A0D8D00E535C8 /* ZingPBModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZingPBModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C3A18821E9A0D8D00E535C8 /* ZingPBModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZingPBModelTests.swift; sourceTree = "<group>"; };
+		1C3A18841E9A0D8D00E535C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C3A188F1E9A0DBF00E535C8 /* Composite.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Composite.pbobjc.h; sourceTree = "<group>"; };
+		1C3A18901E9A0DBF00E535C8 /* Composite.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Composite.pbobjc.m; sourceTree = "<group>"; };
+		1C3A18911E9A0DBF00E535C8 /* Plain.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plain.pbobjc.h; sourceTree = "<group>"; };
+		1C3A18921E9A0DBF00E535C8 /* Plain.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plain.pbobjc.m; sourceTree = "<group>"; };
+		1C3A18931E9A0DBF00E535C8 /* Response.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.pbobjc.h; sourceTree = "<group>"; };
+		1C3A18941E9A0DBF00E535C8 /* Response.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.pbobjc.m; sourceTree = "<group>"; };
+		1C3A18951E9A0DBF00E535C8 /* Storge.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storge.pbobjc.h; sourceTree = "<group>"; };
+		1C3A18961E9A0DBF00E535C8 /* Storge.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storge.pbobjc.m; sourceTree = "<group>"; };
+		1C89946B1E9B31AB00DF1C57 /* AppConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigManager.swift; sourceTree = "<group>"; };
+		1CD2F36A1E9A183B00861387 /* ApplicationProfileContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationProfileContext.swift; sourceTree = "<group>"; };
+		9D54BC49667919EB16C64809 /* Pods_ZingPBModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZingPBModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A054E31178577761159C9FDF /* Pods-ZingPBModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingPBModel.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZingPBModel/Pods-ZingPBModel.release.xcconfig"; sourceTree = "<group>"; };
+		A2136935DEF149F5AFA85AC2 /* Pods-ZingPBModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingPBModel.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ZingPBModel/Pods-ZingPBModel.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C3A18701E9A0D8D00E535C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B310F6C68577166916E9D78 /* Pods_ZingPBModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C3A187A1E9A0D8D00E535C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C3A187E1E9A0D8D00E535C8 /* ZingPBModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C3A186A1E9A0D8D00E535C8 = {
+			isa = PBXGroup;
+			children = (
+				1C3A188E1E9A0DBF00E535C8 /* Generate */,
+				1C3A18761E9A0D8D00E535C8 /* ZingPBModel */,
+				1C3A18811E9A0D8D00E535C8 /* ZingPBModelTests */,
+				1C3A18751E9A0D8D00E535C8 /* Products */,
+				7D8C794D09284D70ED83655A /* Pods */,
+				83E7823E613C514FB4F553B9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1C3A18751E9A0D8D00E535C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A18741E9A0D8D00E535C8 /* ZingPBModel.framework */,
+				1C3A187D1E9A0D8D00E535C8 /* ZingPBModelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C3A18761E9A0D8D00E535C8 /* ZingPBModel */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A18771E9A0D8D00E535C8 /* ZingPBModel.h */,
+				1CD2F36A1E9A183B00861387 /* ApplicationProfileContext.swift */,
+				1C89946B1E9B31AB00DF1C57 /* AppConfigManager.swift */,
+				1C3A18781E9A0D8D00E535C8 /* Info.plist */,
+			);
+			path = ZingPBModel;
+			sourceTree = "<group>";
+		};
+		1C3A18811E9A0D8D00E535C8 /* ZingPBModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A18821E9A0D8D00E535C8 /* ZingPBModelTests.swift */,
+				1C3A18841E9A0D8D00E535C8 /* Info.plist */,
+			);
+			path = ZingPBModelTests;
+			sourceTree = "<group>";
+		};
+		1C3A188E1E9A0DBF00E535C8 /* Generate */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A188F1E9A0DBF00E535C8 /* Composite.pbobjc.h */,
+				1C3A18901E9A0DBF00E535C8 /* Composite.pbobjc.m */,
+				1C3A18911E9A0DBF00E535C8 /* Plain.pbobjc.h */,
+				1C3A18921E9A0DBF00E535C8 /* Plain.pbobjc.m */,
+				1C3A18931E9A0DBF00E535C8 /* Response.pbobjc.h */,
+				1C3A18941E9A0DBF00E535C8 /* Response.pbobjc.m */,
+				1C3A18951E9A0DBF00E535C8 /* Storge.pbobjc.h */,
+				1C3A18961E9A0DBF00E535C8 /* Storge.pbobjc.m */,
+			);
+			path = Generate;
+			sourceTree = "<group>";
+		};
+		7D8C794D09284D70ED83655A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2136935DEF149F5AFA85AC2 /* Pods-ZingPBModel.debug.xcconfig */,
+				A054E31178577761159C9FDF /* Pods-ZingPBModel.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		83E7823E613C514FB4F553B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D54BC49667919EB16C64809 /* Pods_ZingPBModel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1C3A18711E9A0D8D00E535C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CD2F37B1E9A20E900861387 /* ZingPBModel.h in Headers */,
+				1CD2F3801E9A241000861387 /* Composite.pbobjc.h in Headers */,
+				1CD2F3811E9A241000861387 /* Plain.pbobjc.h in Headers */,
+				1CD2F3821E9A241000861387 /* Response.pbobjc.h in Headers */,
+				1CD2F3831E9A241000861387 /* Storge.pbobjc.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1C3A18731E9A0D8D00E535C8 /* ZingPBModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C3A18881E9A0D8D00E535C8 /* Build configuration list for PBXNativeTarget "ZingPBModel" */;
+			buildPhases = (
+				B59DB85B6EBC6A6B50C6B7E6 /* 📦 Check Pods Manifest.lock */,
+				1C3A186F1E9A0D8D00E535C8 /* Sources */,
+				1C3A18701E9A0D8D00E535C8 /* Frameworks */,
+				1C3A18711E9A0D8D00E535C8 /* Headers */,
+				1C3A18721E9A0D8D00E535C8 /* Resources */,
+				E3B9BC5FC4FA64D3D5FB92E4 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZingPBModel;
+			productName = ZingPBModel;
+			productReference = 1C3A18741E9A0D8D00E535C8 /* ZingPBModel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1C3A187C1E9A0D8D00E535C8 /* ZingPBModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C3A188B1E9A0D8D00E535C8 /* Build configuration list for PBXNativeTarget "ZingPBModelTests" */;
+			buildPhases = (
+				1C3A18791E9A0D8D00E535C8 /* Sources */,
+				1C3A187A1E9A0D8D00E535C8 /* Frameworks */,
+				1C3A187B1E9A0D8D00E535C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C3A18801E9A0D8D00E535C8 /* PBXTargetDependency */,
+			);
+			name = ZingPBModelTests;
+			productName = ZingPBModelTests;
+			productReference = 1C3A187D1E9A0D8D00E535C8 /* ZingPBModelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C3A186B1E9A0D8D00E535C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Witgo;
+				TargetAttributes = {
+					1C3A18731E9A0D8D00E535C8 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 7AWX2MRU3G;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					1C3A187C1E9A0D8D00E535C8 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 7AWX2MRU3G;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1C3A186E1E9A0D8D00E535C8 /* Build configuration list for PBXProject "ZingPBModel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1C3A186A1E9A0D8D00E535C8;
+			productRefGroup = 1C3A18751E9A0D8D00E535C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C3A18731E9A0D8D00E535C8 /* ZingPBModel */,
+				1C3A187C1E9A0D8D00E535C8 /* ZingPBModelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C3A18721E9A0D8D00E535C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C3A187B1E9A0D8D00E535C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B59DB85B6EBC6A6B50C6B7E6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3B9BC5FC4FA64D3D5FB92E4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ZingPBModel/Pods-ZingPBModel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C3A186F1E9A0D8D00E535C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C3A189E1E9A0DBF00E535C8 /* Storge.pbobjc.m in Sources */,
+				1CD2F36B1E9A183B00861387 /* ApplicationProfileContext.swift in Sources */,
+				1C3A189C1E9A0DBF00E535C8 /* Response.pbobjc.m in Sources */,
+				1C89946C1E9B31AB00DF1C57 /* AppConfigManager.swift in Sources */,
+				1C3A18981E9A0DBF00E535C8 /* Composite.pbobjc.m in Sources */,
+				1C3A189A1E9A0DBF00E535C8 /* Plain.pbobjc.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C3A18791E9A0D8D00E535C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C3A18831E9A0D8D00E535C8 /* ZingPBModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C3A18801E9A0D8D00E535C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C3A18731E9A0D8D00E535C8 /* ZingPBModel */;
+			targetProxy = 1C3A187F1E9A0D8D00E535C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C3A18861E9A0D8D00E535C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1C3A18871E9A0D8D00E535C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1C3A18891E9A0D8D00E535C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2136935DEF149F5AFA85AC2 /* Pods-ZingPBModel.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7AWX2MRU3G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ZingPBModel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.witgo.ZingPBModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1C3A188A1E9A0D8D00E535C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A054E31178577761159C9FDF /* Pods-ZingPBModel.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7AWX2MRU3G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ZingPBModel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.witgo.ZingPBModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1C3A188C1E9A0D8D00E535C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7AWX2MRU3G;
+				INFOPLIST_FILE = ZingPBModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.witgo.ZingPBModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1C3A188D1E9A0D8D00E535C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7AWX2MRU3G;
+				INFOPLIST_FILE = ZingPBModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.witgo.ZingPBModelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C3A186E1E9A0D8D00E535C8 /* Build configuration list for PBXProject "ZingPBModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C3A18861E9A0D8D00E535C8 /* Debug */,
+				1C3A18871E9A0D8D00E535C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C3A18881E9A0D8D00E535C8 /* Build configuration list for PBXNativeTarget "ZingPBModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C3A18891E9A0D8D00E535C8 /* Debug */,
+				1C3A188A1E9A0D8D00E535C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C3A188B1E9A0D8D00E535C8 /* Build configuration list for PBXNativeTarget "ZingPBModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C3A188C1E9A0D8D00E535C8 /* Debug */,
+				1C3A188D1E9A0D8D00E535C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C3A186B1E9A0D8D00E535C8 /* Project object */;
+}

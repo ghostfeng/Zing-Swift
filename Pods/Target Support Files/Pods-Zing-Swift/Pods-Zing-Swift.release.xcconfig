@@ -1,0 +1,11 @@
+EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Alamofire" "$PODS_CONFIGURATION_BUILD_DIR/AliyunOSSiOS" "$PODS_CONFIGURATION_BUILD_DIR/Protobuf" "${PODS_ROOT}/AlicloudPush/push" "${PODS_ROOT}/AlicloudUTDID/utdid" "${PODS_ROOT}/AlicloudUtils/utils"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AlicloudPush" "${PODS_ROOT}/Headers/Public/AlicloudUTDID" "${PODS_ROOT}/Headers/Public/AlicloudUtils"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/AliyunOSSiOS/AliyunOSSiOS.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Protobuf/Protobuf.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AlicloudPush" -isystem "${PODS_ROOT}/Headers/Public/AlicloudUTDID" -isystem "${PODS_ROOT}/Headers/Public/AlicloudUtils"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"resolv" -framework "Alamofire" -framework "AlicloudUtils" -framework "AliyunOSSiOS" -framework "CloudPushSDK" -framework "Protobuf" -framework "UTDID"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods
