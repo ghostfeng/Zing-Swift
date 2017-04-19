@@ -18,6 +18,7 @@
 		1C8994681E9B30FC00DF1C57 /* RequestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994631E9B30FC00DF1C57 /* RequestPath.swift */; };
 		1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994651E9B30FC00DF1C57 /* APIService.swift */; };
 		1C89946A1E9B30FC00DF1C57 /* URLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994661E9B30FC00DF1C57 /* URLService.swift */; };
+		1CC0D3DB1EA741DF00B59DF9 /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */; };
 		57CFB6FAE9171C29CA4ECA99 /* Pods_Zing_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864E3B997AE6832097136B76 /* Pods_Zing_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		1C8994631E9B30FC00DF1C57 /* RequestPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
 		1C8994651E9B30FC00DF1C57 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		1C8994661E9B30FC00DF1C57 /* URLService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLService.swift; sourceTree = "<group>"; };
+		1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
 		59F41581AC2E2EB7EF7BACCD /* Pods-Zing-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zing-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zing-Swift/Pods-Zing-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		864E3B997AE6832097136B76 /* Pods_Zing_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zing_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CC84864785DAA9E218E5E4 /* Pods-Zing-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zing-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zing-Swift/Pods-Zing-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				1C8994621E9B30FC00DF1C57 /* GCDQueue.swift */,
 				1C8994631E9B30FC00DF1C57 /* RequestPath.swift */,
+				1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CC0D3DB1EA741DF00B59DF9 /* ResponseCode.swift in Sources */,
 				1C1637FD1E777A0C002C9734 /* ViewController.swift in Sources */,
 				1C89946A1E9B30FC00DF1C57 /* URLService.swift in Sources */,
 				1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */,

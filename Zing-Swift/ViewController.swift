@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import ZingPBModel
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = APIService.default
+        APIService.default.get(.appConfig, queue: userInitiatedQueue) { (path, response, error) in
+            let acm = AppConfigManager.defaultManager
+            acm.update((response?.config)!)
+            print(acm.bucket,acm.bucketEndPoint)
+        }
     }
 
     override func didReceiveMemoryWarning() {

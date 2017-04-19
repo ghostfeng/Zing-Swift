@@ -37,6 +37,9 @@ private let ATTACHMENTS_NAME = "attachments" + FSP
         return INSTANCE
     }
     
+    /// 是否是测试环境
+    public var isTestEnv = false
+    
     /// 应用配置
     public var appConfig = ZTMAppConfiguration()
     
@@ -140,8 +143,13 @@ private let ATTACHMENTS_NAME = "attachments" + FSP
     }
     
     public func saveUserProfile() throws {
-        if let data = userProfile?.data() {
-            print(data)
+        if let userId = localProfile.userId, userId != "", let userProfile = userProfile, let data = userProfile.data() {
+            let userPath = PROFILE_ROOT_PATH + userId + FSP
+            if !fileManager.fileExists(atPath: userPath) {
+                try fileManager.createDirectory(atPath: userPath, withIntermediateDirectories: true)
+            }
+            let userProfilePath = userPath + USER_PROFILE_FILE_NAME
+            try data.write(to: URL(fileURLWithPath: userProfilePath))
         }
     }
 }
