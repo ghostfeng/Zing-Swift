@@ -217,6 +217,7 @@ typedef struct ZTMLocalProfile__storage_ {
 @dynamic hasBlacklist, blacklist;
 @dynamic conversationProfiles, conversationProfiles_Count;
 @dynamic hasUser, user;
+@dynamic recommendAttitude;
 
 typedef struct ZTMUserLocalProfile__storage_ {
   uint32_t _has_storage_[1];
@@ -225,6 +226,7 @@ typedef struct ZTMUserLocalProfile__storage_ {
   ZTMBlacklist *blacklist;
   NSMutableDictionary *conversationProfiles;
   ZTMUserDescription *user;
+  NSString *recommendAttitude;
 } ZTMUserLocalProfile__storage_;
 
 // This method is threadsafe because it is initially called
@@ -278,6 +280,15 @@ typedef struct ZTMUserLocalProfile__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
+      {
+        .name = "recommendAttitude",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMUserLocalProfile_FieldNumber_RecommendAttitude,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(ZTMUserLocalProfile__storage_, recommendAttitude),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ZTMUserLocalProfile class]
@@ -289,7 +300,7 @@ typedef struct ZTMUserLocalProfile__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\013\000\002\017\000\004\024\000";
+        "\004\001\013\000\002\017\000\004\024\000\006\021\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -365,13 +376,9 @@ typedef struct ZTMChannelLocalProfile__storage_ {
 
 @dynamic hasSense, sense;
 @dynamic attachmentsArray, attachmentsArray_Count;
-@dynamic progress;
-@dynamic isSended;
 
 typedef struct ZTMSenseDraft__storage_ {
   uint32_t _has_storage_[1];
-  int32_t progress;
-  int32_t isSended;
   ZTMSense *sense;
   NSMutableArray *attachmentsArray;
 } ZTMSenseDraft__storage_;
@@ -400,24 +407,6 @@ typedef struct ZTMSenseDraft__storage_ {
         .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeMessage,
       },
-      {
-        .name = "progress",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMSenseDraft_FieldNumber_Progress,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ZTMSenseDraft__storage_, progress),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeInt32,
-      },
-      {
-        .name = "isSended",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMSenseDraft_FieldNumber_IsSended,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ZTMSenseDraft__storage_, isSended),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeInt32,
-      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ZTMSenseDraft class]
@@ -427,11 +416,6 @@ typedef struct ZTMSenseDraft__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(ZTMSenseDraft__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    static const char *extraTextFormatInfo =
-        "\001\007\010\000";
-    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
-#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }

@@ -359,7 +359,9 @@ typedef GPB_ENUM(ZTMSense_FieldNumber) {
   ZTMSense_FieldNumber_ReplyCount = 104,
   ZTMSense_FieldNumber_RepliesArray = 105,
   ZTMSense_FieldNumber_IsLiked = 106,
-  ZTMSense_FieldNumber_MyChoice = 107,
+  ZTMSense_FieldNumber_MyAttitude = 107,
+  ZTMSense_FieldNumber_Progress = 108,
+  ZTMSense_FieldNumber_IsSending = 109,
 };
 
 @interface ZTMSense : GPBMessage
@@ -424,7 +426,13 @@ typedef GPB_ENUM(ZTMSense_FieldNumber) {
 @property(nonatomic, readwrite) int32_t isLiked;
 
 /** 针对投票我的选择 */
-@property(nonatomic, readwrite) int32_t myChoice;
+@property(nonatomic, readwrite) int32_t myAttitude;
+
+/** 上传进度(最高100)，仅仅在前端使用 */
+@property(nonatomic, readwrite) int32_t progress;
+
+/** 是否在上传中，仅仅在前端使用 */
+@property(nonatomic, readwrite) int32_t isSending;
 
 @end
 
@@ -589,12 +597,6 @@ typedef GPB_ENUM(ZTMAppConfiguration_FieldNumber) {
   ZTMAppConfiguration_FieldNumber_UserAgreement = 8,
   ZTMAppConfiguration_FieldNumber_OwnerNotice = 9,
   ZTMAppConfiguration_FieldNumber_Faq = 10,
-  ZTMAppConfiguration_FieldNumber_ChannelsCreatedId = 30,
-  ZTMAppConfiguration_FieldNumber_ChannelsCreatedName = 31,
-  ZTMAppConfiguration_FieldNumber_ChannelsCreatedIcon = 32,
-  ZTMAppConfiguration_FieldNumber_ChannelsAttitudedId = 33,
-  ZTMAppConfiguration_FieldNumber_ChannelsAttitudedName = 34,
-  ZTMAppConfiguration_FieldNumber_ChannelsAttitudedIcon = 35,
   ZTMAppConfiguration_FieldNumber_LeanCloudAppId = 50,
   ZTMAppConfiguration_FieldNumber_LeanCloudAppKey = 51,
   ZTMAppConfiguration_FieldNumber_AliPushAppId = 52,
@@ -641,24 +643,6 @@ typedef GPB_ENUM(ZTMAppConfiguration_FieldNumber) {
 
 /** 常见问题 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *faq;
-
-/** “我的创建”的频道ID */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *channelsCreatedId;
-
-/** “我的创建”的频道名称 */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *channelsCreatedName;
-
-/** “我的创建”的频道ICON */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *channelsCreatedIcon;
-
-/** “我的态度”的频道ID */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *channelsAttitudedId;
-
-/** “我的创建”的频道名称 */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *channelsAttitudedName;
-
-/** “我的创建”的频道ICON */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *channelsAttitudedIcon;
 
 /** LeanCloud App Id */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *leanCloudAppId;
@@ -808,13 +792,13 @@ typedef GPB_ENUM(ZTMReply_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *targetParentUserId;
 
 /**  媒体类型 */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *contentType;
+@property(nonatomic, readwrite) int32_t contentType;
 
 /**  媒体长度（毫秒） */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *contentLength;
+@property(nonatomic, readwrite) int32_t contentLength;
 
 /**  总点赞数 */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *totalPraises;
+@property(nonatomic, readwrite) int32_t totalPraises;
 
 /** 发送人 */
 @property(nonatomic, readwrite, strong, null_resettable) ZTMUserDescription *user;

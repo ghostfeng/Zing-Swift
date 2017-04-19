@@ -114,6 +114,7 @@ typedef GPB_ENUM(ZTMUserLocalProfile_FieldNumber) {
   ZTMUserLocalProfile_FieldNumber_Blacklist = 3,
   ZTMUserLocalProfile_FieldNumber_ConversationProfiles = 4,
   ZTMUserLocalProfile_FieldNumber_User = 5,
+  ZTMUserLocalProfile_FieldNumber_RecommendAttitude = 6,
 };
 
 @interface ZTMUserLocalProfile : GPBMessage
@@ -140,6 +141,9 @@ typedef GPB_ENUM(ZTMUserLocalProfile_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) ZTMUserDescription *user;
 /** Test to see if @c user has been set. */
 @property(nonatomic, readwrite) BOOL hasUser;
+
+/** 推荐表态参与的日期字符串 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *recommendAttitude;
 
 @end
 
@@ -169,8 +173,6 @@ typedef GPB_ENUM(ZTMChannelLocalProfile_FieldNumber) {
 typedef GPB_ENUM(ZTMSenseDraft_FieldNumber) {
   ZTMSenseDraft_FieldNumber_Sense = 3,
   ZTMSenseDraft_FieldNumber_AttachmentsArray = 5,
-  ZTMSenseDraft_FieldNumber_Progress = 6,
-  ZTMSenseDraft_FieldNumber_IsSended = 7,
 };
 
 @interface ZTMSenseDraft : GPBMessage
@@ -184,12 +186,6 @@ typedef GPB_ENUM(ZTMSenseDraft_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ZTMAttachment*> *attachmentsArray;
 /** The number of items in @c attachmentsArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger attachmentsArray_Count;
-
-/** 进度，最高100 */
-@property(nonatomic, readwrite) int32_t progress;
-
-/** 发送的状态 */
-@property(nonatomic, readwrite) int32_t isSended;
 
 @end
 

@@ -39,6 +39,7 @@ CF_EXTERN_C_BEGIN
 @class ZTMEmoticon;
 @class ZTMOssToken;
 @class ZTMPayApplication;
+@class ZTMPunch;
 @class ZTMPushMessage;
 @class ZTMRegionDescription;
 @class ZTMReply;
@@ -51,6 +52,7 @@ CF_EXTERN_C_BEGIN
 @class ZTMUserProfile;
 @class ZTMUserStatus;
 @class ZTMVoteChoice;
+@class ZTMVoteConfig;
 @class ZTMVoteDetail;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -123,6 +125,8 @@ typedef GPB_ENUM(ZTMZingResponse_FieldNumber) {
   ZTMZingResponse_FieldNumber_OrdinaryChannelRulesArray = 146,
   ZTMZingResponse_FieldNumber_HabitChannelRulesArray = 147,
   ZTMZingResponse_FieldNumber_AttitudeChannelRulesArray = 148,
+  ZTMZingResponse_FieldNumber_Punch = 149,
+  ZTMZingResponse_FieldNumber_Vote = 150,
 };
 
 @interface ZTMZingResponse : GPBMessage
@@ -354,6 +358,16 @@ typedef GPB_ENUM(ZTMZingResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ZTMChannelCreateRule*> *attitudeChannelRulesArray;
 /** The number of items in @c attitudeChannelRulesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger attitudeChannelRulesArray_Count;
+
+/** 打卡结果 */
+@property(nonatomic, readwrite, strong, null_resettable) ZTMPunch *punch;
+/** Test to see if @c punch has been set. */
+@property(nonatomic, readwrite) BOOL hasPunch;
+
+/** 投票结果 */
+@property(nonatomic, readwrite, strong, null_resettable) ZTMVoteConfig *vote;
+/** Test to see if @c vote has been set. */
+@property(nonatomic, readwrite) BOOL hasVote;
 
 @end
 

@@ -99,6 +99,8 @@ static GPBFileDescriptor *ZTMResponseRoot_FileDescriptor(void) {
 @dynamic ordinaryChannelRulesArray, ordinaryChannelRulesArray_Count;
 @dynamic habitChannelRulesArray, habitChannelRulesArray_Count;
 @dynamic attitudeChannelRulesArray, attitudeChannelRulesArray_Count;
+@dynamic hasPunch, punch;
+@dynamic hasVote, vote;
 
 typedef struct ZTMZingResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -151,6 +153,8 @@ typedef struct ZTMZingResponse__storage_ {
   NSMutableArray *ordinaryChannelRulesArray;
   NSMutableArray *habitChannelRulesArray;
   NSMutableArray *attitudeChannelRulesArray;
+  ZTMPunch *punch;
+  ZTMVoteConfig *vote;
   uint64_t requestAt;
 } ZTMZingResponse__storage_;
 
@@ -608,6 +612,24 @@ typedef struct ZTMZingResponse__storage_ {
         .hasIndex = GPBNoHasBit,
         .offset = (uint32_t)offsetof(ZTMZingResponse__storage_, attitudeChannelRulesArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "punch",
+        .dataTypeSpecific.className = GPBStringifySymbol(ZTMPunch),
+        .number = ZTMZingResponse_FieldNumber_Punch,
+        .hasIndex = 27,
+        .offset = (uint32_t)offsetof(ZTMZingResponse__storage_, punch),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "vote",
+        .dataTypeSpecific.className = GPBStringifySymbol(ZTMVoteConfig),
+        .number = ZTMZingResponse_FieldNumber_Vote,
+        .hasIndex = 28,
+        .offset = (uint32_t)offsetof(ZTMZingResponse__storage_, vote),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };

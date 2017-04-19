@@ -617,7 +617,9 @@ typedef struct ZTMChannelLayoutConfig__storage_ {
 @dynamic replyCount;
 @dynamic repliesArray, repliesArray_Count;
 @dynamic isLiked;
-@dynamic myChoice;
+@dynamic myAttitude;
+@dynamic progress;
+@dynamic isSending;
 
 typedef struct ZTMSense__storage_ {
   uint32_t _has_storage_[1];
@@ -631,7 +633,9 @@ typedef struct ZTMSense__storage_ {
   int32_t punchTimes;
   int32_t replyCount;
   int32_t isLiked;
-  int32_t myChoice;
+  int32_t myAttitude;
+  int32_t progress;
+  int32_t isSending;
   NSString *id_p;
   NSString *channelId;
   NSString *userId;
@@ -801,11 +805,29 @@ typedef struct ZTMSense__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "myChoice",
+        .name = "myAttitude",
         .dataTypeSpecific.className = NULL,
-        .number = ZTMSense_FieldNumber_MyChoice,
+        .number = ZTMSense_FieldNumber_MyAttitude,
         .hasIndex = 16,
-        .offset = (uint32_t)offsetof(ZTMSense__storage_, myChoice),
+        .offset = (uint32_t)offsetof(ZTMSense__storage_, myAttitude),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "progress",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMSense_FieldNumber_Progress,
+        .hasIndex = 17,
+        .offset = (uint32_t)offsetof(ZTMSense__storage_, progress),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "isSending",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMSense_FieldNumber_IsSending,
+        .hasIndex = 18,
+        .offset = (uint32_t)offsetof(ZTMSense__storage_, isSending),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
@@ -820,7 +842,7 @@ typedef struct ZTMSense__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\n\003\t\000\004\006\000\005\010\000\006\010\000\007\010\000\010\010\000\013\n\000h\n\000j\007\000k\010\000";
+        "\013\003\t\000\004\006\000\005\010\000\006\010\000\007\010\000\010\010\000\013\n\000h\n\000j\007\000k\n\000m\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -1223,12 +1245,6 @@ typedef struct ZTMVoteConfig__storage_ {
 @dynamic userAgreement;
 @dynamic ownerNotice;
 @dynamic faq;
-@dynamic channelsCreatedId;
-@dynamic channelsCreatedName;
-@dynamic channelsCreatedIcon;
-@dynamic channelsAttitudedId;
-@dynamic channelsAttitudedName;
-@dynamic channelsAttitudedIcon;
 @dynamic leanCloudAppId;
 @dynamic leanCloudAppKey;
 @dynamic aliPushAppId;
@@ -1249,12 +1265,6 @@ typedef struct ZTMAppConfiguration__storage_ {
   NSString *userAgreement;
   NSString *ownerNotice;
   NSString *faq;
-  NSString *channelsCreatedId;
-  NSString *channelsCreatedName;
-  NSString *channelsCreatedIcon;
-  NSString *channelsAttitudedId;
-  NSString *channelsAttitudedName;
-  NSString *channelsAttitudedIcon;
   NSString *leanCloudAppId;
   NSString *leanCloudAppKey;
   NSString *aliPushAppId;
@@ -1345,64 +1355,10 @@ typedef struct ZTMAppConfiguration__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "channelsCreatedId",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMAppConfiguration_FieldNumber_ChannelsCreatedId,
-        .hasIndex = 7,
-        .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, channelsCreatedId),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "channelsCreatedName",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMAppConfiguration_FieldNumber_ChannelsCreatedName,
-        .hasIndex = 8,
-        .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, channelsCreatedName),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "channelsCreatedIcon",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMAppConfiguration_FieldNumber_ChannelsCreatedIcon,
-        .hasIndex = 9,
-        .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, channelsCreatedIcon),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "channelsAttitudedId",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMAppConfiguration_FieldNumber_ChannelsAttitudedId,
-        .hasIndex = 10,
-        .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, channelsAttitudedId),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "channelsAttitudedName",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMAppConfiguration_FieldNumber_ChannelsAttitudedName,
-        .hasIndex = 11,
-        .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, channelsAttitudedName),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "channelsAttitudedIcon",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMAppConfiguration_FieldNumber_ChannelsAttitudedIcon,
-        .hasIndex = 12,
-        .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, channelsAttitudedIcon),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "leanCloudAppId",
         .dataTypeSpecific.className = NULL,
         .number = ZTMAppConfiguration_FieldNumber_LeanCloudAppId,
-        .hasIndex = 13,
+        .hasIndex = 7,
         .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, leanCloudAppId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -1411,7 +1367,7 @@ typedef struct ZTMAppConfiguration__storage_ {
         .name = "leanCloudAppKey",
         .dataTypeSpecific.className = NULL,
         .number = ZTMAppConfiguration_FieldNumber_LeanCloudAppKey,
-        .hasIndex = 14,
+        .hasIndex = 8,
         .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, leanCloudAppKey),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -1420,7 +1376,7 @@ typedef struct ZTMAppConfiguration__storage_ {
         .name = "aliPushAppId",
         .dataTypeSpecific.className = NULL,
         .number = ZTMAppConfiguration_FieldNumber_AliPushAppId,
-        .hasIndex = 15,
+        .hasIndex = 9,
         .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, aliPushAppId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -1429,7 +1385,7 @@ typedef struct ZTMAppConfiguration__storage_ {
         .name = "aliPushAppKey",
         .dataTypeSpecific.className = NULL,
         .number = ZTMAppConfiguration_FieldNumber_AliPushAppKey,
-        .hasIndex = 16,
+        .hasIndex = 10,
         .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, aliPushAppKey),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -1438,7 +1394,7 @@ typedef struct ZTMAppConfiguration__storage_ {
         .name = "xmPushAppKey",
         .dataTypeSpecific.className = NULL,
         .number = ZTMAppConfiguration_FieldNumber_XmPushAppKey,
-        .hasIndex = 17,
+        .hasIndex = 11,
         .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, xmPushAppKey),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -1447,7 +1403,7 @@ typedef struct ZTMAppConfiguration__storage_ {
         .name = "xmPushAppId",
         .dataTypeSpecific.className = NULL,
         .number = ZTMAppConfiguration_FieldNumber_XmPushAppId,
-        .hasIndex = 18,
+        .hasIndex = 12,
         .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, xmPushAppId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -1456,7 +1412,7 @@ typedef struct ZTMAppConfiguration__storage_ {
         .name = "hwPushAppKey",
         .dataTypeSpecific.className = NULL,
         .number = ZTMAppConfiguration_FieldNumber_HwPushAppKey,
-        .hasIndex = 19,
+        .hasIndex = 13,
         .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, hwPushAppKey),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -1465,7 +1421,7 @@ typedef struct ZTMAppConfiguration__storage_ {
         .name = "hwPushAppId",
         .dataTypeSpecific.className = NULL,
         .number = ZTMAppConfiguration_FieldNumber_HwPushAppId,
-        .hasIndex = 20,
+        .hasIndex = 14,
         .offset = (uint32_t)offsetof(ZTMAppConfiguration__storage_, hwPushAppId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -1490,8 +1446,8 @@ typedef struct ZTMAppConfiguration__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\023\001!!\'\000\005\t\000\010\r\000\t\013\000\036\021\000\037\023\000 \023\000!\023\000\"\025\000#\025\0002\016\0003\017\0004"
-        "\014\0005\r\0006\014\0007\013\0008\014\0009\013\000F\017\000";
+        "\r\001!!\'\000\005\t\000\010\r\000\t\013\0002\016\0003\017\0004\014\0005\r\0006\014\0007\013\0008\014\0009\013\000F"
+        "\017\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -1696,6 +1652,9 @@ typedef struct ZTMDiscoveryChannels__storage_ {
 typedef struct ZTMReply__storage_ {
   uint32_t _has_storage_[1];
   uint32_t createAt;
+  int32_t contentType;
+  int32_t contentLength;
+  int32_t totalPraises;
   int32_t replySource;
   int32_t isPraised;
   NSString *id_p;
@@ -1708,9 +1667,6 @@ typedef struct ZTMReply__storage_ {
   NSString *targetUserId;
   NSString *targetParentId;
   NSString *targetParentUserId;
-  NSString *contentType;
-  NSString *contentLength;
-  NSString *totalPraises;
   ZTMUserDescription *user;
   ZTMUserDescription *replyToUser;
 } ZTMReply__storage_;
@@ -1827,7 +1783,7 @@ typedef struct ZTMReply__storage_ {
         .hasIndex = 11,
         .offset = (uint32_t)offsetof(ZTMReply__storage_, contentType),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeInt32,
       },
       {
         .name = "contentLength",
@@ -1836,7 +1792,7 @@ typedef struct ZTMReply__storage_ {
         .hasIndex = 12,
         .offset = (uint32_t)offsetof(ZTMReply__storage_, contentLength),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeInt32,
       },
       {
         .name = "totalPraises",
@@ -1845,7 +1801,7 @@ typedef struct ZTMReply__storage_ {
         .hasIndex = 13,
         .offset = (uint32_t)offsetof(ZTMReply__storage_, totalPraises),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeInt32,
       },
       {
         .name = "user",
