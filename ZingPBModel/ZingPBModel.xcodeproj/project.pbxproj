@@ -15,6 +15,8 @@
 		1C3A189C1E9A0DBF00E535C8 /* Response.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A18941E9A0DBF00E535C8 /* Response.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1C3A189E1E9A0DBF00E535C8 /* Storge.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A18961E9A0DBF00E535C8 /* Storge.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1C89946C1E9B31AB00DF1C57 /* AppConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89946B1E9B31AB00DF1C57 /* AppConfigManager.swift */; };
+		1CC0D3DD1EA7834600B59DF9 /* UserProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0D3DC1EA7834600B59DF9 /* UserProfileManager.swift */; };
+		1CC0D3DF1EA7844700B59DF9 /* LocalProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0D3DE1EA7844700B59DF9 /* LocalProfileManager.swift */; };
 		1CD2F36B1E9A183B00861387 /* ApplicationProfileContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2F36A1E9A183B00861387 /* ApplicationProfileContext.swift */; };
 		1CD2F37B1E9A20E900861387 /* ZingPBModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A18771E9A0D8D00E535C8 /* ZingPBModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CD2F3801E9A241000861387 /* Composite.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A188F1E9A0DBF00E535C8 /* Composite.pbobjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,6 +51,8 @@
 		1C3A18951E9A0DBF00E535C8 /* Storge.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storge.pbobjc.h; sourceTree = "<group>"; };
 		1C3A18961E9A0DBF00E535C8 /* Storge.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storge.pbobjc.m; sourceTree = "<group>"; };
 		1C89946B1E9B31AB00DF1C57 /* AppConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfigManager.swift; sourceTree = "<group>"; };
+		1CC0D3DC1EA7834600B59DF9 /* UserProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileManager.swift; sourceTree = "<group>"; };
+		1CC0D3DE1EA7844700B59DF9 /* LocalProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalProfileManager.swift; sourceTree = "<group>"; };
 		1CD2F36A1E9A183B00861387 /* ApplicationProfileContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationProfileContext.swift; sourceTree = "<group>"; };
 		9D54BC49667919EB16C64809 /* Pods_ZingPBModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZingPBModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A054E31178577761159C9FDF /* Pods-ZingPBModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingPBModel.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZingPBModel/Pods-ZingPBModel.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				1C3A18771E9A0D8D00E535C8 /* ZingPBModel.h */,
 				1CD2F36A1E9A183B00861387 /* ApplicationProfileContext.swift */,
 				1C89946B1E9B31AB00DF1C57 /* AppConfigManager.swift */,
+				1CC0D3DC1EA7834600B59DF9 /* UserProfileManager.swift */,
+				1CC0D3DE1EA7844700B59DF9 /* LocalProfileManager.swift */,
 				1C3A18781E9A0D8D00E535C8 /* Info.plist */,
 			);
 			path = ZingPBModel;
@@ -303,8 +309,10 @@
 				1C3A189E1E9A0DBF00E535C8 /* Storge.pbobjc.m in Sources */,
 				1CD2F36B1E9A183B00861387 /* ApplicationProfileContext.swift in Sources */,
 				1C3A189C1E9A0DBF00E535C8 /* Response.pbobjc.m in Sources */,
+				1CC0D3DF1EA7844700B59DF9 /* LocalProfileManager.swift in Sources */,
 				1C89946C1E9B31AB00DF1C57 /* AppConfigManager.swift in Sources */,
 				1C3A18981E9A0DBF00E535C8 /* Composite.pbobjc.m in Sources */,
+				1CC0D3DD1EA7834600B59DF9 /* UserProfileManager.swift in Sources */,
 				1C3A189A1E9A0DBF00E535C8 /* Plain.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
