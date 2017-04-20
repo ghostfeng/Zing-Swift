@@ -10,6 +10,7 @@
 		1C3A17CB1E99E55000E535C8 /* ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3A17C11E99E55000E535C8 /* ZingCommon.framework */; };
 		1C3A17D01E99E55000E535C8 /* ZingCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A17CF1E99E55000E535C8 /* ZingCommonTests.swift */; };
 		1C3A17D21E99E55000E535C8 /* ZingCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A17C41E99E55000E535C8 /* ZingCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C6A08691EA8E62000C99B7C /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A08681EA8E62000C99B7C /* PhotoLibraryService.swift */; };
 		7C836A76D3025A143B11541F /* Pods_ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465EF1FB55A2278377038CAD /* Pods_ZingCommon.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		1C3A17CA1E99E55000E535C8 /* ZingCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZingCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3A17CF1E99E55000E535C8 /* ZingCommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZingCommonTests.swift; sourceTree = "<group>"; };
 		1C3A17D11E99E55000E535C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C6A08681EA8E62000C99B7C /* PhotoLibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
 		465EF1FB55A2278377038CAD /* Pods_ZingCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZingCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEFDC4829AEF546CCA10E34 /* Pods-ZingCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingCommon.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZingCommon/Pods-ZingCommon.release.xcconfig"; sourceTree = "<group>"; };
 		E0C6DC76AFF9535CCB6A3261 /* Pods-ZingCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingCommon.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ZingCommon/Pods-ZingCommon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		1C8994571E9B302500DF1C57 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1C6A08681EA8E62000C99B7C /* PhotoLibraryService.swift */,
 			);
 			name = Service;
 			path = ZingCommon/Service;
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6A08691EA8E62000C99B7C /* PhotoLibraryService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +460,7 @@
 		1C3A17D91E99E55000E535C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 7AWX2MRU3G;
 				INFOPLIST_FILE = ZingCommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -468,6 +473,7 @@
 		1C3A17DA1E99E55000E535C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 7AWX2MRU3G;
 				INFOPLIST_FILE = ZingCommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
