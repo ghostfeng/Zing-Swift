@@ -14,6 +14,7 @@
 		1C1638051E777A0C002C9734 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1638031E777A0C002C9734 /* LaunchScreen.storyboard */; };
 		1C1638101E777A0C002C9734 /* Zing_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C16380F1E777A0C002C9734 /* Zing_SwiftTests.swift */; };
 		1C16381B1E777A0C002C9734 /* Zing_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C16381A1E777A0C002C9734 /* Zing_SwiftUITests.swift */; };
+		1C46066F1EB02C12005BD800 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C46066E1EB02C12005BD800 /* AccountService.swift */; };
 		1C8994671E9B30FC00DF1C57 /* GCDQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994621E9B30FC00DF1C57 /* GCDQueue.swift */; };
 		1C8994681E9B30FC00DF1C57 /* RequestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994631E9B30FC00DF1C57 /* RequestPath.swift */; };
 		1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994651E9B30FC00DF1C57 /* APIService.swift */; };
@@ -53,6 +54,7 @@
 		1C1638161E777A0C002C9734 /* Zing-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zing-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C16381A1E777A0C002C9734 /* Zing_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zing_SwiftUITests.swift; sourceTree = "<group>"; };
 		1C16381C1E777A0C002C9734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C46066E1EB02C12005BD800 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		1C8994621E9B30FC00DF1C57 /* GCDQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueue.swift; sourceTree = "<group>"; };
 		1C8994631E9B30FC00DF1C57 /* RequestPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
 		1C8994651E9B30FC00DF1C57 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				1C8994651E9B30FC00DF1C57 /* APIService.swift */,
 				1C8994661E9B30FC00DF1C57 /* URLService.swift */,
+				1C46066E1EB02C12005BD800 /* AccountService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				1C89946A1E9B30FC00DF1C57 /* URLService.swift in Sources */,
 				1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */,
 				1C8994671E9B30FC00DF1C57 /* GCDQueue.swift in Sources */,
+				1C46066F1EB02C12005BD800 /* AccountService.swift in Sources */,
 				1C8994681E9B30FC00DF1C57 /* RequestPath.swift in Sources */,
 				1C1637FB1E777A0C002C9734 /* AppDelegate.swift in Sources */,
 			);

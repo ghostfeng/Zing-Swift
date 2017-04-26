@@ -17,6 +17,7 @@ PODS:
   - AVOSCloudIM/_NOARC (4.2.0):
     - AVOSCloud (= 4.2.0)
   - Protobuf (3.2.1)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (>= 4.4.0)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - AVOSCloudIM (>= 4.0.0)
   - Protobuf (>= 3.2.0)
   - Protobuf (>= 3.2.1)
+  - SwiftyJSON (>= 3.1.4)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -35,7 +37,8 @@ SPEC CHECKSUMS:
   AVOSCloud: 5446ad0320f4942cce1a036d131992cd1115db99
   AVOSCloudIM: 69df8e8517247f3c2585e321f24e777d5b398843
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: fc844c7138653495ee834af760838a6b1f839488
+PODFILE CHECKSUM: 69a3ff1c51fdf23d7537ea29c1962baae6d244c1
 
 COCOAPODS: 1.0.0

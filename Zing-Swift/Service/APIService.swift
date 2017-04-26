@@ -11,11 +11,17 @@ import Alamofire
 import ZingPBModel
 
 public typealias PBClosure = (String, ZTMZingResponse?, Error?) -> Void
-public typealias JSONClosure = (String, Any?, Error?) -> Void
+public typealias JSONClosure = (String, Data?, Error?) -> Void
 
 let BASE_URL_SERVICES = "/services"
 let APIServiceFailure = NSNotification.Name(rawValue: "APIServiceFailure")
 let APIServiceDataFailure = NSNotification.Name(rawValue: "APIServiceDataFailure")
+
+enum ZingResponseCode: Int32 {
+    case success = 0
+    case authenticationFailed = 401
+    case authenticationException = 403
+}
 
 
 /// 网络请求服务类
@@ -59,7 +65,7 @@ class APIService {
     }
     
     private var headers: HTTPHeaders = ["X-Zing-PageSize": String(30)]
-    private let acm = AppConfigManager.defaultManager
+    private let acm = AppConfigManager.default
     var pageSize: Int = 30 {
         didSet{
             headers["X-Zing-PageSize"] = String(pageSize)
@@ -102,7 +108,7 @@ class APIService {
                 do {
                     let response = try ZTMZingResponse(data: data)
                     #if DEBUG
-                        print("API 性能", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
+                        print("API性能：", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
                     #endif
                     closure(path, response, nil)
                 } catch {
@@ -114,13 +120,25 @@ class APIService {
         }
     }
     
+    func get3rd(_ path: String, parameters: [String: String] = [:], queue: DispatchQueue? = nil, closure: @escaping JSONClosure) {
+        getManager.request(path, method: .get, parameters: parameters).validate().responseData { (responseData) in
+            switch responseData.result {
+            case .failure(let error):
+                NotificationCenter.default.post(name: APIServiceFailure, object: self, userInfo: ["error": error])
+                closure(path, nil, error)
+            case .success(let data):
+                closure(path, data, nil)
+            }
+        }
+    }
+    
     func get(_ path: RequestPath, pathParameters: [String: String] = [:], queue: DispatchQueue? = nil, closure: @escaping PBClosure) {
         get(getAbsolutePath(path.rawValue), parameters: pathParameters, queue: queue, closure: closure)
     }
     
-    func post(_ path: String, parameters: [String: String] = [:], queue: DispatchQueue? = nil, closure: @escaping PBClosure) {
+    func post(_ path: String, parameters: [String: String] = [:], queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
         headers["X-Zing-At"] = String(Date().timeIntervalSince1970 * 1000)
-        getManager.request(path, method: .post, parameters: parameters, headers: headers).validate().responseData(queue: queue) { (responseData) in
+        postManager.request(path, method: .post, parameters: parameters, headers: headers).validate().responseData(queue: queue) { (responseData) in
             switch responseData.result {
             case .failure(let error):
                 NotificationCenter.default.post(name: APIServiceFailure, object: self, userInfo: ["error": error])
@@ -130,7 +148,7 @@ class APIService {
                 do {
                     let response = try ZTMZingResponse(data: data)
                     #if DEBUG
-                        print("API 性能", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
+                        print("API性能：", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
                     #endif
                     closure(path, response, nil)
                 } catch {
@@ -142,8 +160,35 @@ class APIService {
         }
     }
     
-    func post(_ path: RequestPath, parameters: [String: String] = [:], queue: DispatchQueue? = nil, closure: @escaping PBClosure) {
+    func post(_ path: RequestPath, parameters: [String: String] = [:], queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
         post(getAbsolutePath(path.rawValue), parameters: parameters, queue: queue, closure: closure)
     }
     
+    func post(_ path: String, message: GPBMessage, queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
+        headers["X-Zing-At"] = String(Date().timeIntervalSince1970 * 1000)
+        postManager.request(path).validate().responseData { (responseData) in
+            switch responseData.result {
+            case .failure(let error):
+                NotificationCenter.default.post(name: APIServiceFailure, object: self, userInfo: ["error": error])
+                closure(path, nil, error)
+                break
+            case .success(let data):
+                do {
+                    let response = try ZTMZingResponse(data: data)
+                    #if DEBUG
+                        print("API性能：", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
+                    #endif
+                    closure(path, response, nil)
+                } catch {
+                    NotificationCenter.default.post(name: APIServiceDataFailure, object: self, userInfo: ["error": error, "path": path])
+                    closure(path, nil, error)
+                }
+                break
+            }
+        }
+    }
+    
+    func post(_ path: RequestPath, message: GPBMessage, queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
+        post(getAbsolutePath(path.rawValue), message: message, queue: queue, closure: closure)
+    }
 }

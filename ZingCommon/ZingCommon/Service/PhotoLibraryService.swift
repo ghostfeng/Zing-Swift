@@ -15,7 +15,7 @@ import UIKit
         super.init()
     }
     
-    public class var defaultService: PhotoLibraryService {
+    public class var `default`: PhotoLibraryService {
         return INSTANCE
     }
     

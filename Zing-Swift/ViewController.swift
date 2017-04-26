@@ -13,9 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         APIService.default.get(.appConfig, queue: userInitiatedQueue) { (path, response, error) in
-            let acm = AppConfigManager.defaultManager
+            let acm = AppConfigManager.default
             acm.update((response?.config)!)
             print(acm.bucket,acm.bucketEndPoint)
+        }
+        
+        AccountService.default.loginWithTel("15201420833", password: "123456", telCode: "+86") { (path, response, error) in
+            print(response!)
         }
     }
 

@@ -16,16 +16,16 @@ import Foundation
         super.init()
     }
     
-    public class var defaultManager: UserProfileManager {
+    public class var `default`: UserProfileManager {
         return INSTANCE
     }
     
-    private let apc = ApplicationProfileContext.defaultContext
-    private let lpm = LocalProfileManager.defaultManager
+    private let apc = ApplicationProfileContext.default
+    private let lpm = LocalProfileManager.default
     
     /// 从本地留存的数据看是否已经登陆
     public var isLogin: Bool {
-        return !apc.localProfile.userId.isEmpty && !apc.userProfile?.tokenServer.isEmpty
+        return !apc.localProfile.userId.isEmpty && !(apc.userProfile?.tokenServer.isEmpty)!
     }
     
     /// 获得本地留存的数据中当前的用户ID
@@ -35,7 +35,7 @@ import Foundation
     
     /// 获得本地留存的数据中当前的用户Token Server
     public var currentTokenServer: String {
-        return isLogin ? apc.userProfile?.tokenServer : ""
+        return isLogin ? (apc.userProfile?.tokenServer)! : ""
     }
     
     /// 是否已经更新过appconfig
@@ -68,7 +68,7 @@ import Foundation
             clearHate()
             try apc.saveLocalProfile()
             if !isUpdated {
-                isUpdated = try
+                isUpdated = true
             }
         } catch {
             print(error)

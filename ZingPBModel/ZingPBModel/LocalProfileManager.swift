@@ -16,11 +16,11 @@ import Foundation
         super.init()
     }
     
-    public class var defaultManager: LocalProfileManager {
+    public class var `default`: LocalProfileManager {
         return INSTANCE
     }
     
-    private let apc = ApplicationProfileContext.defaultContext
+    private let apc = ApplicationProfileContext.default
     
     // MARK:- 当前程序版本
     

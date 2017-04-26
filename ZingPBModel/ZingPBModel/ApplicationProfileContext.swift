@@ -33,7 +33,7 @@ private let ATTACHMENTS_NAME = "attachments" + FSP
     private let fileManager = FileManager.default
     
     /// 应用级上下文
-    public class var defaultContext: ApplicationProfileContext {
+    public class var `default`: ApplicationProfileContext {
         return INSTANCE
     }
     

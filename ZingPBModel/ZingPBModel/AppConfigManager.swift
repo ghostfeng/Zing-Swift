@@ -16,12 +16,12 @@ import UIKit
     }
     
     /// 获得应用配置管理类
-    public class var defaultManager: AppConfigManager {
+    public class var `default`: AppConfigManager {
         return INSTANCE
     }
     
     /// 应用级上下文
-    private let apc = ApplicationProfileContext.defaultContext
+    private let apc = ApplicationProfileContext.default
     
     /// 是否已经更新过appconfig
     public dynamic var isUpdated = false

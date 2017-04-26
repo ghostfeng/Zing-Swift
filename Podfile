@@ -14,6 +14,8 @@ target 'Zing-Swift' do
     pod 'Alamofire', '>= 4.4.0'
     # 序列化 protobuf
     pod 'Protobuf', '>= 3.2.1'
+    # 序列化 JSON
+    pod 'SwiftyJSON', '>= 3.1.4'
     # 阿里OSS SDK
     pod 'AliyunOSSiOS', '>= 2.6.0'
     # 阿里Push SDK
