@@ -7,8 +7,10 @@
 //
 
 import UIKit
+
 import ZingPBModel
 import Snippets
+
 import CloudPushSDK
 import SwiftyJSON
 
@@ -31,6 +33,7 @@ class AccountService: NSObject {
     var curentUser: ZTMUserDescription! {
         return user
     }
+//    dynamic var imClient: AVIMClient!
     
     //MARK: - 登入、登出
     func loginWithTel(_ tel: String, password: String, telCode: String, closure: @escaping PBClosure) {

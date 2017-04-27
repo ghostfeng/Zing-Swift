@@ -18,4 +18,5 @@ class UMengService {
     class var `default`: UMengService {
         return INSTANCE
     }
+//    UMSocialManager.default()
 }

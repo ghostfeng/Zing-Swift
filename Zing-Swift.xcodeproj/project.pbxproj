@@ -61,6 +61,7 @@
 		1C4606CE1EB1903D005BD800 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1C4606D01EB198A8005BD800 /* AppKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeys.swift; sourceTree = "<group>"; };
 		1C4606D21EB19B27005BD800 /* UMengService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMengService.swift; sourceTree = "<group>"; };
+		1C4606D41EB1C13D005BD800 /* Zing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zing-Bridging-Header.h"; sourceTree = "<group>"; };
 		1C8994621E9B30FC00DF1C57 /* GCDQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueue.swift; sourceTree = "<group>"; };
 		1C8994631E9B30FC00DF1C57 /* RequestPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
 		1C8994651E9B30FC00DF1C57 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 				1C1638011E777A0C002C9734 /* Assets.xcassets */,
 				1C1638031E777A0C002C9734 /* LaunchScreen.storyboard */,
 				1C1638061E777A0C002C9734 /* Info.plist */,
+				1C4606D41EB1C13D005BD800 /* Zing-Bridging-Header.h */,
 			);
 			path = "Zing-Swift";
 			sourceTree = "<group>";
@@ -549,6 +551,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -592,6 +595,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,8 +616,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.witgo.Zing-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zing-Swift/Zing-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Zing-Swift/Zing-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -630,8 +636,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.witgo.Zing-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zing-Swift/Zing-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Zing-Swift/Zing-Bridging-Header.h";
 			};
 			name = Release;
 		};
