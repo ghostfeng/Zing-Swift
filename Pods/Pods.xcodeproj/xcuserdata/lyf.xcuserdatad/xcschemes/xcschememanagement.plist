@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Snippets.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Zing-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -83,6 +88,11 @@
 			<true/>
 		</dict>
 		<key>D3B73FAD84F41C2AA1FE5E692DC15CAC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC9C23C4248B100A065774E84BC1B367</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -44,3 +44,8 @@ target 'ZingPBModel' do
     # 序列化 protobuf
     pod 'Protobuf', '>= 3.2.1'
 end
+
+target 'Snippets' do
+    project 'Snippets/Snippets.xcodeproj'
+end
+

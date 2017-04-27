@@ -23,7 +23,10 @@
 		1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994651E9B30FC00DF1C57 /* APIService.swift */; };
 		1C89946A1E9B30FC00DF1C57 /* URLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994661E9B30FC00DF1C57 /* URLService.swift */; };
 		1CC0D3DB1EA741DF00B59DF9 /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */; };
-		57CFB6FAE9171C29CA4ECA99 /* Pods_Zing_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864E3B997AE6832097136B76 /* Pods_Zing_Swift.framework */; };
+		1CF45A191EB1D5C300E2B2BA /* Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF45A161EB1D5C300E2B2BA /* Snippets.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1CF45A1A1EB1D5C300E2B2BA /* ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF45A171EB1D5C300E2B2BA /* ZingCommon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		1CF45A201EB1D78400E2B2BA /* ZingPBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF45A181EB1D5C300E2B2BA /* ZingPBModel.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		57CFB6FAE9171C29CA4ECA99 /* Pods_Zing_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864E3B997AE6832097136B76 /* Pods_Zing_Swift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		1C8994651E9B30FC00DF1C57 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		1C8994661E9B30FC00DF1C57 /* URLService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLService.swift; sourceTree = "<group>"; };
 		1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
+		1CF45A161EB1D5C300E2B2BA /* Snippets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Snippets.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-ddfdqgrkxfrimnchadcqntzarvuv/Build/Products/Debug-iphoneos/Snippets.framework"; sourceTree = "<group>"; };
+		1CF45A171EB1D5C300E2B2BA /* ZingCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZingCommon.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-ddfdqgrkxfrimnchadcqntzarvuv/Build/Products/Debug-iphoneos/ZingCommon.framework"; sourceTree = "<group>"; };
+		1CF45A181EB1D5C300E2B2BA /* ZingPBModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZingPBModel.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-ddfdqgrkxfrimnchadcqntzarvuv/Build/Products/Debug-iphoneos/ZingPBModel.framework"; sourceTree = "<group>"; };
 		59F41581AC2E2EB7EF7BACCD /* Pods-Zing-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zing-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zing-Swift/Pods-Zing-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		864E3B997AE6832097136B76 /* Pods_Zing_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zing_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CC84864785DAA9E218E5E4 /* Pods-Zing-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zing-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zing-Swift/Pods-Zing-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF45A191EB1D5C300E2B2BA /* Snippets.framework in Frameworks */,
+				1CF45A201EB1D78400E2B2BA /* ZingPBModel.framework in Frameworks */,
+				1CF45A1A1EB1D5C300E2B2BA /* ZingCommon.framework in Frameworks */,
 				57CFB6FAE9171C29CA4ECA99 /* Pods_Zing_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +254,9 @@
 		E16F583B6A9CCDB826982BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CF45A161EB1D5C300E2B2BA /* Snippets.framework */,
+				1CF45A171EB1D5C300E2B2BA /* ZingCommon.framework */,
+				1CF45A181EB1D5C300E2B2BA /* ZingPBModel.framework */,
 				864E3B997AE6832097136B76 /* Pods_Zing_Swift.framework */,
 			);
 			name = Frameworks;
@@ -421,7 +433,7 @@
 		};
 		D98033050D29E6778B1093D4 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -509,6 +521,7 @@
 		1C16381D1E777A0C002C9734 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -561,6 +574,7 @@
 		1C16381E1E777A0C002C9734 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -607,13 +621,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59F41581AC2E2EB7EF7BACCD /* Pods-Zing-Swift.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7AWX2MRU3G;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Zing-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.witgo.Zing-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zing-Swift/Zing-Bridging-Header.h";
@@ -627,13 +642,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8CC84864785DAA9E218E5E4 /* Pods-Zing-Swift.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7AWX2MRU3G;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Zing-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.witgo.Zing-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Zing-Swift/Zing-Bridging-Header.h";

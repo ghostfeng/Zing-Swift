@@ -5,13 +5,13 @@
       location = "group:Zing-Swift.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Snippets/Snippets.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ZingCommon/ZingCommon.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ZingPBModel/ZingPBModel.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Snippets/Snippets.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
