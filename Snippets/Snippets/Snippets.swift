@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+public extension UIDevice {
+    public class func unameMachine() -> String {
+        var systemInfo: utsname = Darwin.utsname()
+        _ = Darwin.uname(&systemInfo)
+        return String(cString: UnsafeMutableRawPointer(&systemInfo.machine).assumingMemoryBound(to: CChar.self), encoding: .utf8)!
+    }
+}
