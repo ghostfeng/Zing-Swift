@@ -24,7 +24,7 @@ enum ZingResponseCode: Int32 {
 }
 
 
-/// 网络请求服务类
+/// 网络请求服务
 class APIService {
     private static let INSTANCE = APIService()
     let getManager: Alamofire.SessionManager
@@ -108,7 +108,7 @@ class APIService {
                 do {
                     let response = try ZTMZingResponse(data: data)
                     #if DEBUG
-                        print("API性能：", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
+                        print("API性能：\n", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
                     #endif
                     closure(path, response, nil)
                 } catch {
@@ -136,6 +136,14 @@ class APIService {
         get(getAbsolutePath(path.rawValue), parameters: pathParameters, queue: queue, closure: closure)
     }
     
+    func refresh(_ path: String, queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
+        get(path, queue: queue, closure: closure)
+    }
+    
+    func refresh(_ path: RequestPath, queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
+        get(path, queue: queue, closure: closure)
+    }
+    
     func post(_ path: String, parameters: [String: String] = [:], queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
         headers["X-Zing-At"] = String(Date().timeIntervalSince1970 * 1000)
         postManager.request(path, method: .post, parameters: parameters, headers: headers).validate().responseData(queue: queue) { (responseData) in
@@ -148,7 +156,7 @@ class APIService {
                 do {
                     let response = try ZTMZingResponse(data: data)
                     #if DEBUG
-                        print("API性能：", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
+                        print("API性能：\n", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
                     #endif
                     closure(path, response, nil)
                 } catch {
@@ -166,7 +174,8 @@ class APIService {
     
     func post(_ path: String, message: GPBMessage, queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
         headers["X-Zing-At"] = String(Date().timeIntervalSince1970 * 1000)
-        postManager.request(path).validate().responseData { (responseData) in
+        
+        postManager.request(path, method: .post, encoding: message, headers: headers).validate().responseData { (responseData) in
             switch responseData.result {
             case .failure(let error):
                 NotificationCenter.default.post(name: APIServiceFailure, object: self, userInfo: ["error": error])
@@ -176,7 +185,7 @@ class APIService {
                 do {
                     let response = try ZTMZingResponse(data: data)
                     #if DEBUG
-                        print("API性能：", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
+                        print("API性能：\n", path, UInt64(Date().timeIntervalSince1970 * 1000) - response.requestAt, response.duration)
                     #endif
                     closure(path, response, nil)
                 } catch {
@@ -190,5 +199,14 @@ class APIService {
     
     func post(_ path: RequestPath, message: GPBMessage, queue: DispatchQueue? = nil, closure: @escaping PBClosure = EMPTY_PBCLOSURE) {
         post(getAbsolutePath(path.rawValue), message: message, queue: queue, closure: closure)
+    }
+}
+
+extension GPBMessage: ParameterEncoding {
+    public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        var request = try urlRequest.asURLRequest()
+        request.setValue("application/x-zing1.1", forHTTPHeaderField: "Content-Type")
+        request.httpBody = self.data()
+        return request
     }
 }

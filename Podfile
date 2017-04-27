@@ -20,13 +20,18 @@ target 'Zing-Swift' do
     pod 'AliyunOSSiOS', '>= 2.6.0'
     # 阿里Push SDK
     pod 'AlicloudPush', '>= 1.9.1'
+    # 友盟分享
+    pod 'UMengUShare/Core', '>= 6.4.3'
+    pod 'UMengUShare/Social/Sina', '>= 6.4.3'
+    pod 'UMengUShare/Social/WeChat', '>= 6.4.3'
+    pod 'UMengUShare/Social/QQ', '>= 6.4.3'
 end
 
 target 'ZingCommon' do
     project 'ZingCommon/ZingCommon.xcodeproj'
     
     # 序列化 protobuf
-    pod 'Protobuf', '>= 3.2.0'
+    pod 'Protobuf', '>= 3.2.1'
     # 阿里OSS SDK
     pod 'AliyunOSSiOS', '>= 2.6.0'
     # LeanCloud SDK

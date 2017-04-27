@@ -12,6 +12,7 @@ import Snippets
 import CloudPushSDK
 import SwiftyJSON
 
+/// 用户服务
 class AccountService: NSObject {
     private static let INSTANCE = AccountService()
     private let upm = UserProfileManager.default
@@ -31,6 +32,7 @@ class AccountService: NSObject {
         return user
     }
     
+    //MARK: - 登入、登出
     func loginWithTel(_ tel: String, password: String, telCode: String, closure: @escaping PBClosure) {
         APIService.default.post(.accountLoginByTel, parameters: ["tel": tel, "password": password, "telCode": telCode], queue: userInitiatedQueue) { (path, response, error) in
             mainQueue.async {
@@ -70,15 +72,25 @@ class AccountService: NSObject {
 //                    }
 //                }
 //                APIService.default.post(.appStarted, parameters:[ "os": UIDevice.current.name + " " + UIDevice.current.systemVersion, "appVersion": Bundle.main.infoDictionary!["CFBundleVersion"] as! String, "model": UIDevice.unameMachine(), "network": status])
-                
-                
             }
             
-            APIService.default.get3rd("https://api.map.baidu.com/location/ip", parameters: ["ak": "Do1F3sPqpyy3cRz79Y1EBqLmgKGdRS6Q"], queue: userInitiatedQueue) { (path, data, error) in
+            APIService.default.get3rd("https://api.map.baidu.com/location/ip", parameters: ["ak": BaiduWebAK], queue: userInitiatedQueue) { (path, data, error) in
+                let updateUser = ZTMUserDescription()
+                updateUser.id_p = user.id_p
+                updateUser.timeZone = TimeZone.current.localizedName(for: .standard, locale: nil)!
+                if let error = error {
+                    print("baidu ip location error:", error)
+                }
                 if let data = data {
                     let json = JSON(data)
-                    print(json["content"]["address_detail"]["city"])
+                    if json["status"].int != 0 {
+                        print("baidu ip location error: ", json["message"].string ?? "unknow")
+                    } else {
+                        updateUser.cityCode = json["content"]["address_detail"]["city"].string!
+                    }
                 }
+                /// 上传用户信息
+                APIService.default.post(.accountUpdateRefresh, message: updateUser)
             }
             
             // 更新本地纪录
@@ -117,7 +129,6 @@ class AccountService: NSObject {
     }
     
     //MARK: - IM
-    
     func imConnect() {
     }
     

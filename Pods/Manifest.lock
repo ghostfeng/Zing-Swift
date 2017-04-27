@@ -18,15 +18,36 @@ PODS:
     - AVOSCloud (= 4.2.0)
   - Protobuf (3.2.1)
   - SwiftyJSON (3.1.4)
+  - UMengUShare/Core (6.4.3):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.3)
+  - UMengUShare/Social/QQ (6.4.3):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedQQ (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.3):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.4.3):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedSina
+  - UMengUShare/Social/WeChat (6.4.3):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedWeChat
 
 DEPENDENCIES:
   - Alamofire (>= 4.4.0)
   - AlicloudPush (>= 1.9.1)
   - AliyunOSSiOS (>= 2.6.0)
   - AVOSCloudIM (>= 4.0.0)
-  - Protobuf (>= 3.2.0)
   - Protobuf (>= 3.2.1)
   - SwiftyJSON (>= 3.1.4)
+  - UMengUShare/Core (>= 6.4.3)
+  - UMengUShare/Social/QQ (>= 6.4.3)
+  - UMengUShare/Social/Sina (>= 6.4.3)
+  - UMengUShare/Social/WeChat (>= 6.4.3)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -38,7 +59,8 @@ SPEC CHECKSUMS:
   AVOSCloudIM: 69df8e8517247f3c2585e321f24e777d5b398843
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  UMengUShare: d39cb682598df87ebdd3c055d03d00eb0102d42c
 
-PODFILE CHECKSUM: 69a3ff1c51fdf23d7537ea29c1962baae6d244c1
+PODFILE CHECKSUM: 131f531a2ac43b30449a76b843db3706474f2348
 
 COCOAPODS: 1.0.0
