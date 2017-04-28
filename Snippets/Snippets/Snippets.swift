@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK: - UI
 public extension UIDevice {
     public class func unameMachine() -> String {
         var systemInfo: utsname = Darwin.utsname()
@@ -31,7 +32,7 @@ public extension UIView {
 
 public extension UIColor {
     public convenience init(rgb: UInt32) {
-        self.init(red: CGFloat(rgb >> 16 && 0x0000ff) / 255.0, green: CGFloat(rgb >> 8 && 0x0000ff) / 255.0, blue: CGFloat(rgb && 0x0000ff) / 255.0, alpha: 1.0)
+        self.init(red: CGFloat(rgb >> 16 & 0x0000ff) / 255.0, green: CGFloat(rgb >> 8 & 0x0000ff) / 255.0, blue: CGFloat(rgb & 0x0000ff) / 255.0, alpha: 1.0)
     }
     
     public func toRGB() -> UInt32 {
@@ -41,4 +42,20 @@ public extension UIColor {
         getRed(&red, green: &green, blue: &blue, alpha: nil)
         return UInt32(red * 255) << 16 | UInt32(green * 255) << 8 | UInt32(blue * 255)
     }
+}
+
+//MARK: - 值
+public extension Int32 {
+    public static var YES: Int32 { return 1 }
+    public static var NO: Int32 { return 0 }
+}
+
+public extension UInt32 {
+    public static var YES: UInt32 { return 1 }
+    public static var NO: UInt32 { return 0 }
+}
+
+public extension Int {
+    public static var YES: Int { return 1 }
+    public static var NO: Int { return 0 }
 }

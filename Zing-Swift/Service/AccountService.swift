@@ -19,7 +19,7 @@ import AVOSCloudIM
 class AccountService: NSObject, AVIMClientDelegate {
     private static let INSTANCE = AccountService()
     private let upm = UserProfileManager.default
-    private var user: ZTMUserDescription!
+    private var _user: ZTMUserDescription!
     
     private override init() {
         super.init()
@@ -31,8 +31,8 @@ class AccountService: NSObject, AVIMClientDelegate {
     
     
     var isFirstLoginAtThisTime = true
-    var curentUser: ZTMUserDescription! {
-        return user
+    var user: ZTMUserDescription! {
+        return _user
     }
     dynamic var imClient: AVIMClient!
     
@@ -60,7 +60,7 @@ class AccountService: NSObject, AVIMClientDelegate {
     
     /// 记录本地登录
     func doLocalLogin(user: ZTMUserDescription) {
-        self.user = user
+        self._user = user
         APIService.default.token = user.tokenServer
         userInitiatedQueue.async {
             if self.isFirstLoginAtThisTime {
@@ -104,7 +104,7 @@ class AccountService: NSObject, AVIMClientDelegate {
             // 注册推送账户
             CloudPushSDK.bindAccount(user.id_p) { res in
                 if (res!.success) {
-                    print("Push SDK bindAccount success, accountId: ", self.user.id_p)
+                    print("Push SDK bindAccount success, accountId: ", self._user.id_p)
                 } else {
                     print("Push SDK bindAccount failed, error: ", res!.error!)
                 }
@@ -114,7 +114,7 @@ class AccountService: NSObject, AVIMClientDelegate {
     
     /// 记录本地登出
     func doLocalLogout() {
-        user = nil
+        _user = nil
         APIService.default.token = nil
         userInitiatedQueue.async {
             //更新本地记录为登出状态

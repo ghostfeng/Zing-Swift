@@ -13,6 +13,7 @@ import Snippets
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+
         APIService.default.get(.appConfig, queue: userInitiatedQueue) { (path, response, error) in
             let acm = AppConfigManager.default
             if let response = response ,response.code == ZingResponseCode.success.rawValue {
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
             }
             print(acm.bucket,acm.bucketEndPoint)
         }
+        
         AccountService.default.loginWithTel("15201420833", password: "123456", telCode: "+86") { (path, response, error) in
             if let response = response {
                 print("login:", response)

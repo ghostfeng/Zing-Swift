@@ -17,9 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+#if TEST_PROFILE
         ApplicationProfileContext.default.isTestEnv = true
-        
-        UMengService.default.launching()
+#endif
+        //启动后台线程初始化一些配置
+        backgroundQueue.async {
+            UMengService.default.launching()
+        }
         return true
     }
 
