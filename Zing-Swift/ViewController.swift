@@ -8,6 +8,7 @@
 
 import UIKit
 import ZingPBModel
+import Snippets
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
@@ -20,8 +21,21 @@ class ViewController: UIViewController {
             print(acm.bucket,acm.bucketEndPoint)
         }
         AccountService.default.loginWithTel("15201420833", password: "123456", telCode: "+86") { (path, response, error) in
-            print("login:", response!)
+            if let response = response {
+                print("login:", response)
+            }
         }
+        
+        UMengService.default.getAuthWithUserInfoFromWechat(vc: self) { (response, error) in
+            if let error = error {
+                print("UMeng getUserInfo error:",error)
+                return
+            }
+            if let response = response {
+                print(response)
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,4 +43,3 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-

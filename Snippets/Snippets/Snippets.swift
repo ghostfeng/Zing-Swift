@@ -15,3 +15,30 @@ public extension UIDevice {
         return String(cString: UnsafeMutableRawPointer(&systemInfo.machine).assumingMemoryBound(to: CChar.self), encoding: .utf8)!
     }
 }
+
+public extension UIView {
+    public func viewController<T: UIViewController>() -> T? {
+        var next = self.next
+        repeat {
+            if next is T {
+                return next as! T?
+            }
+            next = next?.next
+        } while (next != nil)
+        return nil
+    }
+}
+
+public extension UIColor {
+    public convenience init(rgb: UInt32) {
+        self.init(red: CGFloat(rgb >> 16 && 0x0000ff) / 255.0, green: CGFloat(rgb >> 8 && 0x0000ff) / 255.0, blue: CGFloat(rgb && 0x0000ff) / 255.0, alpha: 1.0)
+    }
+    
+    public func toRGB() -> UInt32 {
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        getRed(&red, green: &green, blue: &blue, alpha: nil)
+        return UInt32(red * 255) << 16 | UInt32(green * 255) << 8 | UInt32(blue * 255)
+    }
+}

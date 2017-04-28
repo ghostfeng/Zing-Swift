@@ -13,9 +13,10 @@ import Snippets
 
 import CloudPushSDK
 import SwiftyJSON
+import AVOSCloudIM
 
 /// 用户服务
-class AccountService: NSObject {
+class AccountService: NSObject, AVIMClientDelegate {
     private static let INSTANCE = AccountService()
     private let upm = UserProfileManager.default
     private var user: ZTMUserDescription!
@@ -33,7 +34,7 @@ class AccountService: NSObject {
     var curentUser: ZTMUserDescription! {
         return user
     }
-//    dynamic var imClient: AVIMClient!
+    dynamic var imClient: AVIMClient!
     
     //MARK: - 登入、登出
     func loginWithTel(_ tel: String, password: String, telCode: String, closure: @escaping PBClosure) {
@@ -136,5 +137,29 @@ class AccountService: NSObject {
     }
     
     func imConnectionClose() {
+    }
+    
+    // MARK:- AVIMClientDelegate
+    
+    /*!
+     接收到新的普通消息。
+     @param conversation － 所属对话
+     @param message - 具体的消息
+     */
+    func conversation(_ conversation: AVIMConversation, didReceiveCommonMessage message: AVIMMessage) {
+        
+    }
+    
+    /*!
+     收到未读通知。在该终端上线的时候，服务器会将对话的未读数发送过来。未读数可通过 -[AVIMConversation markAsReadInBackground] 清零，服务端不会自动清零。
+     @param conversation 所属会话。
+     @param unread 未读消息数量。
+     */
+    func conversation(_ conversation: AVIMConversation, didReceiveUnread unread: Int) {
+        
+    }
+    
+    deinit {
+        imConnectionClose()
     }
 }
