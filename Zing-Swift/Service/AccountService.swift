@@ -10,6 +10,7 @@ import UIKit
 
 import ZingPBModel
 import Snippets
+import ZingCommon
 
 import CloudPushSDK
 import SwiftyJSON
@@ -23,6 +24,21 @@ class AccountService: NSObject, AVIMClientDelegate {
     
     private override init() {
         super.init()
+        
+        ///注入获取用户关注频道列表的接口
+        ZingFollowedChannel.default.getFollowedChannelsByApi = { closure in
+            APIService.default.get(.channelsUser, queue: userInitiatedQueue, closure: { (path, response, error) in
+                if let response = response {
+                    if response.code == ZingResponseCode.success.rawValue {
+                        closure(response.toppingChannelsArray.copy() as! [ZTMChannel], response.followedChannelsArray.copy() as! [ZTMChannel])
+                    } else {
+                        print("api error:", path, response.error)
+                    }
+                } else {
+                    print("get error:", path, error!)
+                }
+            })
+        }
     }
     
     class var `default`: AccountService {
@@ -39,15 +55,15 @@ class AccountService: NSObject, AVIMClientDelegate {
     //MARK: - 登入、登出
     func loginWithTel(_ tel: String, password: String, telCode: String, closure: @escaping PBClosure) {
         APIService.default.post(.accountLoginByTel, parameters: ["tel": tel, "password": password, "telCode": telCode], queue: userInitiatedQueue) { (path, response, error) in
-            mainQueue.async {
-                closure(path, response, error)
-            }
             if let response = response {
                 if response.code == ZingResponseCode.success.rawValue {
                     self.doLocalLogin(user: response.user)
                 }
             } else {
                 print("post error", path, error!)
+            }
+            mainQueue.async {
+                closure(path, response, error)
             }
         }
     }
@@ -101,6 +117,8 @@ class AccountService: NSObject, AVIMClientDelegate {
             self.upm.recordLogin(user: user)
             // 聊天连接
             self.imConnect()
+            //关注频道列表
+            ZingFollowedChannel.default.launching()
             // 注册推送账户
             CloudPushSDK.bindAccount(user.id_p) { res in
                 if (res!.success) {
@@ -134,9 +152,30 @@ class AccountService: NSObject, AVIMClientDelegate {
     
     //MARK: - IM
     func imConnect() {
+        imConnectionClose()
+        if _user != nil {
+            imClient = AVIMClient(clientId: _user.id_p)
+            imClient.delegate = self
+            imClient.open(callback: { (success, error) in
+                if !success {
+                    print(error ?? "AVIMClient open failure with no error")
+                } else {
+                    //TODO:
+                }
+            })
+        }
     }
     
     func imConnectionClose() {
+        if imClient != nil {
+            imClient.close(callback: { (success, error) in
+                if !success {
+                    print(error ?? "AVIMClient close failure with no error")
+                }
+            })
+            imClient.delegate = nil
+            imClient = nil
+        }
     }
     
     // MARK:- AVIMClientDelegate

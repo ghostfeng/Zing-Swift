@@ -194,7 +194,7 @@ typedef GPB_ENUM(ZTMSenseDraft_FieldNumber) {
 typedef GPB_ENUM(ZTMConversationLocalProfile_FieldNumber) {
   ZTMConversationLocalProfile_FieldNumber_Drafts = 1,
   ZTMConversationLocalProfile_FieldNumber_Unread = 2,
-  ZTMConversationLocalProfile_FieldNumber_ReadedSpeach = 3,
+  ZTMConversationLocalProfile_FieldNumber_ReadedSpeech = 3,
 };
 
 @interface ZTMConversationLocalProfile : GPBMessage
@@ -208,9 +208,9 @@ typedef GPB_ENUM(ZTMConversationLocalProfile_FieldNumber) {
 @property(nonatomic, readwrite) int32_t unread;
 
 /** 按时间存最近的20个 */
-@property(nonatomic, readwrite, strong, null_resettable) GPBStringUInt32Dictionary *readedSpeach;
-/** The number of items in @c readedSpeach without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger readedSpeach_Count;
+@property(nonatomic, readwrite, strong, null_resettable) GPBStringUInt32Dictionary *readedSpeech;
+/** The number of items in @c readedSpeech without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger readedSpeech_Count;
 
 @end
 

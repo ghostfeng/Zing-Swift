@@ -1097,6 +1097,8 @@ typedef GPB_ENUM(ZTMUserDescription_FieldNumber) {
   ZTMUserDescription_FieldNumber_OpenId = 11,
   ZTMUserDescription_FieldNumber_IsStaff = 12,
   ZTMUserDescription_FieldNumber_IsAgreeOwnerNotice = 13,
+  ZTMUserDescription_FieldNumber_IsAgreeFinancialRiskNotice = 14,
+  ZTMUserDescription_FieldNumber_IsMyContacts = 15,
 };
 
 @interface ZTMUserDescription : GPBMessage
@@ -1139,6 +1141,12 @@ typedef GPB_ENUM(ZTMUserDescription_FieldNumber) {
 
 /** 是否确定了频道主须知 */
 @property(nonatomic, readwrite) int32_t isAgreeOwnerNotice;
+
+/** 是否查看过金融风险提醒 */
+@property(nonatomic, readwrite) int32_t isAgreeFinancialRiskNotice;
+
+/** 是否是自己的联系人 */
+@property(nonatomic, readwrite) int32_t isMyContacts;
 
 @end
 

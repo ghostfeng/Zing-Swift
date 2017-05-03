@@ -7,12 +7,16 @@
 //
 
 import UIKit
+
 import ZingPBModel
 import Snippets
+import ZingCommon
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: kZingFollowedChannelUpdated, object: nil)
 
         APIService.default.get(.appConfig, queue: userInitiatedQueue) { (path, response, error) in
             let acm = AppConfigManager.default
@@ -23,9 +27,6 @@ class ViewController: UIViewController {
         }
         
         AccountService.default.loginWithTel("15201420833", password: "123456", telCode: "+86") { (path, response, error) in
-            if let response = response {
-                print("login:", response)
-            }
         }
         
         UMengService.default.getAuthWithUserInfoFromWechat(vc: self) { (response, error) in
@@ -37,7 +38,10 @@ class ViewController: UIViewController {
                 print(response)
             }
         }
-        
+    }
+    
+    func reloadData() {
+        print("topping:\n", ZingFollowedChannel.default.toppingChannels!, "\nfollow:\n", ZingFollowedChannel.default.followedChannels!)
     }
 
     override func didReceiveMemoryWarning() {

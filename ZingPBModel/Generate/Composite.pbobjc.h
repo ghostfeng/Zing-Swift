@@ -834,6 +834,8 @@ typedef GPB_ENUM(ZTMUserProfile_FieldNumber) {
   ZTMUserProfile_FieldNumber_OpenId = 11,
   ZTMUserProfile_FieldNumber_IsStaff = 12,
   ZTMUserProfile_FieldNumber_IsAgreeOwnerNotice = 13,
+  ZTMUserProfile_FieldNumber_IsAgreeFinancialRiskNotice = 14,
+  ZTMUserProfile_FieldNumber_IsMyContacts = 15,
   ZTMUserProfile_FieldNumber_CreateSenseCount = 101,
   ZTMUserProfile_FieldNumber_FollowChannelCount = 102,
 };
@@ -879,6 +881,12 @@ typedef GPB_ENUM(ZTMUserProfile_FieldNumber) {
 /** 是否确定了频道主须知 */
 @property(nonatomic, readwrite) int32_t isAgreeOwnerNotice;
 
+/** 是否查看过金融风险提醒 */
+@property(nonatomic, readwrite) int32_t isAgreeFinancialRiskNotice;
+
+/** 是否是自己的联系人 */
+@property(nonatomic, readwrite) int32_t isMyContacts;
+
 /** 创建的感言数 */
 @property(nonatomic, readwrite) int32_t createSenseCount;
 
@@ -903,6 +911,8 @@ typedef GPB_ENUM(ZTMUserStatus_FieldNumber) {
   ZTMUserStatus_FieldNumber_OpenId = 11,
   ZTMUserStatus_FieldNumber_IsStaff = 12,
   ZTMUserStatus_FieldNumber_IsAgreeOwnerNotice = 13,
+  ZTMUserStatus_FieldNumber_IsAgreeFinancialRiskNotice = 14,
+  ZTMUserStatus_FieldNumber_IsMyContacts = 15,
   ZTMUserStatus_FieldNumber_LoginAt = 101,
   ZTMUserStatus_FieldNumber_JoinChannelsArray = 102,
   ZTMUserStatus_FieldNumber_CreateChannelsArray = 103,
@@ -951,6 +961,12 @@ typedef GPB_ENUM(ZTMUserStatus_FieldNumber) {
 
 /** 是否确定了频道主须知 */
 @property(nonatomic, readwrite) int32_t isAgreeOwnerNotice;
+
+/** 是否查看过金融风险提醒 */
+@property(nonatomic, readwrite) int32_t isAgreeFinancialRiskNotice;
+
+/** 是否是自己的联系人 */
+@property(nonatomic, readwrite) int32_t isMyContacts;
 
 /** 登陆时间 */
 @property(nonatomic, readwrite) uint32_t loginAt;
@@ -1027,6 +1043,8 @@ typedef GPB_ENUM(ZTMContacts_FieldNumber) {
   ZTMContacts_FieldNumber_OpenId = 11,
   ZTMContacts_FieldNumber_IsStaff = 12,
   ZTMContacts_FieldNumber_IsAgreeOwnerNotice = 13,
+  ZTMContacts_FieldNumber_IsAgreeFinancialRiskNotice = 14,
+  ZTMContacts_FieldNumber_IsMyContacts = 15,
   ZTMContacts_FieldNumber_CvsId = 101,
   ZTMContacts_FieldNumber_Identity = 102,
   ZTMContacts_FieldNumber_BgColor = 103,
@@ -1035,8 +1053,7 @@ typedef GPB_ENUM(ZTMContacts_FieldNumber) {
   ZTMContacts_FieldNumber_IsTopping = 106,
   ZTMContacts_FieldNumber_ToppingAt = 107,
   ZTMContacts_FieldNumber_Pinyin = 108,
-  ZTMContacts_FieldNumber_IsMyContacts = 109,
-  ZTMContacts_FieldNumber_IsMyCvs = 110,
+  ZTMContacts_FieldNumber_IsMyCvs = 109,
 };
 
 @interface ZTMContacts : GPBMessage
@@ -1080,6 +1097,12 @@ typedef GPB_ENUM(ZTMContacts_FieldNumber) {
 /** 是否确定了频道主须知 */
 @property(nonatomic, readwrite) int32_t isAgreeOwnerNotice;
 
+/** 是否查看过金融风险提醒 */
+@property(nonatomic, readwrite) int32_t isAgreeFinancialRiskNotice;
+
+/** 是否是自己的联系人 */
+@property(nonatomic, readwrite) int32_t isMyContacts;
+
 /** 会话ID */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *cvsId;
 
@@ -1104,9 +1127,6 @@ typedef GPB_ENUM(ZTMContacts_FieldNumber) {
 /** 名称拼音 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *pinyin;
 
-/** 是否是自己的联系人 */
-@property(nonatomic, readwrite) int32_t isMyContacts;
-
 /** 是否在自己的聊天列表 */
 @property(nonatomic, readwrite) int32_t isMyCvs;
 
@@ -1124,6 +1144,10 @@ typedef GPB_ENUM(ZTMPushMessage_FieldNumber) {
   ZTMPushMessage_FieldNumber_URL = 7,
   ZTMPushMessage_FieldNumber_IsDev = 8,
   ZTMPushMessage_FieldNumber_Relationship = 9,
+  ZTMPushMessage_FieldNumber_Type = 10,
+  ZTMPushMessage_FieldNumber_TypeDesc = 11,
+  ZTMPushMessage_FieldNumber_PushId = 12,
+  ZTMPushMessage_FieldNumber_TargetName = 13,
 };
 
 @interface ZTMPushMessage : GPBMessage
@@ -1156,6 +1180,18 @@ typedef GPB_ENUM(ZTMPushMessage_FieldNumber) {
 
 /** 关系的创建模式, 0, 不创建, 1, 接收消息方创建 */
 @property(nonatomic, readwrite) int32_t relationship;
+
+/** 消息类型 */
+@property(nonatomic, readwrite) int32_t type;
+
+/** 类型的描述 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *typeDesc;
+
+/** 推送的ID */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *pushId;
+
+/** 目标名称 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *targetName;
 
 @end
 

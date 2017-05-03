@@ -1879,6 +1879,8 @@ typedef struct ZTMReply__storage_ {
 @dynamic openId;
 @dynamic isStaff;
 @dynamic isAgreeOwnerNotice;
+@dynamic isAgreeFinancialRiskNotice;
+@dynamic isMyContacts;
 @dynamic createSenseCount;
 @dynamic followChannelCount;
 
@@ -1889,6 +1891,8 @@ typedef struct ZTMUserProfile__storage_ {
   uint32_t createAt;
   int32_t isStaff;
   int32_t isAgreeOwnerNotice;
+  int32_t isAgreeFinancialRiskNotice;
+  int32_t isMyContacts;
   int32_t createSenseCount;
   int32_t followChannelCount;
   NSString *id_p;
@@ -2025,10 +2029,28 @@ typedef struct ZTMUserProfile__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
+        .name = "isAgreeFinancialRiskNotice",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMUserProfile_FieldNumber_IsAgreeFinancialRiskNotice,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(ZTMUserProfile__storage_, isAgreeFinancialRiskNotice),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "isMyContacts",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMUserProfile_FieldNumber_IsMyContacts,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(ZTMUserProfile__storage_, isMyContacts),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "createSenseCount",
         .dataTypeSpecific.className = NULL,
         .number = ZTMUserProfile_FieldNumber_CreateSenseCount,
-        .hasIndex = 13,
+        .hasIndex = 15,
         .offset = (uint32_t)offsetof(ZTMUserProfile__storage_, createSenseCount),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -2037,7 +2059,7 @@ typedef struct ZTMUserProfile__storage_ {
         .name = "followChannelCount",
         .dataTypeSpecific.className = NULL,
         .number = ZTMUserProfile_FieldNumber_FollowChannelCount,
-        .hasIndex = 14,
+        .hasIndex = 16,
         .offset = (uint32_t)offsetof(ZTMUserProfile__storage_, followChannelCount),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -2053,7 +2075,7 @@ typedef struct ZTMUserProfile__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\013\002\010\000\004\010\000\006\010\000\007\010\000\010\010\000\t\013\000\013\006\000\014\007\000\r\022\000e\020\000f\022\000";
+        "\r\002\010\000\004\010\000\006\010\000\007\010\000\010\010\000\t\013\000\013\006\000\014\007\000\r\022\000\016\032\000\017\014\000e\020\000f\022\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -2081,6 +2103,8 @@ typedef struct ZTMUserProfile__storage_ {
 @dynamic openId;
 @dynamic isStaff;
 @dynamic isAgreeOwnerNotice;
+@dynamic isAgreeFinancialRiskNotice;
+@dynamic isMyContacts;
 @dynamic loginAt;
 @dynamic joinChannelsArray, joinChannelsArray_Count;
 @dynamic createChannelsArray, createChannelsArray_Count;
@@ -2095,6 +2119,8 @@ typedef struct ZTMUserStatus__storage_ {
   uint32_t createAt;
   int32_t isStaff;
   int32_t isAgreeOwnerNotice;
+  int32_t isAgreeFinancialRiskNotice;
+  int32_t isMyContacts;
   uint32_t loginAt;
   uint32_t updateAt;
   int32_t isOpenFriendship;
@@ -2235,10 +2261,28 @@ typedef struct ZTMUserStatus__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
+        .name = "isAgreeFinancialRiskNotice",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMUserStatus_FieldNumber_IsAgreeFinancialRiskNotice,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(ZTMUserStatus__storage_, isAgreeFinancialRiskNotice),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "isMyContacts",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMUserStatus_FieldNumber_IsMyContacts,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(ZTMUserStatus__storage_, isMyContacts),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "loginAt",
         .dataTypeSpecific.className = NULL,
         .number = ZTMUserStatus_FieldNumber_LoginAt,
-        .hasIndex = 13,
+        .hasIndex = 15,
         .offset = (uint32_t)offsetof(ZTMUserStatus__storage_, loginAt),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeFixed32,
@@ -2265,7 +2309,7 @@ typedef struct ZTMUserStatus__storage_ {
         .name = "lastOperation",
         .dataTypeSpecific.className = NULL,
         .number = ZTMUserStatus_FieldNumber_LastOperation,
-        .hasIndex = 14,
+        .hasIndex = 16,
         .offset = (uint32_t)offsetof(ZTMUserStatus__storage_, lastOperation),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -2274,7 +2318,7 @@ typedef struct ZTMUserStatus__storage_ {
         .name = "updateAt",
         .dataTypeSpecific.className = NULL,
         .number = ZTMUserStatus_FieldNumber_UpdateAt,
-        .hasIndex = 15,
+        .hasIndex = 17,
         .offset = (uint32_t)offsetof(ZTMUserStatus__storage_, updateAt),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeFixed32,
@@ -2283,7 +2327,7 @@ typedef struct ZTMUserStatus__storage_ {
         .name = "isOpenFriendship",
         .dataTypeSpecific.className = NULL,
         .number = ZTMUserStatus_FieldNumber_IsOpenFriendship,
-        .hasIndex = 16,
+        .hasIndex = 18,
         .offset = (uint32_t)offsetof(ZTMUserStatus__storage_, isOpenFriendship),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -2299,8 +2343,8 @@ typedef struct ZTMUserStatus__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\017\002\010\000\004\010\000\006\010\000\007\010\000\010\010\000\t\013\000\013\006\000\014\007\000\r\022\000e\007\000f\000joinCha"
-        "nnels\000g\000createChannels\000h\r\000i\010\000j\020\000";
+        "\021\002\010\000\004\010\000\006\010\000\007\010\000\010\010\000\t\013\000\013\006\000\014\007\000\r\022\000\016\032\000\017\014\000e\007\000f\000j"
+        "oinChannels\000g\000createChannels\000h\r\000i\010\000j\020\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -2431,6 +2475,8 @@ typedef struct ZTMEmoticon__storage_ {
 @dynamic openId;
 @dynamic isStaff;
 @dynamic isAgreeOwnerNotice;
+@dynamic isAgreeFinancialRiskNotice;
+@dynamic isMyContacts;
 @dynamic cvsId;
 @dynamic identity;
 @dynamic bgColor;
@@ -2439,7 +2485,6 @@ typedef struct ZTMEmoticon__storage_ {
 @dynamic isTopping;
 @dynamic toppingAt;
 @dynamic pinyin;
-@dynamic isMyContacts;
 @dynamic isMyCvs;
 
 typedef struct ZTMContacts__storage_ {
@@ -2449,11 +2494,12 @@ typedef struct ZTMContacts__storage_ {
   uint32_t createAt;
   int32_t isStaff;
   int32_t isAgreeOwnerNotice;
+  int32_t isAgreeFinancialRiskNotice;
+  int32_t isMyContacts;
   int32_t isTalker;
   int32_t isBroadcast;
   int32_t isTopping;
   uint32_t toppingAt;
-  int32_t isMyContacts;
   int32_t isMyCvs;
   NSString *id_p;
   NSString *userName;
@@ -2593,10 +2639,28 @@ typedef struct ZTMContacts__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
+        .name = "isAgreeFinancialRiskNotice",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMContacts_FieldNumber_IsAgreeFinancialRiskNotice,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(ZTMContacts__storage_, isAgreeFinancialRiskNotice),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "isMyContacts",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMContacts_FieldNumber_IsMyContacts,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(ZTMContacts__storage_, isMyContacts),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "cvsId",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_CvsId,
-        .hasIndex = 13,
+        .hasIndex = 15,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, cvsId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -2605,7 +2669,7 @@ typedef struct ZTMContacts__storage_ {
         .name = "identity",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_Identity,
-        .hasIndex = 14,
+        .hasIndex = 16,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, identity),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -2614,7 +2678,7 @@ typedef struct ZTMContacts__storage_ {
         .name = "bgColor",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_BgColor,
-        .hasIndex = 15,
+        .hasIndex = 17,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, bgColor),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -2623,7 +2687,7 @@ typedef struct ZTMContacts__storage_ {
         .name = "isTalker",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_IsTalker,
-        .hasIndex = 16,
+        .hasIndex = 18,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, isTalker),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -2632,7 +2696,7 @@ typedef struct ZTMContacts__storage_ {
         .name = "isBroadcast",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_IsBroadcast,
-        .hasIndex = 17,
+        .hasIndex = 19,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, isBroadcast),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -2641,7 +2705,7 @@ typedef struct ZTMContacts__storage_ {
         .name = "isTopping",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_IsTopping,
-        .hasIndex = 18,
+        .hasIndex = 20,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, isTopping),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -2650,7 +2714,7 @@ typedef struct ZTMContacts__storage_ {
         .name = "toppingAt",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_ToppingAt,
-        .hasIndex = 19,
+        .hasIndex = 21,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, toppingAt),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeFixed32,
@@ -2659,25 +2723,16 @@ typedef struct ZTMContacts__storage_ {
         .name = "pinyin",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_Pinyin,
-        .hasIndex = 20,
+        .hasIndex = 22,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, pinyin),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "isMyContacts",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMContacts_FieldNumber_IsMyContacts,
-        .hasIndex = 21,
-        .offset = (uint32_t)offsetof(ZTMContacts__storage_, isMyContacts),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeInt32,
-      },
-      {
         .name = "isMyCvs",
         .dataTypeSpecific.className = NULL,
         .number = ZTMContacts_FieldNumber_IsMyCvs,
-        .hasIndex = 22,
+        .hasIndex = 23,
         .offset = (uint32_t)offsetof(ZTMContacts__storage_, isMyCvs),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -2693,8 +2748,8 @@ typedef struct ZTMContacts__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\021\002\010\000\004\010\000\006\010\000\007\010\000\010\010\000\t\013\000\013\006\000\014\007\000\r\022\000e\005\000g\007\000h\010\000i\013\000"
-        "j\t\000k\t\000m\014\000n\007\000";
+        "\022\002\010\000\004\010\000\006\010\000\007\010\000\010\010\000\t\013\000\013\006\000\014\007\000\r\022\000\016\032\000\017\014\000e\005\000g\007\000"
+        "h\010\000i\013\000j\t\000k\t\000m\007\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -2718,18 +2773,26 @@ typedef struct ZTMContacts__storage_ {
 @dynamic URL;
 @dynamic isDev;
 @dynamic relationship;
+@dynamic type;
+@dynamic typeDesc;
+@dynamic pushId;
+@dynamic targetName;
 
 typedef struct ZTMPushMessage__storage_ {
   uint32_t _has_storage_[1];
   uint32_t createAt;
   int32_t isDev;
   int32_t relationship;
+  int32_t type;
   ZTMContacts *contacts;
   NSString *title;
   NSString *content;
   NSString *img;
   NSString *style;
   NSString *URL;
+  NSString *typeDesc;
+  NSString *pushId;
+  NSString *targetName;
 } ZTMPushMessage__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2819,6 +2882,42 @@ typedef struct ZTMPushMessage__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
+      {
+        .name = "type",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMPushMessage_FieldNumber_Type,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(ZTMPushMessage__storage_, type),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "typeDesc",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMPushMessage_FieldNumber_TypeDesc,
+        .hasIndex = 10,
+        .offset = (uint32_t)offsetof(ZTMPushMessage__storage_, typeDesc),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "pushId",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMPushMessage_FieldNumber_PushId,
+        .hasIndex = 11,
+        .offset = (uint32_t)offsetof(ZTMPushMessage__storage_, pushId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "targetName",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMPushMessage_FieldNumber_TargetName,
+        .hasIndex = 12,
+        .offset = (uint32_t)offsetof(ZTMPushMessage__storage_, targetName),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ZTMPushMessage class]
@@ -2830,7 +2929,7 @@ typedef struct ZTMPushMessage__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\004\010\000\007!!!\000\010\005\000";
+        "\006\004\010\000\007!!!\000\010\005\000\013\010\000\014\006\000\r\n\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

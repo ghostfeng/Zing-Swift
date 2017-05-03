@@ -53,35 +53,128 @@ public let kZingFollowedChannelUpdated = NSNotification.Name(rawValue: "kZingFol
             hasNewSense = false
         }
         lastRefreshAt = Date()
-        getFollowedChannelsByApi? {
-            toppingChannels, followedChannels in {
-                self._toppingChannels = toppingChannels
-                self._followedChannels = followedChannels
-                //通知刷新
-                NotificationCenter.default.post(name: kZingFollowedChannelUpdated, object: self)
-            }
+        getFollowedChannelsByApi? { toppingChannels, followedChannels in
+            self._toppingChannels = toppingChannels
+            self._followedChannels = followedChannels
+            //通知刷新
+            NotificationCenter.default.post(name: kZingFollowedChannelUpdated, object: self)
         }
     }
     
     //MARK: - 刷新行为
     
-    //MARK: - 服务行为
-    
-    public func top(channnelId: String, refresh: Bool = true) {
-        if let followedChannels = self._followedChannels {
-            let index = followedChannels.index{ $0.id_p == channnelId}
-            if let index = index {
-                let toTop = followedChannels.remove(at: index)
-                
-                toTop.isTopping = .YES
-                
-                if let toppingChannels = self._toppingChannels {
-                    toppingChannels.insert(toTop, at: 0)
-                } else {
-                    self._toppingChannels = [toTop]
-                }
-            }
+    /// 带有结束回调的刷新
+    public func refresh(_ closure: @escaping () -> Void) {
+        if hasNewSense {
+            hasNewSense = false
+        }
+        lastRefreshAt = Date()
+        getFollowedChannelsByApi? { toppingChannels, followedChannels in
+            self._toppingChannels = toppingChannels
+            self._followedChannels = followedChannels
+            //通知刷新
+            NotificationCenter.default.post(name: kZingFollowedChannelUpdated, object: self)
+            //回调
+            closure()
         }
     }
     
+    //MARK: - 服务行为
+    
+    ///置顶
+    public func top(channnelId: String, refresh: Bool = true) {
+        if let followedChannels = _followedChannels {
+            let index = followedChannels.index{ $0.id_p == channnelId}
+            if let index = index {
+                let toTop = _followedChannels!.remove(at: index)
+                
+                toTop.isTopping = .YES
+                
+                if _toppingChannels != nil {
+                    _toppingChannels!.insert(toTop, at: 0)
+                } else {
+                    _toppingChannels = [toTop]
+                }
+            }
+        }
+        
+        if refresh {
+            // 通知
+            NotificationCenter.default.post(name: kZingFollowedChannelUpdated, object: self)
+        }
+    }
+    
+    ///取消置顶
+    public func untop(channnelId: String, refresh: Bool = true) {
+        if let toppingChannels = _toppingChannels {
+            let index = toppingChannels.index{ $0.id_p == channnelId}
+            if let index = index {
+                let toUntop = _toppingChannels!.remove(at: index)
+                
+                toUntop.isTopping = .NO
+                
+                if _followedChannels != nil {
+                    _followedChannels!.insert(toUntop, at: 0)
+                } else {
+                    _followedChannels = [toUntop]
+                }
+            }
+        }
+        
+        if refresh {
+            // 通知
+            NotificationCenter.default.post(name: kZingFollowedChannelUpdated, object: self)
+        }
+    }
+    
+    /// 添加关注
+    public func follow(channel: ZTMChannel, refresh: Bool = true) {
+        channel.isFollow = .YES
+        channel.unreadSenseCount = ""
+        if _followedChannels != nil {
+            _followedChannels!.insert(channel, at: 0)
+        } else {
+            _followedChannels = [channel]
+        }
+        
+        if refresh {
+            // 通知
+            NotificationCenter.default.post(name: kZingFollowedChannelUpdated, object: self)
+        }
+    }
+    
+    /// 取消关注
+    public func unfollow(channelId: String, refresh: Bool = true) {
+        if let followedChannels = _followedChannels {
+            let index = followedChannels.index { $0.id_p == channelId}
+            if let index = index {
+                _followedChannels!.remove(at: index)
+            }
+        }
+        if let toppingChannels = _toppingChannels {
+            let index = toppingChannels.index { $0.id_p == channelId}
+            if let index = index {
+                _toppingChannels!.remove(at: index)
+            }
+        }
+        
+        if refresh {
+            // 通知
+            NotificationCenter.default.post(name: kZingFollowedChannelUpdated, object: self)
+        }
+    }
+
+    /// 创建
+    public func create(channel: ZTMChannel, refresh: Bool = true) {
+        if _followedChannels != nil {
+            _followedChannels!.insert(channel, at: 0)
+        } else {
+            _followedChannels = [channel]
+        }
+        
+        if refresh {
+            // 通知
+            NotificationCenter.default.post(name: kZingFollowedChannelUpdated, object: self)
+        }
+    }
 }

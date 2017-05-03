@@ -158,6 +158,7 @@
 		1C3A17AE1E99E46600E535C8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1C94C1371EB9743C007590D7 /* Goto */,
 				1C3A17AF1E99E46600E535C8 /* Channel */,
 				1C3A17B01E99E46600E535C8 /* Discovery */,
 				1C3A17B21E99E46600E535C8 /* Me */,
@@ -231,6 +232,13 @@
 				1C4606D21EB19B27005BD800 /* UMengService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		1C94C1371EB9743C007590D7 /* Goto */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Goto;
 			sourceTree = "<group>";
 		};
 		D25B1D66026B64DBC293803D /* Pods */ = {

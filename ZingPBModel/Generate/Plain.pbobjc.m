@@ -3216,6 +3216,8 @@ typedef struct ZTMReplyDescription__storage_ {
 @dynamic openId;
 @dynamic isStaff;
 @dynamic isAgreeOwnerNotice;
+@dynamic isAgreeFinancialRiskNotice;
+@dynamic isMyContacts;
 
 typedef struct ZTMUserDescription__storage_ {
   uint32_t _has_storage_[1];
@@ -3224,6 +3226,8 @@ typedef struct ZTMUserDescription__storage_ {
   uint32_t createAt;
   int32_t isStaff;
   int32_t isAgreeOwnerNotice;
+  int32_t isAgreeFinancialRiskNotice;
+  int32_t isMyContacts;
   NSString *id_p;
   NSString *userName;
   NSString *avatar;
@@ -3357,6 +3361,24 @@ typedef struct ZTMUserDescription__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
+      {
+        .name = "isAgreeFinancialRiskNotice",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMUserDescription_FieldNumber_IsAgreeFinancialRiskNotice,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(ZTMUserDescription__storage_, isAgreeFinancialRiskNotice),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "isMyContacts",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMUserDescription_FieldNumber_IsMyContacts,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(ZTMUserDescription__storage_, isMyContacts),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ZTMUserDescription class]
@@ -3368,7 +3390,7 @@ typedef struct ZTMUserDescription__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\t\002\010\000\004\010\000\006\010\000\007\010\000\010\010\000\t\013\000\013\006\000\014\007\000\r\022\000";
+        "\013\002\010\000\004\010\000\006\010\000\007\010\000\010\010\000\t\013\000\013\006\000\014\007\000\r\022\000\016\032\000\017\014\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

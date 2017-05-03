@@ -430,13 +430,13 @@ typedef struct ZTMSenseDraft__storage_ {
 
 @dynamic drafts, drafts_Count;
 @dynamic unread;
-@dynamic readedSpeach, readedSpeach_Count;
+@dynamic readedSpeech, readedSpeech_Count;
 
 typedef struct ZTMConversationLocalProfile__storage_ {
   uint32_t _has_storage_[1];
   int32_t unread;
   GPBUInt32ObjectDictionary *drafts;
-  GPBStringUInt32Dictionary *readedSpeach;
+  GPBStringUInt32Dictionary *readedSpeech;
 } ZTMConversationLocalProfile__storage_;
 
 // This method is threadsafe because it is initially called
@@ -464,11 +464,11 @@ typedef struct ZTMConversationLocalProfile__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "readedSpeach",
+        .name = "readedSpeech",
         .dataTypeSpecific.className = NULL,
-        .number = ZTMConversationLocalProfile_FieldNumber_ReadedSpeach,
+        .number = ZTMConversationLocalProfile_FieldNumber_ReadedSpeech,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(ZTMConversationLocalProfile__storage_, readedSpeach),
+        .offset = (uint32_t)offsetof(ZTMConversationLocalProfile__storage_, readedSpeech),
         .flags = (GPBFieldFlags)(GPBFieldMapKeyString | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeFixed32,
       },
