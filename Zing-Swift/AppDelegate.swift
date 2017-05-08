@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-#if TEST_PROFILE
+#if DEBUG
         ApplicationProfileContext.default.isTestEnv = true
 #endif
         //启动后台线程初始化一些配置

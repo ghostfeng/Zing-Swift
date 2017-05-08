@@ -8,21 +8,21 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+open class BaseViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
-
+        self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let prepareSegueWithDatable = segue.destination as? PrepareSegueWithDatable{
             prepareSegueWithDatable.prepareSegueWith(data: sender)
         }
