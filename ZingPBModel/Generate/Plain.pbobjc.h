@@ -1188,15 +1188,14 @@ typedef GPB_ENUM(ZTMSharingMessage_FieldNumber) {
   ZTMSharingMessage_FieldNumber_WxSubtitle = 8,
   ZTMSharingMessage_FieldNumber_WxURL = 9,
   ZTMSharingMessage_FieldNumber_PyqTitle = 10,
-  ZTMSharingMessage_FieldNumber_PyqSubtitle = 11,
-  ZTMSharingMessage_FieldNumber_PyqURL = 12,
-  ZTMSharingMessage_FieldNumber_QqTitle = 13,
-  ZTMSharingMessage_FieldNumber_QqSubtitle = 14,
-  ZTMSharingMessage_FieldNumber_QqURL = 15,
-  ZTMSharingMessage_FieldNumber_QzoneTitle = 16,
-  ZTMSharingMessage_FieldNumber_QzoneURL = 17,
-  ZTMSharingMessage_FieldNumber_Thumbnail = 18,
-  ZTMSharingMessage_FieldNumber_MediaURL = 19,
+  ZTMSharingMessage_FieldNumber_PyqURL = 11,
+  ZTMSharingMessage_FieldNumber_QqTitle = 12,
+  ZTMSharingMessage_FieldNumber_QqSubtitle = 13,
+  ZTMSharingMessage_FieldNumber_QqURL = 14,
+  ZTMSharingMessage_FieldNumber_QzoneTitle = 15,
+  ZTMSharingMessage_FieldNumber_QzoneURL = 16,
+  ZTMSharingMessage_FieldNumber_Thumbnail = 17,
+  ZTMSharingMessage_FieldNumber_MediaURL = 18,
 };
 
 @interface ZTMSharingMessage : GPBMessage
@@ -1230,9 +1229,6 @@ typedef GPB_ENUM(ZTMSharingMessage_FieldNumber) {
 
 /** 微信朋友圈主标题 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *pyqTitle;
-
-/** 微信朋友圈副标题 */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *pyqSubtitle;
 
 /** 朋友圈跳转路径 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *pyqURL;

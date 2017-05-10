@@ -19,6 +19,13 @@
 		1C4606CF1EB1903D005BD800 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4606CE1EB1903D005BD800 /* MainTabBarController.swift */; };
 		1C4606D11EB198A8005BD800 /* AppKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4606D01EB198A8005BD800 /* AppKeys.swift */; };
 		1C4606D31EB19B27005BD800 /* UMengService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4606D21EB19B27005BD800 /* UMengService.swift */; };
+		1C6100D21EC2EF1D00DEDB40 /* ChannelNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100D11EC2EF1D00DEDB40 /* ChannelNavigationController.swift */; };
+		1C6100D41EC2EF3F00DEDB40 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100D31EC2EF3F00DEDB40 /* ChannelViewController.swift */; };
+		1C6100D61EC2EF6700DEDB40 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100D51EC2EF6700DEDB40 /* DiscoveryViewController.swift */; };
+		1C6100D81EC2EF8100DEDB40 /* DiscoveryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100D71EC2EF8100DEDB40 /* DiscoveryNavigationController.swift */; };
+		1C6100DA1EC2EFA600DEDB40 /* MessageNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100D91EC2EFA600DEDB40 /* MessageNavigationController.swift */; };
+		1C6100DC1EC2EFBF00DEDB40 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100DB1EC2EFBF00DEDB40 /* MessageViewController.swift */; };
+		1C6100DE1EC2F4D500DEDB40 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100DD1EC2F4D500DEDB40 /* WebViewController.swift */; };
 		1C8994671E9B30FC00DF1C57 /* GCDQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994621E9B30FC00DF1C57 /* GCDQueue.swift */; };
 		1C8994681E9B30FC00DF1C57 /* RequestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994631E9B30FC00DF1C57 /* RequestPath.swift */; };
 		1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994651E9B30FC00DF1C57 /* APIService.swift */; };
@@ -64,6 +71,13 @@
 		1C4606D01EB198A8005BD800 /* AppKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeys.swift; sourceTree = "<group>"; };
 		1C4606D21EB19B27005BD800 /* UMengService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UMengService.swift; sourceTree = "<group>"; };
 		1C4606D41EB1C13D005BD800 /* Zing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zing-Bridging-Header.h"; sourceTree = "<group>"; };
+		1C6100D11EC2EF1D00DEDB40 /* ChannelNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelNavigationController.swift; sourceTree = "<group>"; };
+		1C6100D31EC2EF3F00DEDB40 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		1C6100D51EC2EF6700DEDB40 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		1C6100D71EC2EF8100DEDB40 /* DiscoveryNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryNavigationController.swift; sourceTree = "<group>"; };
+		1C6100D91EC2EFA600DEDB40 /* MessageNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageNavigationController.swift; sourceTree = "<group>"; };
+		1C6100DB1EC2EFBF00DEDB40 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		1C6100DD1EC2F4D500DEDB40 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1C8994621E9B30FC00DF1C57 /* GCDQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueue.swift; sourceTree = "<group>"; };
 		1C8994631E9B30FC00DF1C57 /* RequestPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
 		1C8994651E9B30FC00DF1C57 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -174,6 +188,8 @@
 		1C3A17AF1E99E46600E535C8 /* Channel */ = {
 			isa = PBXGroup;
 			children = (
+				1C6100D11EC2EF1D00DEDB40 /* ChannelNavigationController.swift */,
+				1C6100D31EC2EF3F00DEDB40 /* ChannelViewController.swift */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -181,6 +197,8 @@
 		1C3A17B01E99E46600E535C8 /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
+				1C6100D71EC2EF8100DEDB40 /* DiscoveryNavigationController.swift */,
+				1C6100D51EC2EF6700DEDB40 /* DiscoveryViewController.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -204,6 +222,8 @@
 		1C3A17B31E99E46600E535C8 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				1C6100D91EC2EFA600DEDB40 /* MessageNavigationController.swift */,
+				1C6100DB1EC2EFBF00DEDB40 /* MessageViewController.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -240,6 +260,7 @@
 		1C94C1371EB9743C007590D7 /* Goto */ = {
 			isa = PBXGroup;
 			children = (
+				1C6100DD1EC2F4D500DEDB40 /* WebViewController.swift */,
 			);
 			path = Goto;
 			sourceTree = "<group>";
@@ -452,18 +473,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6100DE1EC2F4D500DEDB40 /* WebViewController.swift in Sources */,
 				1CC0D3DB1EA741DF00B59DF9 /* ResponseCode.swift in Sources */,
 				1C1637FD1E777A0C002C9734 /* ViewController.swift in Sources */,
 				1C4606CF1EB1903D005BD800 /* MainTabBarController.swift in Sources */,
+				1C6100DA1EC2EFA600DEDB40 /* MessageNavigationController.swift in Sources */,
 				1C4606D11EB198A8005BD800 /* AppKeys.swift in Sources */,
+				1C6100D61EC2EF6700DEDB40 /* DiscoveryViewController.swift in Sources */,
 				1C89946A1E9B30FC00DF1C57 /* URLService.swift in Sources */,
 				1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */,
 				1C8994671E9B30FC00DF1C57 /* GCDQueue.swift in Sources */,
 				1C1BD0631EBD642F00AEEA31 /* LaunchViewController.swift in Sources */,
+				1C6100DC1EC2EFBF00DEDB40 /* MessageViewController.swift in Sources */,
 				1C4606D31EB19B27005BD800 /* UMengService.swift in Sources */,
+				1C6100D81EC2EF8100DEDB40 /* DiscoveryNavigationController.swift in Sources */,
 				1C46066F1EB02C12005BD800 /* AccountService.swift in Sources */,
 				1C8994681E9B30FC00DF1C57 /* RequestPath.swift in Sources */,
 				1C1637FB1E777A0C002C9734 /* AppDelegate.swift in Sources */,
+				1C6100D41EC2EF3F00DEDB40 /* ChannelViewController.swift in Sources */,
+				1C6100D21EC2EF1D00DEDB40 /* ChannelNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

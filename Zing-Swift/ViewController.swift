@@ -29,21 +29,24 @@ class ViewController: UIViewController {
         AccountService.default.loginWithTel("15201420833", password: "123456", telCode: "+86") { (path, response, error) in
         }
         
-        UMengService.default.getAuthWithUserInfoFromWechat(vc: self) { (response, error) in
-            if let error = error {
-                print("UMeng getUserInfo error:",error)
-                return
-            }
-            if let response = response {
-                print(response)
-            }
-        }
+//        UMengService.default.getAuthWithUserInfoFromWechat(vc: self) { (response, error) in
+//            if let error = error {
+//                print("UMeng getUserInfo error:",error)
+//                return
+//            }
+//            if let response = response {
+//                print(response)
+//            }
+//        }
     }
     
     func reloadData() {
         print("topping:\n", ZingFollowedChannel.default.toppingChannels!, "\nfollow:\n", ZingFollowedChannel.default.followedChannels!)
     }
 
+    @IBAction func push(_ sender: Any) {
+        navigationController?.pushViewController(WebViewController(url: URL(string: "https://www.baidu.com")!), animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

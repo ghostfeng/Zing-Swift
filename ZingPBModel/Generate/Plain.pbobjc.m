@@ -3496,7 +3496,6 @@ typedef struct ZTMSticker__storage_ {
 @dynamic wxSubtitle;
 @dynamic wxURL;
 @dynamic pyqTitle;
-@dynamic pyqSubtitle;
 @dynamic pyqURL;
 @dynamic qqTitle;
 @dynamic qqSubtitle;
@@ -3518,7 +3517,6 @@ typedef struct ZTMSharingMessage__storage_ {
   NSString *wxSubtitle;
   NSString *wxURL;
   NSString *pyqTitle;
-  NSString *pyqSubtitle;
   NSString *pyqURL;
   NSString *qqTitle;
   NSString *qqSubtitle;
@@ -3626,19 +3624,10 @@ typedef struct ZTMSharingMessage__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "pyqSubtitle",
-        .dataTypeSpecific.className = NULL,
-        .number = ZTMSharingMessage_FieldNumber_PyqSubtitle,
-        .hasIndex = 10,
-        .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, pyqSubtitle),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "pyqURL",
         .dataTypeSpecific.className = NULL,
         .number = ZTMSharingMessage_FieldNumber_PyqURL,
-        .hasIndex = 11,
+        .hasIndex = 10,
         .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, pyqURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -3647,7 +3636,7 @@ typedef struct ZTMSharingMessage__storage_ {
         .name = "qqTitle",
         .dataTypeSpecific.className = NULL,
         .number = ZTMSharingMessage_FieldNumber_QqTitle,
-        .hasIndex = 12,
+        .hasIndex = 11,
         .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, qqTitle),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -3656,7 +3645,7 @@ typedef struct ZTMSharingMessage__storage_ {
         .name = "qqSubtitle",
         .dataTypeSpecific.className = NULL,
         .number = ZTMSharingMessage_FieldNumber_QqSubtitle,
-        .hasIndex = 13,
+        .hasIndex = 12,
         .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, qqSubtitle),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -3665,7 +3654,7 @@ typedef struct ZTMSharingMessage__storage_ {
         .name = "qqURL",
         .dataTypeSpecific.className = NULL,
         .number = ZTMSharingMessage_FieldNumber_QqURL,
-        .hasIndex = 14,
+        .hasIndex = 13,
         .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, qqURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -3674,7 +3663,7 @@ typedef struct ZTMSharingMessage__storage_ {
         .name = "qzoneTitle",
         .dataTypeSpecific.className = NULL,
         .number = ZTMSharingMessage_FieldNumber_QzoneTitle,
-        .hasIndex = 15,
+        .hasIndex = 14,
         .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, qzoneTitle),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -3683,7 +3672,7 @@ typedef struct ZTMSharingMessage__storage_ {
         .name = "qzoneURL",
         .dataTypeSpecific.className = NULL,
         .number = ZTMSharingMessage_FieldNumber_QzoneURL,
-        .hasIndex = 16,
+        .hasIndex = 15,
         .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, qzoneURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -3692,7 +3681,7 @@ typedef struct ZTMSharingMessage__storage_ {
         .name = "thumbnail",
         .dataTypeSpecific.className = NULL,
         .number = ZTMSharingMessage_FieldNumber_Thumbnail,
-        .hasIndex = 17,
+        .hasIndex = 16,
         .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, thumbnail),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -3701,7 +3690,7 @@ typedef struct ZTMSharingMessage__storage_ {
         .name = "mediaURL",
         .dataTypeSpecific.className = NULL,
         .number = ZTMSharingMessage_FieldNumber_MediaURL,
-        .hasIndex = 18,
+        .hasIndex = 17,
         .offset = (uint32_t)offsetof(ZTMSharingMessage__storage_, mediaURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -3717,8 +3706,8 @@ typedef struct ZTMSharingMessage__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\022\001\007\000\002!!!\000\003\005\000\004\005\000\005\003!!\000\006\010!!\000\007\007\000\010\n\000\t\003!!\000\n\010\000\013"
-        "\013\000\014\004!!\000\r\007\000\016\n\000\017\003!!\000\020\n\000\021\006!!\000\023\006!!\000";
+        "\021\001\007\000\002!!!\000\003\005\000\004\005\000\005\003!!\000\006\010!!\000\007\007\000\010\n\000\t\003!!\000\n\010\000\013"
+        "\004!!\000\014\007\000\r\n\000\016\003!!\000\017\n\000\020\006!!\000\022\006!!\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

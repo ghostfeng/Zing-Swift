@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreGraphics
 
 //MARK: - UI
 public extension UIDevice {
@@ -14,6 +16,18 @@ public extension UIDevice {
         var systemInfo: utsname = Darwin.utsname()
         _ = Darwin.uname(&systemInfo)
         return String(cString: UnsafeMutableRawPointer(&systemInfo.machine).assumingMemoryBound(to: CChar.self), encoding: .utf8)!
+    }
+}
+
+public extension UIImage {
+    public class func image(color: UIColor, size:CGSize) -> UIImage?{
+        UIGraphicsBeginImageContext(size)
+        let context = UIGraphicsGetCurrentContext()
+        context?.setFillColor(color.cgColor)
+        context?.fill(CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }
 

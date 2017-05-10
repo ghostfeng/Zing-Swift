@@ -10,9 +10,10 @@
 		1C3A17CB1E99E55000E535C8 /* ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3A17C11E99E55000E535C8 /* ZingCommon.framework */; };
 		1C3A17D01E99E55000E535C8 /* ZingCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A17CF1E99E55000E535C8 /* ZingCommonTests.swift */; };
 		1C3A17D21E99E55000E535C8 /* ZingCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3A17C41E99E55000E535C8 /* ZingCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C6100CC1EC2E3EF00DEDB40 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100CB1EC2E3EF00DEDB40 /* BaseViewController.swift */; };
+		1C6100CE1EC2E48700DEDB40 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6100CD1EC2E48700DEDB40 /* BaseNavigationController.swift */; };
 		1C62CCE71EB3391300522629 /* ZingFollowedChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C62CCE61EB3391300522629 /* ZingFollowedChannel.swift */; };
 		1C6A08691EA8E62000C99B7C /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A08681EA8E62000C99B7C /* PhotoLibraryService.swift */; };
-		1C94C1391EB98A04007590D7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C94C1381EB98A04007590D7 /* BaseViewController.swift */; };
 		1C94C13B1EB98AA0007590D7 /* PrepareSegueWithDatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C94C13A1EB98AA0007590D7 /* PrepareSegueWithDatable.swift */; };
 		7C836A76D3025A143B11541F /* Pods_ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465EF1FB55A2278377038CAD /* Pods_ZingCommon.framework */; };
 /* End PBXBuildFile section */
@@ -34,9 +35,10 @@
 		1C3A17CA1E99E55000E535C8 /* ZingCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZingCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3A17CF1E99E55000E535C8 /* ZingCommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZingCommonTests.swift; sourceTree = "<group>"; };
 		1C3A17D11E99E55000E535C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C6100CB1EC2E3EF00DEDB40 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1C6100CD1EC2E48700DEDB40 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		1C62CCE61EB3391300522629 /* ZingFollowedChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZingFollowedChannel.swift; sourceTree = "<group>"; };
 		1C6A08681EA8E62000C99B7C /* PhotoLibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
-		1C94C1381EB98A04007590D7 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1C94C13A1EB98AA0007590D7 /* PrepareSegueWithDatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareSegueWithDatable.swift; sourceTree = "<group>"; };
 		465EF1FB55A2278377038CAD /* Pods_ZingCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZingCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEFDC4829AEF546CCA10E34 /* Pods-ZingCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZingCommon.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ZingCommon/Pods-ZingCommon.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				1C3A17C31E99E55000E535C8 /* ZingCommon */,
 				1C8994561E9B302500DF1C57 /* Constant */,
 				1C8994571E9B302500DF1C57 /* Service */,
+				1C6100CA1EC2E3EF00DEDB40 /* UI */,
 				1C8994581E9B302500DF1C57 /* Util */,
 				1C3A17CE1E99E55000E535C8 /* ZingCommonTests */,
 				1C3A17C21E99E55000E535C8 /* Products */,
@@ -91,7 +94,6 @@
 			children = (
 				1C3A17C41E99E55000E535C8 /* ZingCommon.h */,
 				1C62CCE61EB3391300522629 /* ZingFollowedChannel.swift */,
-				1C94C1381EB98A04007590D7 /* BaseViewController.swift */,
 				1C94C13A1EB98AA0007590D7 /* PrepareSegueWithDatable.swift */,
 				1C3A17C51E99E55000E535C8 /* Info.plist */,
 			);
@@ -105,6 +107,16 @@
 				1C3A17D11E99E55000E535C8 /* Info.plist */,
 			);
 			path = ZingCommonTests;
+			sourceTree = "<group>";
+		};
+		1C6100CA1EC2E3EF00DEDB40 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1C6100CB1EC2E3EF00DEDB40 /* BaseViewController.swift */,
+				1C6100CD1EC2E48700DEDB40 /* BaseNavigationController.swift */,
+			);
+			name = UI;
+			path = ZingCommon/UI;
 			sourceTree = "<group>";
 		};
 		1C8994561E9B302500DF1C57 /* Constant */ = {
@@ -298,9 +310,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C6A08691EA8E62000C99B7C /* PhotoLibraryService.swift in Sources */,
+				1C6100CC1EC2E3EF00DEDB40 /* BaseViewController.swift in Sources */,
 				1C94C13B1EB98AA0007590D7 /* PrepareSegueWithDatable.swift in Sources */,
+				1C6100CE1EC2E48700DEDB40 /* BaseNavigationController.swift in Sources */,
 				1C62CCE71EB3391300522629 /* ZingFollowedChannel.swift in Sources */,
-				1C94C1391EB98A04007590D7 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

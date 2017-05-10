@@ -155,6 +155,7 @@ typedef GPB_ENUM(ZTMChannel_FieldNumber) {
   ZTMChannel_FieldNumber_TodayPunchTimes = 113,
   ZTMChannel_FieldNumber_MyAttitude = 114,
   ZTMChannel_FieldNumber_Puch = 115,
+  ZTMChannel_FieldNumber_NullChannelSticker = 116,
 };
 
 @interface ZTMChannel : GPBMessage
@@ -264,6 +265,9 @@ typedef GPB_ENUM(ZTMChannel_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) ZTMPunch *puch;
 /** Test to see if @c puch has been set. */
 @property(nonatomic, readwrite) BOOL hasPuch;
+
+/** 空频道卡通图标 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *nullChannelSticker;
 
 @end
 

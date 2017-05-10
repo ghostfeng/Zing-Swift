@@ -78,6 +78,7 @@ static GPBFileDescriptor *ZTMCompositeRoot_FileDescriptor(void) {
 @dynamic todayPunchTimes;
 @dynamic myAttitude;
 @dynamic hasPuch, puch;
+@dynamic nullChannelSticker;
 
 typedef struct ZTMChannel__storage_ {
   uint32_t _has_storage_[1];
@@ -111,6 +112,7 @@ typedef struct ZTMChannel__storage_ {
   NSString *unreadSenseCount;
   NSString *ownSenseCount;
   ZTMPunch *puch;
+  NSString *nullChannelSticker;
 } ZTMChannel__storage_;
 
 // This method is threadsafe because it is initially called
@@ -389,6 +391,15 @@ typedef struct ZTMChannel__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
+      {
+        .name = "nullChannelSticker",
+        .dataTypeSpecific.className = NULL,
+        .number = ZTMChannel_FieldNumber_NullChannelSticker,
+        .hasIndex = 29,
+        .offset = (uint32_t)offsetof(ZTMChannel__storage_, nullChannelSticker),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ZTMChannel class]
@@ -400,8 +411,8 @@ typedef struct ZTMChannel__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\026\003\006\000\010\010\000\t\010\000\n\013\000\013\013\000\014\010\000\r\010\000\016\n\000\017\016\000\020\014\000\021\n\000f\014\000g\r\000"
-        "h\013\000j\021\000k\017\000m\010\000n\t\000o\020\000p\r\000q\017\000r\n\000";
+        "\027\003\006\000\010\010\000\t\010\000\n\013\000\013\013\000\014\010\000\r\010\000\016\n\000\017\016\000\020\014\000\021\n\000f\014\000g\r\000"
+        "h\013\000j\021\000k\017\000m\010\000n\t\000o\020\000p\r\000q\017\000r\n\000t\022\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
