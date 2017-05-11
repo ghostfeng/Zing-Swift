@@ -60,16 +60,22 @@ public extension UIColor {
 
 //MARK: - 值
 public extension Int32 {
+    public static var `true`: Int32 { return 1 }
     public static var YES: Int32 { return 1 }
+    public static var `false`: Int32 { return 0 }
     public static var NO: Int32 { return 0 }
 }
 
 public extension UInt32 {
+    public static var `true`: UInt32 { return 1 }
     public static var YES: UInt32 { return 1 }
+    public static var `false`: UInt32 { return 0 }
     public static var NO: UInt32 { return 0 }
 }
 
 public extension Int {
+    public static var `true`: Int { return 1 }
     public static var YES: Int { return 1 }
+    public static var `false`: Int { return 0 }
     public static var NO: Int { return 0 }
 }
