@@ -88,7 +88,7 @@ public let kZingFollowedChannelUpdated = NSNotification.Name(rawValue: "kZingFol
             if let index = index {
                 let toTop = _followedChannels!.remove(at: index)
                 
-                toTop.isTopping = .YES
+                toTop.isTopping = .true
                 
                 if _toppingChannels != nil {
                     _toppingChannels!.insert(toTop, at: 0)
@@ -111,7 +111,7 @@ public let kZingFollowedChannelUpdated = NSNotification.Name(rawValue: "kZingFol
             if let index = index {
                 let toUntop = _toppingChannels!.remove(at: index)
                 
-                toUntop.isTopping = .NO
+                toUntop.isTopping = .false
                 
                 if _followedChannels != nil {
                     _followedChannels!.insert(toUntop, at: 0)
@@ -129,7 +129,7 @@ public let kZingFollowedChannelUpdated = NSNotification.Name(rawValue: "kZingFol
     
     /// 添加关注
     public func follow(channel: ZTMChannel, refresh: Bool = true) {
-        channel.isFollow = .YES
+        channel.isFollow = .true
         channel.unreadSenseCount = ""
         if _followedChannels != nil {
             _followedChannels!.insert(channel, at: 0)

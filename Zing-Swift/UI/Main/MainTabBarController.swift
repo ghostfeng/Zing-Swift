@@ -8,12 +8,20 @@
 
 import UIKit
 
+var tabControllersItems = [(storyboardName: "channel",
+                            title: "频道",
+                            normalImg: "")]
+
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupViewControllers()
+    }
+    
+    func setupViewControllers() {
+        
     }
 
     override func didReceiveMemoryWarning() {
