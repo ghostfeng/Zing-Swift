@@ -28,4 +28,14 @@ open class BaseViewController: UIViewController {
             prepareSegueWithDatable.prepareSegueWith(data: sender)
         }
     }
+    
+    deinit {
+        if isViewLoaded {
+            viewUnload();
+        }
+    }
+    
+    open func viewUnload() {
+        
+    }
 }
