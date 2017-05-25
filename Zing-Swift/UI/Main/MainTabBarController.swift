@@ -8,20 +8,34 @@
 
 import UIKit
 
-var tabControllersItems = [(storyboardName: "channel",
-                            title: "频道",
-                            normalImg: "")]
+//let tabControllersItems = [(controller: ChannelNavigationController(rootViewController: ChannelViewController()),
+//                            title: "频道",
+//                            normalImg: "channel_normal",
+//                            selectedImg: "channel_selected"),
+//                           
+//                           (controller: DiscoveryNavigationController(rootViewController: DiscoveryViewController()),
+//                            title: "发现",
+//                            normalImg: "channel_normal",
+//                            selectedImg: "channel_selected"),
+//
+//                           (controller: MessageNavigationController(rootViewController: MessageViewController()),
+//                            title: "消息",
+//                            normalImg: "channel_normal",
+//                            selectedImg: "channel_selected"),
+//
+//                           (controller: MeNavigationController(rootViewController: MeViewController()),
+//                            title: "我的",
+//                            normalImg: "channel_normal",
+//                            selectedImg: "channel_selected")]
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViewControllers()
     }
     
     func setupViewControllers() {
-        
     }
 
     override func didReceiveMemoryWarning() {

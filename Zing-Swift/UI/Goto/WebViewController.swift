@@ -51,7 +51,6 @@ class WebViewController: BaseViewController {
                 }, completion: { (success) in
                     self.progress.setProgress(1, animated: false);
                 })
-                
             }
         }
     }
@@ -62,11 +61,8 @@ class WebViewController: BaseViewController {
         web.frame = view.bounds
     }
 
-    deinit {
-        if isViewLoaded {
-            web.removeObserver(self, forKeyPath: #keyPath(WKWebView.title))
-            web.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
-        }
+    override func viewUnload() {
+        web.removeObserver(self, forKeyPath: #keyPath(WKWebView.title))
+        web.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
     }
-
 }

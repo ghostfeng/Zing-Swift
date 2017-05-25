@@ -35,6 +35,7 @@ open class BaseViewController: UIViewController {
         }
     }
     
+    ///控制器视图销毁
     open func viewUnload() {
         
     }
