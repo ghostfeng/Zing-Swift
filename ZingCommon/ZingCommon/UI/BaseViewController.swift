@@ -12,9 +12,10 @@ open class BaseViewController: UIViewController {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.edgesForExtendedLayout = .top
-        // Do any additional setup after loading the view.
+        automaticallyAdjustsScrollViewInsets = false
+        edgesForExtendedLayout = .top
+        
+        view.backgroundColor = .white
     }
 
     override open func didReceiveMemoryWarning() {
@@ -27,16 +28,5 @@ open class BaseViewController: UIViewController {
         if let prepareSegueWithDatable = segue.destination as? PrepareSegueWithDatable{
             prepareSegueWithDatable.prepareSegueWith(data: sender)
         }
-    }
-    
-    deinit {
-        if isViewLoaded {
-            viewUnload();
-        }
-    }
-    
-    ///控制器视图销毁
-    open func viewUnload() {
-        
     }
 }

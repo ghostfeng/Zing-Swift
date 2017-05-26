@@ -14,8 +14,8 @@ public typealias PBClosure = (String, ZTMZingResponse?, Error?) -> Void
 public typealias JSONClosure = (String, Data?, Error?) -> Void
 
 let BASE_URL_SERVICES = "/services"
-let APIServiceFailure = NSNotification.Name(rawValue: "APIServiceFailure")
-let APIServiceDataFailure = NSNotification.Name(rawValue: "APIServiceDataFailure")
+let APIServiceFailure = NSNotification.Name("APIServiceFailure")
+let APIServiceDataFailure = NSNotification.Name("APIServiceDataFailure")
 
 enum ZingResponseCode: Int32 {
     case success = 0

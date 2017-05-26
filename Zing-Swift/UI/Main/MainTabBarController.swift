@@ -8,34 +8,53 @@
 
 import UIKit
 
-//let tabControllersItems = [(controller: ChannelNavigationController(rootViewController: ChannelViewController()),
-//                            title: "频道",
-//                            normalImg: "channel_normal",
-//                            selectedImg: "channel_selected"),
-//                           
-//                           (controller: DiscoveryNavigationController(rootViewController: DiscoveryViewController()),
-//                            title: "发现",
-//                            normalImg: "channel_normal",
-//                            selectedImg: "channel_selected"),
-//
-//                           (controller: MessageNavigationController(rootViewController: MessageViewController()),
-//                            title: "消息",
-//                            normalImg: "channel_normal",
-//                            selectedImg: "channel_selected"),
-//
-//                           (controller: MeNavigationController(rootViewController: MeViewController()),
-//                            title: "我的",
-//                            normalImg: "channel_normal",
-//                            selectedImg: "channel_selected")]
+import ZingCommon
+
+var tabItems = [(title: "频道",
+                 imageName: ZingApplication.tab_channel),
+                (title: "发现",
+                 imageName: ZingApplication.tab_discovery),
+                (title: "消息",
+                 imageName: ZingApplication.tab_message),
+                (title: "我的",
+                 imageName: ZingApplication.tab_me)]
+
+var tabControllers = [ZingApplication.tab_channel: ChannelViewController(),
+                      ZingApplication.tab_discovery: DiscoveryViewController(),
+                      ZingApplication.tab_message: MessageViewController(),
+                      ZingApplication.tab_me: MeViewController()];
+
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
+        setupTabbar()
     }
     
     func setupViewControllers() {
+        for item in tabItems {
+            if let controller = tabControllers[item.imageName] {
+                addChildViewController(controller, title: item.title, imageName: item.imageName)
+            }
+        }
+    }
+    
+    func setupTabbar() {
+        tabBar.tintColor = UIColor.red
+        tabBar.backgroundColor = UIColor.white
+    }
+    
+    private func addChildViewController(_ childController: UIViewController, title: String, imageName: String) {
+        childController.tabBarItem.image = UIImage(named: imageName + "_normal")
+        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")
+        childController.tabBarItem.title = title
+        childController.title = title
+        childController.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGray], for: .normal)
+        childController.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.red], for: .selected)
+        let nav = BaseNavigationController(rootViewController: childController)
+        addChildViewController(nav)
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +65,12 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     //MARK: - UITabBarControllerDelegate
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
+    }
+    
+    deinit {
+        if isViewLoaded {
+            
+        }
     }
 
     /*

@@ -61,8 +61,10 @@ class WebViewController: BaseViewController {
         web.frame = view.bounds
     }
 
-    override func viewUnload() {
-        web.removeObserver(self, forKeyPath: #keyPath(WKWebView.title))
-        web.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
+    deinit {
+        if isViewLoaded {
+            web.removeObserver(self, forKeyPath: #keyPath(WKWebView.title))
+            web.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
+        }
     }
 }

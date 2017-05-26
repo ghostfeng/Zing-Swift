@@ -58,6 +58,16 @@ public extension UIColor {
     }
 }
 
+public extension UITableView {
+    public func hideExtraHeader() {
+        tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude))
+    }
+    
+    public func hideExtraFooter() {
+        tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude))
+    }
+}
+
 //MARK: - 值
 public extension Int32 {
     public static var `true`: Int32 { return 1 }
