@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #if DEBUG
         ApplicationProfileContext.default.isTestEnv = true
 #endif
-        //启动后台线程初始化一些配置
+        //启动后台线程初始化一些配置//
         backgroundQueue.async {
             UMengService.default.launching()
         }
