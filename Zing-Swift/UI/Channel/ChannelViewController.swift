@@ -14,14 +14,18 @@ import Snippets
 class ChannelViewController: BaseViewController {
     
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.bounds, style: .grouped)
+        let tableView: UITableView = UITableView(frame: self.view.bounds, style: .grouped)
+        tableView.hideExtraHeader()
+        tableView.hideExtraFooter()
+        tableView.delegate = self
+        tableView.dataSource = self
         return tableView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AccountService.default.loginWithTel("15201420833", password: "123456", telCode: "+86") { (path, response, error) in
+        AccountService.default.loginWithTel("15375496301", password: "123456", telCode: "+86") { (path, response, error) in
         }
         
         setupUI()
@@ -43,10 +47,6 @@ class ChannelViewController: BaseViewController {
 //MARK: - UI界面相关
 extension ChannelViewController {
     func setupUI() {
-        tableView.hideExtraHeader()
-        tableView.hideExtraFooter()
-        tableView.delegate = self
-        tableView.dataSource = self
         view.addSubview(tableView)
     }
     
@@ -93,6 +93,6 @@ extension ChannelViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(BaseViewController(), animated: true)
+        
     }
 }

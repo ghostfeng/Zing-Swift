@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Zing-Swift
 //
-//  Created by 刘永峰 on 2017/3/14.
+//  Created by 刘永峰 on 2017/3/14..
 //  Copyright © 2017年 Witgo. All rights reserved.
 //
 

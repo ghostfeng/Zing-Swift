@@ -81,17 +81,17 @@ class AccountService: NSObject, AVIMClientDelegate {
         userInitiatedQueue.async {
             if self.isFirstLoginAtThisTime {
                 self.isFirstLoginAtThisTime = false
-//                var status: String!
-//                switch APIService.default.networkStatus {
-//                case .unknown: status = "UNKNOWN"
-//                case .notReachable: status = "NOT REACHABLE"
-//                case .reachable(let type):
-//                    switch type {
-//                    case .ethernetOrWiFi: status = "WIFI"
-//                    case .wwan: status = "4G"
-//                    }
-//                }
-//                APIService.default.post(.appStarted, parameters:[ "os": UIDevice.current.name + " " + UIDevice.current.systemVersion, "appVersion": Bundle.main.infoDictionary!["CFBundleVersion"] as! String, "model": UIDevice.unameMachine(), "network": status])
+                var status: String!
+                switch APIService.default.networkStatus {
+                case .unknown: status = "UNKNOWN"
+                case .notReachable: status = "NOT REACHABLE"
+                case .reachable(let type):
+                    switch type {
+                    case .ethernetOrWiFi: status = "WiFi"
+                    case .wwan: status = "4G"
+                    }
+                }
+                APIService.default.post(.appStarted, parameters:[ "os": UIDevice.osVersion(), "appVersion": Bundle.appVersion(), "model": UIDevice.unameMachine(), "network": status])
             }
             
             APIService.default.get3rd("https://api.map.baidu.com/location/ip", parameters: ["ak": BaiduWebAK], queue: userInitiatedQueue) { (path, data, error) in
@@ -117,7 +117,7 @@ class AccountService: NSObject, AVIMClientDelegate {
             self.upm.recordLogin(user: user)
             // 聊天连接
             self.imConnect()
-            //关注频道列表
+            // 关注频道列表
             ZingFollowedChannel.default.launching()
             // 注册推送账户
             CloudPushSDK.bindAccount(user.id_p) { res in

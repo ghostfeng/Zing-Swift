@@ -475,6 +475,7 @@
 				1CF45A071EB1D2D500E2B2BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CF45A081EB1D2D500E2B2BA /* Build configuration list for PBXNativeTarget "SnippetsTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				1CF45A0A1EB1D2D500E2B2BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

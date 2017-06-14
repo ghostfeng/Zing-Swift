@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1C04BD871ED817D100A462B9 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C04BD861ED817D100A462B9 /* AppStyle.swift */; };
+		1C0B59681EF11F5200C42AFC /* ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B59661EF11F5200C42AFC /* ZingCommon.framework */; };
+		1C0B59691EF11F5200C42AFC /* ZingPBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B59671EF11F5200C42AFC /* ZingPBModel.framework */; };
+		1C0B596B1EF1219200C42AFC /* Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B596A1EF1219200C42AFC /* Snippets.framework */; };
+		1C0B596C1EF1219900C42AFC /* Snippets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B596A1EF1219200C42AFC /* Snippets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C0B596D1EF1219900C42AFC /* ZingCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B59661EF11F5200C42AFC /* ZingCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1C0B596E1EF1219900C42AFC /* ZingPBModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B59671EF11F5200C42AFC /* ZingPBModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C1637FB1E777A0C002C9734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1637FA1E777A0C002C9734 /* AppDelegate.swift */; };
 		1C1637FD1E777A0C002C9734 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1637FC1E777A0C002C9734 /* ViewController.swift */; };
 		1C1638021E777A0C002C9734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C1638011E777A0C002C9734 /* Assets.xcassets */; };
@@ -52,8 +58,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1C0B59651EF11F2200C42AFC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1C0B596C1EF1219900C42AFC /* Snippets.framework in Embed Frameworks */,
+				1C0B596D1EF1219900C42AFC /* ZingCommon.framework in Embed Frameworks */,
+				1C0B596E1EF1219900C42AFC /* ZingPBModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1C04BD861ED817D100A462B9 /* AppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		1C0B59661EF11F5200C42AFC /* ZingCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZingCommon.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-ddfdqgrkxfrimnchadcqntzarvuv/Build/Products/Debug-iphoneos/ZingCommon.framework"; sourceTree = "<group>"; };
+		1C0B59671EF11F5200C42AFC /* ZingPBModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZingPBModel.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-ddfdqgrkxfrimnchadcqntzarvuv/Build/Products/Debug-iphoneos/ZingPBModel.framework"; sourceTree = "<group>"; };
+		1C0B596A1EF1219200C42AFC /* Snippets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Snippets.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-ddfdqgrkxfrimnchadcqntzarvuv/Build/Products/Debug-iphoneos/Snippets.framework"; sourceTree = "<group>"; };
 		1C1637F71E777A0C002C9734 /* Zing-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zing-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1637FA1E777A0C002C9734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C1637FC1E777A0C002C9734 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +121,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0B596B1EF1219200C42AFC /* Snippets.framework in Frameworks */,
+				1C0B59681EF11F5200C42AFC /* ZingCommon.framework in Frameworks */,
+				1C0B59691EF11F5200C42AFC /* ZingPBModel.framework in Frameworks */,
 				57CFB6FAE9171C29CA4ECA99 /* Pods_Zing_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +309,9 @@
 		E16F583B6A9CCDB826982BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C0B596A1EF1219200C42AFC /* Snippets.framework */,
+				1C0B59661EF11F5200C42AFC /* ZingCommon.framework */,
+				1C0B59671EF11F5200C42AFC /* ZingPBModel.framework */,
 				864E3B997AE6832097136B76 /* Pods_Zing_Swift.framework */,
 			);
 			name = Frameworks;
@@ -299,6 +330,7 @@
 				1C1637F51E777A0C002C9734 /* Resources */,
 				D98033050D29E6778B1093D4 /* 📦 Embed Pods Frameworks */,
 				B4288DDB0E7B3FD6A7B865D0 /* 📦 Copy Pods Resources */,
+				1C0B59651EF11F2200C42AFC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -666,7 +698,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59F41581AC2E2EB7EF7BACCD /* Pods-Zing-Swift.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7AWX2MRU3G;
 				ENABLE_BITCODE = YES;
@@ -690,7 +721,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8CC84864785DAA9E218E5E4 /* Pods-Zing-Swift.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7AWX2MRU3G;
 				ENABLE_BITCODE = YES;
