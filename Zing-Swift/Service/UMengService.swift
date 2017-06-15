@@ -9,7 +9,7 @@
 import Foundation
 
 /// 友盟服务
-class UMengService{
+class UMengService {
     private static let INSTANCE = UMengService()
     let umm = UMSocialManager.default()!
     

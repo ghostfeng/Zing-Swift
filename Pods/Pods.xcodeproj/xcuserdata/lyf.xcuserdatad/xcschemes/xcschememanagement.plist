@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Snippets.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -49,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +67,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0F8D2C99526291CC850D86295B0A9F4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>394E3032E2CCBBAF609632DE5A91C20C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3E59FD0B6A7A73A9FA97E8ACA96F9A50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>580130013F1E955B12F06C1EA5CE4371</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,22 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C07082C0FD1FF69FBEEE3CAA1D059FF9</key>
+		<key>C235F77E101E742652CCF98FFDFA5182</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D3B73FAD84F41C2AA1FE5E692DC15CAC</key>
+		<key>DC5158D5F41CA2EDE866E073C01DFF9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DC9C23C4248B100A065774E84BC1B367</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD35DAFD777854163BB7A51030363366</key>
 		<dict>
 			<key>primary</key>
 			<true/>

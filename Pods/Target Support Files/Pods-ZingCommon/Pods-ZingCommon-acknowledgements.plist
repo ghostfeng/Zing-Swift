@@ -216,6 +216,8 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 </string>
+			<key>License</key>
+			<string>Apache License, Version 2.0</string>
 			<key>Title</key>
 			<string>AVOSCloud</string>
 			<key>Type</key>
@@ -425,6 +427,8 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 </string>
+			<key>License</key>
+			<string>Apache License, Version 2.0</string>
 			<key>Title</key>
 			<string>AVOSCloudIM</string>
 			<key>Type</key>
@@ -446,6 +450,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 </string>
+			<key>License</key>
+			<string>Apache License, Version 2.0</string>
 			<key>Title</key>
 			<string>AliyunOSSiOS</string>
 			<key>Type</key>
@@ -496,6 +502,8 @@ of the input file used when generating it.  This code is not
 standalone and requires a support library to be linked with it.  This
 support library is itself covered by the above license.
 </string>
+			<key>License</key>
+			<string>New BSD</string>
 			<key>Title</key>
 			<string>Protobuf</string>
 			<key>Type</key>

@@ -176,12 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C3A18881E9A0D8D00E535C8 /* Build configuration list for PBXNativeTarget "ZingPBModel" */;
 			buildPhases = (
-				B59DB85B6EBC6A6B50C6B7E6 /* 📦 Check Pods Manifest.lock */,
+				B59DB85B6EBC6A6B50C6B7E6 /* [CP] Check Pods Manifest.lock */,
 				1C3A186F1E9A0D8D00E535C8 /* Sources */,
 				1C3A18701E9A0D8D00E535C8 /* Frameworks */,
 				1C3A18711E9A0D8D00E535C8 /* Headers */,
 				1C3A18721E9A0D8D00E535C8 /* Resources */,
-				E3B9BC5FC4FA64D3D5FB92E4 /* 📦 Copy Pods Resources */,
+				E3B9BC5FC4FA64D3D5FB92E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,29 +269,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B59DB85B6EBC6A6B50C6B7E6 /* 📦 Check Pods Manifest.lock */ = {
+		B59DB85B6EBC6A6B50C6B7E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E3B9BC5FC4FA64D3D5FB92E4 /* 📦 Copy Pods Resources */ = {
+		E3B9BC5FC4FA64D3D5FB92E4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

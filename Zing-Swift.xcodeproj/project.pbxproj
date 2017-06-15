@@ -35,6 +35,9 @@
 		1C8994681E9B30FC00DF1C57 /* RequestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994631E9B30FC00DF1C57 /* RequestPath.swift */; };
 		1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994651E9B30FC00DF1C57 /* APIService.swift */; };
 		1C89946A1E9B30FC00DF1C57 /* URLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8994661E9B30FC00DF1C57 /* URLService.swift */; };
+		1CB257FE1EF25C0B000E03C4 /* InputBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB257FD1EF25C0B000E03C4 /* InputBarViewController.swift */; };
+		1CB258001EF25F53000E03C4 /* SensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB257FF1EF25F53000E03C4 /* SensesViewController.swift */; };
+		1CB258021EF27031000E03C4 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB258011EF27031000E03C4 /* KeyboardService.swift */; };
 		1CC0D3DB1EA741DF00B59DF9 /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */; };
 		1CE5853C1ECD754E00196919 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CE5853E1ECD754E00196919 /* Localizable.strings */; };
 		1CE585501ECD7C9000196919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE585521ECD7C9000196919 /* Main.storyboard */; };
@@ -107,6 +110,9 @@
 		1C8994631E9B30FC00DF1C57 /* RequestPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPath.swift; sourceTree = "<group>"; };
 		1C8994651E9B30FC00DF1C57 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		1C8994661E9B30FC00DF1C57 /* URLService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLService.swift; sourceTree = "<group>"; };
+		1CB257FD1EF25C0B000E03C4 /* InputBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputBarViewController.swift; sourceTree = "<group>"; };
+		1CB257FF1EF25F53000E03C4 /* SensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensesViewController.swift; sourceTree = "<group>"; };
+		1CB258011EF27031000E03C4 /* KeyboardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
 		1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
 		1CE5853D1ECD754E00196919 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1CE5853F1ECD755400196919 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -206,6 +212,7 @@
 		1C3A17AE1E99E46600E535C8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				1CB257FC1EF25BD3000E03C4 /* Media */,
 				1C94C1371EB9743C007590D7 /* Goto */,
 				1C3A17AF1E99E46600E535C8 /* Channel */,
 				1C3A17B01E99E46600E535C8 /* Discovery */,
@@ -285,6 +292,7 @@
 				1C8994661E9B30FC00DF1C57 /* URLService.swift */,
 				1C46066E1EB02C12005BD800 /* AccountService.swift */,
 				1C4606D21EB19B27005BD800 /* UMengService.swift */,
+				1CB258011EF27031000E03C4 /* KeyboardService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -293,8 +301,17 @@
 			isa = PBXGroup;
 			children = (
 				1C6100DD1EC2F4D500DEDB40 /* WebViewController.swift */,
+				1CB257FF1EF25F53000E03C4 /* SensesViewController.swift */,
 			);
 			path = Goto;
+			sourceTree = "<group>";
+		};
+		1CB257FC1EF25BD3000E03C4 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				1CB257FD1EF25C0B000E03C4 /* InputBarViewController.swift */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		D25B1D66026B64DBC293803D /* Pods */ = {
@@ -324,12 +341,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C16381F1E777A0C002C9734 /* Build configuration list for PBXNativeTarget "Zing-Swift" */;
 			buildPhases = (
-				910C669F38F67DF321D3D9D6 /* 📦 Check Pods Manifest.lock */,
+				910C669F38F67DF321D3D9D6 /* [CP] Check Pods Manifest.lock */,
 				1C1637F31E777A0C002C9734 /* Sources */,
 				1C1637F41E777A0C002C9734 /* Frameworks */,
 				1C1637F51E777A0C002C9734 /* Resources */,
-				D98033050D29E6778B1093D4 /* 📦 Embed Pods Frameworks */,
-				B4288DDB0E7B3FD6A7B865D0 /* 📦 Copy Pods Resources */,
+				D98033050D29E6778B1093D4 /* [CP] Embed Pods Frameworks */,
+				B4288DDB0E7B3FD6A7B865D0 /* [CP] Copy Pods Resources */,
 				1C0B59651EF11F2200C42AFC /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -459,29 +476,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		910C669F38F67DF321D3D9D6 /* 📦 Check Pods Manifest.lock */ = {
+		910C669F38F67DF321D3D9D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B4288DDB0E7B3FD6A7B865D0 /* 📦 Copy Pods Resources */ = {
+		B4288DDB0E7B3FD6A7B865D0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,14 +506,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zing-Swift/Pods-Zing-Swift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D98033050D29E6778B1093D4 /* 📦 Embed Pods Frameworks */ = {
+		D98033050D29E6778B1093D4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,11 +538,14 @@
 				1C89946A1E9B30FC00DF1C57 /* URLService.swift in Sources */,
 				1C2754291EC3EC970005166E /* LoginViewController.swift in Sources */,
 				1C8994691E9B30FC00DF1C57 /* APIService.swift in Sources */,
+				1CB258001EF25F53000E03C4 /* SensesViewController.swift in Sources */,
 				1C8994671E9B30FC00DF1C57 /* GCDQueue.swift in Sources */,
 				1C1BD0631EBD642F00AEEA31 /* LaunchViewController.swift in Sources */,
 				1C6100DC1EC2EFBF00DEDB40 /* MessageViewController.swift in Sources */,
 				1C4606D31EB19B27005BD800 /* UMengService.swift in Sources */,
 				1C27542B1EC3EF8A0005166E /* MeViewController.swift in Sources */,
+				1CB258021EF27031000E03C4 /* KeyboardService.swift in Sources */,
+				1CB257FE1EF25C0B000E03C4 /* InputBarViewController.swift in Sources */,
 				1C46066F1EB02C12005BD800 /* AccountService.swift in Sources */,
 				1C8994681E9B30FC00DF1C57 /* RequestPath.swift in Sources */,
 				1C1637FB1E777A0C002C9734 /* AppDelegate.swift in Sources */,

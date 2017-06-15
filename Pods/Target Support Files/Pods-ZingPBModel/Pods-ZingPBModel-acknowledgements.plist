@@ -57,6 +57,8 @@ of the input file used when generating it.  This code is not
 standalone and requires a support library to be linked with it.  This
 support library is itself covered by the above license.
 </string>
+			<key>License</key>
+			<string>New BSD</string>
 			<key>Title</key>
 			<string>Protobuf</string>
 			<key>Type</key>

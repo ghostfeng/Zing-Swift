@@ -27,6 +27,10 @@ target 'Zing-Swift' do
     pod 'UMengUShare/Social/Sina', '>= 6.4.3'
     pod 'UMengUShare/Social/WeChat', '>= 6.4.3'
     pod 'UMengUShare/Social/QQ', '>= 6.4.3'
+    # 布局约束
+    pod 'SnapKit'
+    # 键盘管理
+    pod 'IQKeyboardManagerSwift'
 end
 
 target 'ZingCommon' do

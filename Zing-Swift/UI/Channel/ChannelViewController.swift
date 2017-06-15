@@ -42,6 +42,12 @@ class ChannelViewController: BaseViewController {
         super.viewDidLayoutSubviews()
         self.tableView.frame = view.bounds;
     }
+    
+    deinit {
+        if isViewLoaded {
+            NotificationCenter.default.removeObserver(self, name: kZingFollowedChannelUpdated, object: nil);
+        }
+    }
 }
 
 //MARK: - UI界面相关
@@ -92,7 +98,18 @@ extension ChannelViewController: UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 1:
+            return (ZingFollowedChannel.default.toppingChannels?.count ?? 0) > 0 ? "置顶频道" : ""
+        case 2:
+            return (ZingFollowedChannel.default.followedChannels?.count ?? 0) > 0 ? "关注频道" : ""
+        default:
+            return ""
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        navigationController?.pushViewController(SensesViewController(), animated: true)
     }
 }

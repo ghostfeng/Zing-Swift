@@ -16,7 +16,9 @@ PODS:
     - AVOSCloudIM/_NOARC (= 4.4.0)
   - AVOSCloudIM/_NOARC (4.4.0):
     - AVOSCloud (= 4.4.0)
+  - IQKeyboardManagerSwift (4.0.10)
   - Protobuf (3.2.1)
+  - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
   - UMengUShare/Core (6.4.3):
     - UMengUShare/Network
@@ -42,7 +44,9 @@ DEPENDENCIES:
   - AlicloudPush (>= 1.9.1)
   - AliyunOSSiOS (>= 2.6.0)
   - AVOSCloudIM (>= 4.0.0)
+  - IQKeyboardManagerSwift
   - Protobuf (>= 3.2.1)
+  - SnapKit
   - SwiftyJSON (>= 3.1.4)
   - UMengUShare/Core (>= 6.4.3)
   - UMengUShare/Social/QQ (>= 6.4.3)
@@ -57,10 +61,12 @@ SPEC CHECKSUMS:
   AliyunOSSiOS: 058b038cc82000dadb8f8e3893a97243124f2898
   AVOSCloud: c2cbba727f10776c995108d7e8fd3142d703ebaa
   AVOSCloudIM: c7fff11ce3cc0333cb2f7b3e41370d6b36a7c78b
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UMengUShare: d39cb682598df87ebdd3c055d03d00eb0102d42c
 
-PODFILE CHECKSUM: 59918073198031f13b8bf99dd64adf3cb3e7870a
+PODFILE CHECKSUM: df076f0dc2b976bbd1367d5b04fc9c76e862636f
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.2.1
