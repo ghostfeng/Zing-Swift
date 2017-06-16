@@ -37,7 +37,7 @@ import Snippets
     
     lazy var textContainer: UIView = {
         let textContainer = UIView()
-        textContainer.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        textContainer.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         textContainer.layer.cornerRadius = 5
         textContainer.layer.masksToBounds = true
         return textContainer
@@ -103,9 +103,9 @@ import Snippets
         textView.snp.makeConstraints { (make) in
             let margin = 10.0
             make.top.equalTo(textContainer.snp.top).offset(margin)
-            make.leading.equalTo(textContainer.snp.leading).offset(margin)
+            make.leading.equalTo(textContainer.snp.leading).offset(margin * 0.5)
             make.bottom.equalTo(textContainer.snp.bottom).offset(-margin)
-            make.trailing.equalTo(textContainer.snp.trailing).offset(-margin)
+            make.trailing.equalTo(textContainer.snp.trailing).offset(-margin * 0.5)
             make.height.equalTo(40)
         }
         
@@ -171,6 +171,10 @@ extension InputBarViewController: UITextViewDelegate {
             textView.snp.updateConstraints({ (make) in
                 make.height.equalTo(inputViewDefaultHeight)
             })
+        }
+        
+        UIView.animate(withDuration: 0.1) {
+            self.view.layoutIfNeeded()
         }
     }
 }
