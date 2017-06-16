@@ -10,11 +10,13 @@ import UIKit
 
 import SnapKit
 import IQKeyboardManagerSwift
+import Snippets
 
-class InputBarViewController: UIViewController {
+@IBDesignable class InputBarViewController: UIViewController {
+    var inputViewDefaultHeight: CGFloat = 0.0
     
     /// 添加媒体按钮
-    var addButton: UIButton = {
+    lazy var addButton: UIButton = {
         let addButton = UIButton(type: .custom);
         addButton.setImage(UIImage(named:"release_add"), for: .normal)
         addButton.addTarget(self, action: #selector(adddAction), for: .touchUpInside)
@@ -22,22 +24,32 @@ class InputBarViewController: UIViewController {
     }()
     
     /// 发送按钮
-    var sendButton: UIButton = {
+    lazy var sendButton: UIButton = {
         let sendButton = UIButton(type: .custom);
         sendButton.setTitle("发送", for: .normal)
         sendButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         sendButton.setTitleColor(.red, for: .normal)
         sendButton.setTitleColor(.lightGray, for: .disabled)
         sendButton.addTarget(self, action: #selector(sendAction), for: .touchUpInside)
+        sendButton.isEnabled = false
         return sendButton;
     }()
     
+    lazy var textContainer: UIView = {
+        let textContainer = UIView()
+        textContainer.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        textContainer.layer.cornerRadius = 5
+        textContainer.layer.masksToBounds = true
+        return textContainer
+    }()
+    
     /// 输入框
-    var textView: IQTextView = {
+    lazy var textView: IQTextView = {
         let textView = IQTextView()
-        textView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
-        textView.layer.cornerRadius = 5
-        textView.layer.masksToBounds = true
+        textView.font = UIFont.systemFont(ofSize: 15)
+        textView.textContainerInset = .zero
+        textView.placeholder = "输入内容..."
+        textView.backgroundColor = .clear
         return textView
     }()
     
@@ -47,11 +59,6 @@ class InputBarViewController: UIViewController {
         setupSubviews()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func setupSubviews() {
         view.backgroundColor = .white
         
@@ -67,7 +74,7 @@ class InputBarViewController: UIViewController {
         
         view.addSubview(addButton)
         addButton.snp.makeConstraints { (make) in
-            let margin = 6;
+            let margin: CGFloat = 4.0
             make.leading.equalTo(view.snp.leading).offset(margin)
             make.bottom.equalTo(view.snp.bottom).offset(-margin)
             make.width.height.equalTo(40)
@@ -81,19 +88,35 @@ class InputBarViewController: UIViewController {
             make.centerY.equalTo(addButton.snp.centerY)
         }
         
-        view.addSubview(textView)
-        textView.snp.makeConstraints { (make) in
+        view.addSubview(textContainer)
+        textContainer.snp.makeConstraints { (make) in
             let margin = 5.0
             make.top.equalTo(view.snp.top).offset(margin)
             make.leading.equalTo(addButton.snp.trailing).offset(margin)
             make.bottom.equalTo(view.snp.bottom).offset(-margin)
             make.trailing.equalTo(sendButton.snp.leading)
+        }
+        
+        textView.delegate = self
+        inputViewDefaultHeight = (textView.font?.lineHeight)!
+        textContainer.addSubview(textView)
+        textView.snp.makeConstraints { (make) in
+            let margin = 10.0
+            make.top.equalTo(textContainer.snp.top).offset(margin)
+            make.leading.equalTo(textContainer.snp.leading).offset(margin)
+            make.bottom.equalTo(textContainer.snp.bottom).offset(-margin)
+            make.trailing.equalTo(textContainer.snp.trailing).offset(-margin)
             make.height.equalTo(40)
         }
+        
+        //调整输入框
+        reloadInputView()
     }
     
+    //MARK: - buttonAction
     func sendAction() {
-        print("发送")
+        textView.text = ""
+        reloadInputView()
     }
     
     func adddAction() {
@@ -101,6 +124,11 @@ class InputBarViewController: UIViewController {
     }
     
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -111,4 +139,38 @@ class InputBarViewController: UIViewController {
     }
     */
 
+}
+
+extension InputBarViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        reloadInputView()
+    }
+    
+    /// 调整输入框
+    func reloadInputView() {
+        sendButton.isEnabled = textView.text.characters.count > 0
+        if textView.text.characters.count > 0 {
+            let height = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude)).height
+            //4是估算的行间距
+            let maxHeight = 3 * inputViewDefaultHeight + 4
+            
+            if height >= maxHeight {
+                textView.isScrollEnabled = true
+                textView.snp.updateConstraints({ (make) in
+                    make.height.equalTo(maxHeight)
+                })
+            } else {
+                textView.isScrollEnabled = false
+                textView.snp.updateConstraints({ (make) in
+                    make.height.equalTo(height)
+                })
+            }
+        } else {
+            textView.isScrollEnabled = false
+            textView.snp.updateConstraints({ (make) in
+                make.height.equalTo(inputViewDefaultHeight)
+            })
+        }
+    }
 }

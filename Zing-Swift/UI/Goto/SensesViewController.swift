@@ -22,6 +22,8 @@ class SensesViewController: BaseViewController {
         super.viewDidLoad()
 
         setupSubviews()
+        
+        KeyboardService.default.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +42,11 @@ class SensesViewController: BaseViewController {
         }
     }
     
+    deinit {
+        if isViewLoaded {
+            print("sensesVC dealloc")
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -50,5 +57,15 @@ class SensesViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension SensesViewController: KeyboardServiceDelegate {
+    func keyboardFrameChange(withInfo info: KeyboardInfo) {
+        inputbarVC.view.snp.updateConstraints { (make) in
+            make.bottom.equalTo(view.snp.bottom).offset(-info.height)
+        }
+        UIView.animate(withDuration: info.duration) { 
+            self.view.layoutIfNeeded()
+        }
+    }
 }
