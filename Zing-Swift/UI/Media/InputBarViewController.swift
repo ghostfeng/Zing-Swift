@@ -48,7 +48,7 @@ import Snippets
         let textView = IQTextView()
         textView.font = UIFont.systemFont(ofSize: 15)
         textView.textContainerInset = .zero
-        textView.placeholder = "输入内容..."
+        textView.placeholder = "输入内容···"
         textView.backgroundColor = .clear
         return textView
     }()
@@ -123,22 +123,10 @@ import Snippets
         print("添加")
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension InputBarViewController: UITextViewDelegate {
@@ -152,8 +140,8 @@ extension InputBarViewController: UITextViewDelegate {
         sendButton.isEnabled = textView.text.characters.count > 0
         if textView.text.characters.count > 0 {
             let height = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude)).height
-            //4是估算的行间距
-            let maxHeight = 3 * inputViewDefaultHeight + 4
+            //2是估算的行间距
+            let maxHeight = 3 * inputViewDefaultHeight + 2
             
             if height >= maxHeight {
                 textView.isScrollEnabled = true
@@ -171,10 +159,6 @@ extension InputBarViewController: UITextViewDelegate {
             textView.snp.updateConstraints({ (make) in
                 make.height.equalTo(inputViewDefaultHeight)
             })
-        }
-        
-        UIView.animate(withDuration: 0.1) {
-            self.view.layoutIfNeeded()
         }
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import ZingCommon
 import ZingPBModel
+import AVOSCloudIM
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         backgroundQueue.async {
             UMengService.default.launching()
         }
+        
+        //LeanCloud
+        AVOSCloud.setApplicationId(LCAppId, clientKey: LCAppKey)
+        #if DEBUG
+            AVOSCloud.setAllLogsEnabled(true)
+        #endif
+        AVIMClient.setUserOptions([AVIMUserOptionUseUnread: true])
+        
         
         configAppStyle()
         

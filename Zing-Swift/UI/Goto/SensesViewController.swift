@@ -17,6 +17,12 @@ class SensesViewController: BaseViewController {
         let inputbarVC = InputBarViewController()
         return inputbarVC
     }()
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.keyboardDismissMode = .onDrag
+        return tableView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +42,13 @@ class SensesViewController: BaseViewController {
         addChildViewController(inputbarVC)
         view.addSubview(inputbarVC.view)
         inputbarVC.view.snp.makeConstraints { (make) in
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
-            make.bottom.equalTo(view.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.top.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(inputbarVC.view.snp.top)
         }
     }
     
@@ -47,16 +57,6 @@ class SensesViewController: BaseViewController {
             print("sensesVC dealloc")
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension SensesViewController: KeyboardServiceDelegate {

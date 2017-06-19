@@ -19,3 +19,5 @@ let SinaAppId = "4118279572"
 let SinaAppSecret = "776f2201e76ea5d4c7d71a892300dc50"
 let BaiduWebAK = "Do1F3sPqpyy3cRz79Y1EBqLmgKGdRS6Q"
 let MWAppKey = "7SZXX0BN82W2P5SDYGM01H89EUB6HJTM"
+let LCAppId = "p5sX9clmsUnMSdIzwbnby5Wv-gzGzoHsz";
+let LCAppKey = "pjYg9zCtdMiAfL4pEd8zIyle";

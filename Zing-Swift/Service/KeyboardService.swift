@@ -58,12 +58,12 @@ class KeyboardService {
     }
     
     @objc func keyboardChangeFrame(notification: NSNotification) {
-        let keyBoardBeginFrame = notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! CGRect
-        let keyBoardEndFrame = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! CGRect
+        let beginFrame = notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! CGRect
+        let endFrame = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! CGRect
         let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
-        let height = (keyBoardEndFrame.origin.y == UIScreen.main.bounds.size.height) ? 0 : keyBoardEndFrame.size.height
-        self.info.beginFrame = keyBoardBeginFrame
-        self.info.endFrame = keyBoardEndFrame
+        let height = (endFrame.origin.y == UIScreen.main.bounds.size.height) ? 0 : endFrame.size.height
+        self.info.beginFrame = beginFrame
+        self.info.endFrame = endFrame
         self.info.duration = duration
         self.info.height = height
         delegate?.keyboardFrameChange(withInfo: self.info)

@@ -152,7 +152,6 @@ class AccountService: NSObject, AVIMClientDelegate {
     
     //MARK: - IM
     func imConnect() {
-        return
         imConnectionClose()
         if let user = _user {
             imClient = AVIMClient(clientId: user.id_p)
@@ -162,13 +161,13 @@ class AccountService: NSObject, AVIMClientDelegate {
                     print(error ?? "AVIMClient open failure with no error")
                 } else {
                     //TODO:
+                    print("AVIMClient open success")
                 }
             })
         }
     }
     
     func imConnectionClose() {
-        return
         if imClient != nil {
             imClient.close(callback: { (success, error) in
                 if !success {

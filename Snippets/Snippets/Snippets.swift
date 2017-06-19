@@ -12,11 +12,18 @@ import CoreGraphics
 
 public extension NSObject {
     
+    /// 根据属性名获取属性的值
+    ///
+    /// - Parameter propertyName: 属性名
+    /// - Returns: 对应属性的值
     public func getPrivateProperty(propertyName: String) -> Any? {
         let iVar = class_getInstanceVariable(object_getClass(self), propertyName)
         return object_getIvar(self, iVar)
     }
 
+    /// 获取对象所有的属性列表
+    ///
+    /// - Returns: 属性列表
     public func getAllPropertys() -> [String] {
         var propertys = [String]()
         var count: UInt32 = 0
@@ -38,9 +45,21 @@ public extension NSObject {
         return propertys
     }
 }
+
+public extension CGRect {
+    public var center: CGPoint {
+        get {
+            return CGPoint(x: (self.minX + self.maxX) * 0.5, y: (self.minY + self.maxX) * 0.5)
+        }
+        set {
+            self = CGRect(x: newValue.x - self.width * 0.5, y: newValue.y - self.height * 0.5, width: self.width, height: self.height)
+        }
+    }
+}
+
 //MARK: - UI
 public extension UIDevice {
-        public class func unameMachine() -> String {
+    public class func unameMachine() -> String {
         var systemInfo: utsname = Darwin.utsname()
         _ = Darwin.uname(&systemInfo)
         return String(cString: UnsafeMutableRawPointer(&systemInfo.machine).assumingMemoryBound(to: CChar.self), encoding: .utf8)!
@@ -56,7 +75,7 @@ public extension UIDevice {
 }
 
 public extension UIImage {
-    public class func image(color: UIColor, size:CGSize) -> UIImage?{
+    public class func image(withColor color: UIColor, size:CGSize) -> UIImage?{
         UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()
         context?.setFillColor(color.cgColor)
