@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CE4258F1EFA14E70070865E /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE4258E1EFA14E70070865E /* Protocol.swift */; };
 		1CF459FB1EB1D2D500E2B2BA /* Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF459F11EB1D2D500E2B2BA /* Snippets.framework */; };
 		1CF45A001EB1D2D500E2B2BA /* SnippetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF459FF1EB1D2D500E2B2BA /* SnippetsTests.swift */; };
 		1CF45A021EB1D2D500E2B2BA /* Snippets.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF459F41EB1D2D500E2B2BA /* Snippets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1A35135F8E3ADB9213DF998B /* Pods_Snippets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snippets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CE4258E1EFA14E70070865E /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		1CF459F11EB1D2D500E2B2BA /* Snippets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Snippets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF459F41EB1D2D500E2B2BA /* Snippets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Snippets.h; sourceTree = "<group>"; };
 		1CF459F51EB1D2D500E2B2BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				1CF459F41EB1D2D500E2B2BA /* Snippets.h */,
 				1CF45A111EB1D3C800E2B2BA /* Snippets.swift */,
+				1CE4258E1EFA14E70070865E /* Protocol.swift */,
 				1CF459F51EB1D2D500E2B2BA /* Info.plist */,
 			);
 			path = Snippets;
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF45A121EB1D3C800E2B2BA /* Snippets.swift in Sources */,
+				1CE4258F1EFA14E70070865E /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

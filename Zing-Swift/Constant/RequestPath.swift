@@ -37,4 +37,10 @@ enum RequestPath: String {
     
     // 频道列表
     case channelsUser = "/channels/user"
+    
+    // 频道操作
+    case channelFollow = "/channel/follow"
+    case channelUnfollow = "/channel/unfollow"
+    case channelTopping = "/channel/topping"
+    case channelUntop = "/channel/untop"
 }
