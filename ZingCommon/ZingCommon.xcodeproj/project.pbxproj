@@ -16,6 +16,7 @@
 		1C6A08691EA8E62000C99B7C /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A08681EA8E62000C99B7C /* PhotoLibraryService.swift */; };
 		1C94C13B1EB98AA0007590D7 /* PrepareSegueWithDatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C94C13A1EB98AA0007590D7 /* PrepareSegueWithDatable.swift */; };
 		1C9975621EF7C392008D55B9 /* BackgroundLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9975611EF7C392008D55B9 /* BackgroundLoop.swift */; };
+		1CE425931EFB63D60070865E /* ZingScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE425921EFB63D60070865E /* ZingScanService.swift */; };
 		1CE585451ECD76F900196919 /* LocalizedContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE585441ECD76F900196919 /* LocalizedContext.swift */; };
 		1CFAF4AA1ECBFEED0062AF53 /* ZingApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFAF4A91ECBFEED0062AF53 /* ZingApplication.swift */; };
 		7C836A76D3025A143B11541F /* Pods_ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465EF1FB55A2278377038CAD /* Pods_ZingCommon.framework */; };
@@ -44,6 +45,7 @@
 		1C6A08681EA8E62000C99B7C /* PhotoLibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
 		1C94C13A1EB98AA0007590D7 /* PrepareSegueWithDatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareSegueWithDatable.swift; sourceTree = "<group>"; };
 		1C9975611EF7C392008D55B9 /* BackgroundLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLoop.swift; sourceTree = "<group>"; };
+		1CE425921EFB63D60070865E /* ZingScanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZingScanService.swift; sourceTree = "<group>"; };
 		1CE585441ECD76F900196919 /* LocalizedContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedContext.swift; sourceTree = "<group>"; };
 		1CFAF4A91ECBFEED0062AF53 /* ZingApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZingApplication.swift; sourceTree = "<group>"; };
 		465EF1FB55A2278377038CAD /* Pods_ZingCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZingCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 		1C8994571E9B302500DF1C57 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1CE425921EFB63D60070865E /* ZingScanService.swift */,
 				1C6A08681EA8E62000C99B7C /* PhotoLibraryService.swift */,
 			);
 			name = Service;
@@ -320,6 +323,7 @@
 			files = (
 				1C6A08691EA8E62000C99B7C /* PhotoLibraryService.swift in Sources */,
 				1C9975621EF7C392008D55B9 /* BackgroundLoop.swift in Sources */,
+				1CE425931EFB63D60070865E /* ZingScanService.swift in Sources */,
 				1C6100CC1EC2E3EF00DEDB40 /* BaseViewController.swift in Sources */,
 				1CE585451ECD76F900196919 /* LocalizedContext.swift in Sources */,
 				1CFAF4AA1ECBFEED0062AF53 /* ZingApplication.swift in Sources */,

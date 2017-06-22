@@ -71,7 +71,7 @@ extension ChannelViewController {
         }
     }
     
-    func reloadTableView(notification: Notification) {
+    func reloadTableView(_ notification: Notification) {
         mainQueue.async {
             self.tableView.reloadData()
         }
