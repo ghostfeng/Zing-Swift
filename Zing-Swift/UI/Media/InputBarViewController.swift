@@ -162,3 +162,64 @@ extension InputBarViewController: UITextViewDelegate {
         }
     }
 }
+
+@IBDesignable class InputBarWithSpeechViewController: InputBarViewController {
+    /// 切换输入模式按钮
+    lazy var switchInputModeButton: UIButton = {
+        let switchInputModeButton = UIButton(type: .custom);
+        switchInputModeButton.setImage(UIImage(named:"release_input_speech"), for: .normal)
+        switchInputModeButton.setImage(UIImage(named:"release_input_txt"), for: .selected)
+        switchInputModeButton.addTarget(self, action: #selector(switchInputMode), for: .touchUpInside)
+        return switchInputModeButton;
+    }()
+    
+    /// 语音按钮
+    lazy var speechButton: UIButton = {
+        let speechButton = UIButton(type: .custom);
+        speechButton.isHidden = true
+        speechButton.setTitle("按住 说话", for: .normal)
+        speechButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        speechButton.setTitleColor(UIColor.lightGray, for: .normal)
+        speechButton.backgroundColor = UIColor.white
+        speechButton.layer.cornerRadius = 5
+        speechButton.layer.masksToBounds = true
+        speechButton.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
+        speechButton.layer.borderWidth = 0.8
+        return speechButton;
+    }()
+    
+    func switchInputMode(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+        
+        reloadInputView(isSpeech: button.isSelected)
+    }
+    
+    func reloadInputView(isSpeech: Bool) {
+        speechButton.isHidden = !isSpeech
+        if isSpeech {
+            textView.resignFirstResponder()
+            textView.snp.updateConstraints({ (make) in
+                make.height.equalTo(inputViewDefaultHeight)
+            })
+        } else {
+            textView.becomeFirstResponder()
+            reloadInputView()
+        }
+    }
+    
+    override func setupSubviews() {
+        super.setupSubviews()
+        
+        addButton.isHidden = true
+        
+        view.addSubview(switchInputModeButton)
+        switchInputModeButton.snp.makeConstraints { (make) in
+            make.top.leading.bottom.trailing.equalTo(addButton)
+        }
+        
+        view.addSubview(speechButton)
+        speechButton.snp.makeConstraints { (make) in
+            make.top.leading.bottom.trailing.equalTo(textContainer)
+        }
+    }
+}

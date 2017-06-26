@@ -14,13 +14,15 @@ import SnapKit
 class SensesViewController: BaseViewController {
     
     lazy var inputbarVC: InputBarViewController = {
-        let inputbarVC = InputBarViewController()
+        let inputbarVC = InputBarWithSpeechViewController()
         return inputbarVC
     }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.keyboardDismissMode = .onDrag
+        tableView.delegate = self
+        tableView.dataSource = self
         return tableView
     }()
 
@@ -67,5 +69,21 @@ extension SensesViewController: KeyboardServiceDelegate {
         UIView.animate(withDuration: info.duration) { 
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+extension SensesViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = "\(UITableViewCell.self)"
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
+        }
+        cell?.textLabel?.text = "感言\(indexPath.row)"
+        return cell!
     }
 }

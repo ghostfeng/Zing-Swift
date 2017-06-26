@@ -86,6 +86,17 @@ public extension UIImage {
     }
 }
 
+public extension UIViewController {
+    
+    /// 添加子控制器，并添加根视图
+    ///
+    /// - Parameter containerController: 被添加的控制器
+    public func addContainerViewController<T: UIViewController>(_ containerController: T) {
+        addChildViewController(containerController)
+        view.addSubview(containerController.view)
+    }
+}
+
 public extension UIView {
     public func viewController<T: UIViewController>() -> T? {
         var next = self.next
