@@ -82,9 +82,9 @@ public let kZingFollowedChannelUpdated = NSNotification.Name(rawValue: "kZingFol
     //MARK: - 服务行为
     
     ///置顶
-    public func top(channnelId: String, refresh: Bool = true) {
+    public func top(channelId: String, refresh: Bool = true) {
         if let followedChannels = _followedChannels {
-            let index = followedChannels.index{ $0.id_p == channnelId}
+            let index = followedChannels.index{ $0.id_p == channelId}
             if let index = index {
                 let toTop = _followedChannels!.remove(at: index)
                 
@@ -105,9 +105,9 @@ public let kZingFollowedChannelUpdated = NSNotification.Name(rawValue: "kZingFol
     }
     
     ///取消置顶
-    public func untop(channnelId: String, refresh: Bool = true) {
+    public func untop(channelId: String, refresh: Bool = true) {
         if let toppingChannels = _toppingChannels {
-            let index = toppingChannels.index{ $0.id_p == channnelId}
+            let index = toppingChannels.index{ $0.id_p == channelId}
             if let index = index {
                 let toUntop = _toppingChannels!.remove(at: index)
                 

@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         
         AccountService.default.loginWithTel("15201420833", password: "123456", telCode: "+86") { (path, response, error) in
         }
-        
+
 //        UMengService.default.getAuthWithUserInfoFromWechat(vc: self) { (response, error) in
 //            if let error = error {
 //                print("UMeng getUserInfo error:",error)

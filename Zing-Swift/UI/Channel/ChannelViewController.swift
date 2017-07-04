@@ -79,13 +79,13 @@ extension ChannelViewController {
     
     func topChannel(atIndexPath indexPath: IndexPath) {
         let channel = getChannel(withIndexPath: indexPath)!
-        ZingFollowedChannel.default.top(channnelId: channel.id_p)
+        ZingFollowedChannel.default.top(channelId: channel.id_p)
         APIService.default.post(.channelTopping, parameters: ["channelId": channel.id_p], queue: userInitiatedQueue)
     }
     
     func untopChannel(atIndexPath indexPath: IndexPath) {
         let channel = getChannel(withIndexPath: indexPath)!
-        ZingFollowedChannel.default.untop(channnelId: channel.id_p)
+        ZingFollowedChannel.default.untop(channelId: channel.id_p)
         APIService.default.post(.channelUntop, parameters: ["channelId": channel.id_p], queue: userInitiatedQueue)
     }
     
