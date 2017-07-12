@@ -1,41 +1,41 @@
 PODS:
-  - Alamofire (4.4.0)
+  - Alamofire (4.5.0)
   - AlicloudPush (1.9.1):
     - AlicloudUtils
   - AlicloudUTDID (1.1.0.16)
   - AlicloudUtils (1.1.7):
     - AlicloudUTDID
   - AliyunOSSiOS (2.6.0)
-  - AVOSCloud (4.4.0)
-  - AVOSCloudIM (4.4.0):
-    - AVOSCloud (= 4.4.0)
-    - AVOSCloudIM/_ARC (= 4.4.0)
-    - AVOSCloudIM/_NOARC (= 4.4.0)
-  - AVOSCloudIM/_ARC (4.4.0):
-    - AVOSCloud (= 4.4.0)
-    - AVOSCloudIM/_NOARC (= 4.4.0)
-  - AVOSCloudIM/_NOARC (4.4.0):
-    - AVOSCloud (= 4.4.0)
+  - AVOSCloud (6.1.1)
+  - AVOSCloudIM (6.1.1):
+    - AVOSCloud (= 6.1.1)
+    - AVOSCloudIM/_ARC (= 6.1.1)
+    - AVOSCloudIM/_NOARC (= 6.1.1)
+  - AVOSCloudIM/_ARC (6.1.1):
+    - AVOSCloud (= 6.1.1)
+    - AVOSCloudIM/_NOARC (= 6.1.1)
+  - AVOSCloudIM/_NOARC (6.1.1):
+    - AVOSCloud (= 6.1.1)
   - IQKeyboardManagerSwift (4.0.10)
-  - Protobuf (3.2.1)
+  - Protobuf (3.3.0)
   - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
-  - UMengUShare/Core (6.4.3):
+  - UMengUShare/Core (6.4.5):
     - UMengUShare/Network
-  - UMengUShare/Network (6.4.3)
-  - UMengUShare/Social/QQ (6.4.3):
+  - UMengUShare/Network (6.4.5)
+  - UMengUShare/Social/QQ (6.4.5):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedQQ
-  - UMengUShare/Social/ReducedQQ (6.4.3):
+  - UMengUShare/Social/ReducedQQ (6.4.5):
     - UMengUShare/Core
-  - UMengUShare/Social/ReducedSina (6.4.3):
+  - UMengUShare/Social/ReducedSina (6.4.5):
     - UMengUShare/Core
-  - UMengUShare/Social/ReducedWeChat (6.4.3):
+  - UMengUShare/Social/ReducedWeChat (6.4.5):
     - UMengUShare/Core
-  - UMengUShare/Social/Sina (6.4.3):
+  - UMengUShare/Social/Sina (6.4.5):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedSina
-  - UMengUShare/Social/WeChat (6.4.3):
+  - UMengUShare/Social/WeChat (6.4.5):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
 
@@ -54,18 +54,18 @@ DEPENDENCIES:
   - UMengUShare/Social/WeChat (>= 6.4.3)
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlicloudPush: 4fbee1f82605adc3bfc7c6136dad4a57c6ad4049
   AlicloudUTDID: f5a7bc1420c5f83e3bd40296e5ab2e5a804a12f8
   AlicloudUtils: 28729eba18437f58000afb7657c5499c751a0826
   AliyunOSSiOS: 058b038cc82000dadb8f8e3893a97243124f2898
-  AVOSCloud: c2cbba727f10776c995108d7e8fd3142d703ebaa
-  AVOSCloudIM: c7fff11ce3cc0333cb2f7b3e41370d6b36a7c78b
+  AVOSCloud: a21318994cd97adaf9bf19cf0ac38187b3d94f00
+  AVOSCloudIM: 5ac1d53078cfd81e193e1eb6a365842d96ad3009
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
-  Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  UMengUShare: d39cb682598df87ebdd3c055d03d00eb0102d42c
+  UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
 
 PODFILE CHECKSUM: df076f0dc2b976bbd1367d5b04fc9c76e862636f
 

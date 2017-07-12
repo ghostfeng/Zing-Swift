@@ -8,6 +8,17 @@
 
 #import "AVIMCommon.h"
 
+typedef NS_ENUM(int8_t, AVIMMessageMediaType) {
+    kAVIMMessageMediaTypeNone = 0,
+    kAVIMMessageMediaTypeText = -1,
+    kAVIMMessageMediaTypeImage = -2,
+    kAVIMMessageMediaTypeAudio = -3,
+    kAVIMMessageMediaTypeVideo = -4,
+    kAVIMMessageMediaTypeLocation = -5,
+    kAVIMMessageMediaTypeFile = -6,
+    kAVIMMessageMediaTypeRecalled = -127
+};
+
 typedef NS_ENUM(int8_t, AVIMMessageIOType) {
     AVIMMessageIOTypeIn = 1,
     AVIMMessageIOTypeOut,
@@ -25,6 +36,8 @@ typedef NS_ENUM(int8_t, AVIMMessageStatus) {
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AVIMMessage : NSObject <NSCopying, NSCoding>
+
+@property (nonatomic, assign, readonly) AVIMMessageMediaType mediaType;
 
 /*!
  * 表示接收和发出的消息
@@ -75,6 +88,11 @@ NS_ASSUME_NONNULL_BEGIN
  * 是否是暂态消息
  */
 @property (nonatomic, assign, readonly) BOOL transient;
+
+/*!
+ The message update time.
+ */
+@property (nonatomic, strong, readonly) NSDate *updatedAt;
 
 - (nullable NSString *)payload;
 
