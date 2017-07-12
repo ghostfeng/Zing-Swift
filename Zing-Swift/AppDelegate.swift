@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
             AVOSCloud.setAllLogsEnabled(true)
         #endif
-        AVIMClient.setUserOptions([AVIMUserOptionUseUnread: true])
+        AVIMClient.setUnreadNotificationEnabled(true)
         
         
         configAppStyle()
