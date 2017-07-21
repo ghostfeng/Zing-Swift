@@ -21,6 +21,7 @@ class ZSegmentMenuViewController: UIViewController {
     
     lazy var collectionView: UICollectionView = { [weak self] in
         let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 80, height: (self?.view.bounds.height)!)
         layout.sectionInset = UIEdgeInsetsMake(0, (self?.margin)!, 0, (self?.margin)!)
         layout.minimumInteritemSpacing = (self?.margin)!
         layout.minimumLineSpacing = (self?.margin)!
@@ -56,6 +57,7 @@ extension ZSegmentMenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ZSegmentCell
         cell.titleLabel.text = dataSource[indexPath.row]
+        cell.titleLabel.font = font
         cell.normalColor = normalColor
         cell.selectColor = selectColor
         return cell
@@ -92,6 +94,12 @@ class ZSegmentCell: UICollectionViewCell {
         return titleLabel
     }()
     
+    lazy var line: UIView = { [weak self] in
+        let line: UIView = UIView(frame: (self?.bounds)!)
+        line.backgroundColor = .red
+        return line
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -111,17 +119,20 @@ class ZSegmentCell: UICollectionViewCell {
     }
     
     func setupUI() {
-        addSubview(titleLabel)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(line)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         titleLabel.frame = bounds
+        line.frame = CGRect(x: 0, y: 0, width: 80, height: 10)
     }
     
     override var isSelected: Bool {
         didSet {
             titleLabel.textColor = isSelected ? selectColor : normalColor
+            line.isHidden = !isSelected
         }
     }
 }
