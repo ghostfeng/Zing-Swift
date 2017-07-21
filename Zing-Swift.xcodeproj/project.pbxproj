@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1C04BD871ED817D100A462B9 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C04BD861ED817D100A462B9 /* AppStyle.swift */; };
-		1C0B59681EF11F5200C42AFC /* ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B59661EF11F5200C42AFC /* ZingCommon.framework */; };
-		1C0B59691EF11F5200C42AFC /* ZingPBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B59671EF11F5200C42AFC /* ZingPBModel.framework */; };
-		1C0B596B1EF1219200C42AFC /* Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B596A1EF1219200C42AFC /* Snippets.framework */; };
-		1C0B596C1EF1219900C42AFC /* Snippets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B596A1EF1219200C42AFC /* Snippets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1C0B596D1EF1219900C42AFC /* ZingCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B59661EF11F5200C42AFC /* ZingCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1C0B596E1EF1219900C42AFC /* ZingPBModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0B59671EF11F5200C42AFC /* ZingPBModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1C1637FB1E777A0C002C9734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1637FA1E777A0C002C9734 /* AppDelegate.swift */; };
 		1C1637FD1E777A0C002C9734 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1637FC1E777A0C002C9734 /* ViewController.swift */; };
 		1C1638021E777A0C002C9734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C1638011E777A0C002C9734 /* Assets.xcassets */; };
@@ -38,6 +32,13 @@
 		1CB257FE1EF25C0B000E03C4 /* InputBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB257FD1EF25C0B000E03C4 /* InputBarViewController.swift */; };
 		1CB258001EF25F53000E03C4 /* SensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB257FF1EF25F53000E03C4 /* SensesViewController.swift */; };
 		1CB258021EF27031000E03C4 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB258011EF27031000E03C4 /* KeyboardService.swift */; };
+		1CB7F7FE1F21A12100A42C67 /* Snippets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB7F7FB1F21A12100A42C67 /* Snippets.framework */; };
+		1CB7F7FF1F21A12100A42C67 /* ZingCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB7F7FC1F21A12100A42C67 /* ZingCommon.framework */; };
+		1CB7F8001F21A12100A42C67 /* ZingPBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB7F7FD1F21A12100A42C67 /* ZingPBModel.framework */; };
+		1CB7F8021F21A14500A42C67 /* ZingCommon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1CB7F7FC1F21A12100A42C67 /* ZingCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1CB7F8031F21A14500A42C67 /* ZingPBModel.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1CB7F7FD1F21A12100A42C67 /* ZingPBModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1CB7F8041F21A14C00A42C67 /* Snippets.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1CB7F7FB1F21A12100A42C67 /* Snippets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1CB7F8061F21D31600A42C67 /* ZSegmentMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB7F8051F21D31600A42C67 /* ZSegmentMenuViewController.swift */; };
 		1CC0D3DB1EA741DF00B59DF9 /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */; };
 		1CE5853C1ECD754E00196919 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CE5853E1ECD754E00196919 /* Localizable.strings */; };
 		1CE585501ECD7C9000196919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE585521ECD7C9000196919 /* Main.storyboard */; };
@@ -62,17 +63,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1C0B59651EF11F2200C42AFC /* Embed Frameworks */ = {
+		1CB7F8011F21A13400A42C67 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1C0B596C1EF1219900C42AFC /* Snippets.framework in Embed Frameworks */,
-				1C0B596D1EF1219900C42AFC /* ZingCommon.framework in Embed Frameworks */,
-				1C0B596E1EF1219900C42AFC /* ZingPBModel.framework in Embed Frameworks */,
+				1CB7F8041F21A14C00A42C67 /* Snippets.framework in CopyFiles */,
+				1CB7F8021F21A14500A42C67 /* ZingCommon.framework in CopyFiles */,
+				1CB7F8031F21A14500A42C67 /* ZingPBModel.framework in CopyFiles */,
 			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -113,6 +113,10 @@
 		1CB257FD1EF25C0B000E03C4 /* InputBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputBarViewController.swift; sourceTree = "<group>"; };
 		1CB257FF1EF25F53000E03C4 /* SensesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensesViewController.swift; sourceTree = "<group>"; };
 		1CB258011EF27031000E03C4 /* KeyboardService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
+		1CB7F7FB1F21A12100A42C67 /* Snippets.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Snippets.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-brhkpjikonftwzfrktrglwulsfjx/Build/Products/Debug-iphonesimulator/Snippets.framework"; sourceTree = "<group>"; };
+		1CB7F7FC1F21A12100A42C67 /* ZingCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZingCommon.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-brhkpjikonftwzfrktrglwulsfjx/Build/Products/Debug-iphonesimulator/ZingCommon.framework"; sourceTree = "<group>"; };
+		1CB7F7FD1F21A12100A42C67 /* ZingPBModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZingPBModel.framework; path = "../../../Library/Developer/Xcode/DerivedData/Zing-Swift-brhkpjikonftwzfrktrglwulsfjx/Build/Products/Debug-iphonesimulator/ZingPBModel.framework"; sourceTree = "<group>"; };
+		1CB7F8051F21D31600A42C67 /* ZSegmentMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSegmentMenuViewController.swift; sourceTree = "<group>"; };
 		1CC0D3DA1EA741DF00B59DF9 /* ResponseCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
 		1CE5853D1ECD754E00196919 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1CE5853F1ECD755400196919 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -127,9 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C0B596B1EF1219200C42AFC /* Snippets.framework in Frameworks */,
-				1C0B59681EF11F5200C42AFC /* ZingCommon.framework in Frameworks */,
-				1C0B59691EF11F5200C42AFC /* ZingPBModel.framework in Frameworks */,
+				1CB7F7FE1F21A12100A42C67 /* Snippets.framework in Frameworks */,
+				1CB7F7FF1F21A12100A42C67 /* ZingCommon.framework in Frameworks */,
+				1CB7F8001F21A12100A42C67 /* ZingPBModel.framework in Frameworks */,
 				57CFB6FAE9171C29CA4ECA99 /* Pods_Zing_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				1C6100D51EC2EF6700DEDB40 /* DiscoveryViewController.swift */,
+				1CB7F8051F21D31600A42C67 /* ZSegmentMenuViewController.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -326,6 +331,9 @@
 		E16F583B6A9CCDB826982BFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CB7F7FB1F21A12100A42C67 /* Snippets.framework */,
+				1CB7F7FC1F21A12100A42C67 /* ZingCommon.framework */,
+				1CB7F7FD1F21A12100A42C67 /* ZingPBModel.framework */,
 				1C0B596A1EF1219200C42AFC /* Snippets.framework */,
 				1C0B59661EF11F5200C42AFC /* ZingCommon.framework */,
 				1C0B59671EF11F5200C42AFC /* ZingPBModel.framework */,
@@ -347,7 +355,7 @@
 				1C1637F51E777A0C002C9734 /* Resources */,
 				D98033050D29E6778B1093D4 /* [CP] Embed Pods Frameworks */,
 				B4288DDB0E7B3FD6A7B865D0 /* [CP] Copy Pods Resources */,
-				1C0B59651EF11F2200C42AFC /* Embed Frameworks */,
+				1CB7F8011F21A13400A42C67 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -400,6 +408,7 @@
 		1C1637EF1E777A0B002C9734 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = Z;
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Witgo;
@@ -533,6 +542,7 @@
 				1C04BD871ED817D100A462B9 /* AppStyle.swift in Sources */,
 				1C1637FD1E777A0C002C9734 /* ViewController.swift in Sources */,
 				1C4606CF1EB1903D005BD800 /* MainTabBarController.swift in Sources */,
+				1CB7F8061F21D31600A42C67 /* ZSegmentMenuViewController.swift in Sources */,
 				1C4606D11EB198A8005BD800 /* AppKeys.swift in Sources */,
 				1C6100D61EC2EF6700DEDB40 /* DiscoveryViewController.swift in Sources */,
 				1C89946A1E9B30FC00DF1C57 /* URLService.swift in Sources */,

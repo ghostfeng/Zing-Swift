@@ -19,25 +19,37 @@ class DiscoveryViewController: BaseViewController {
         return pageVC
     }()
     
+    lazy var menu: ZSegmentMenuViewController = {
+        let menu = ZSegmentMenuViewController()
+        return menu
+    }()
+    
     var vcs: [UIViewController] = [UIViewController]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.addChildViewController(pageVC)
-        self.view.addSubview(pageVC.view)
-        pageVC.view.snp.makeConstraints { (make) in
-            make.top.leading.equalToSuperview().offset(30)
-            make.bottom.trailing.equalToSuperview().offset(-10)
-        }
         
+        addChildViewController(menu)
+        menu.selectColor = UIColor.green
+        menu.normalColor = UIColor.black
+        view.addSubview(menu.view)
+        menu.view.snp.makeConstraints { (make) in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(44)
+        }
+
+        addChildViewController(pageVC)
+        view.addSubview(pageVC.view)
+        pageVC.view.snp.makeConstraints { (make) in
+            make.top.equalTo(menu.view.snp.bottom)
+            make.leading.bottom.trailing.equalToSuperview()
+        }
         for _ in 0..<5 {
             let vc = ChannelViewController()
             vcs.append(vc)
         }
-        
-        pageVC.setViewControllers([vcs.first!], direction: .forward, animated: true)
+        pageVC.setViewControllers([vcs.first!], direction: .reverse, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +71,7 @@ class DiscoveryViewController: BaseViewController {
 }
 
 extension DiscoveryViewController: UIPageViewControllerDataSource {
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let now = vcs.index(of: viewController)
         if let now = now {
@@ -71,6 +84,7 @@ extension DiscoveryViewController: UIPageViewControllerDataSource {
             return nil
         }
     }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let now = vcs.index(of: viewController)
         if let now = now {
@@ -83,4 +97,5 @@ extension DiscoveryViewController: UIPageViewControllerDataSource {
             return nil
         }
     }
+    
 }
