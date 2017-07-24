@@ -10,6 +10,10 @@ import UIKit
 
 let reuseIdentifier = "\(ZSegmentCell.self)"
 
+func textSize(text: String, font: UIFont, maxSize: CGSize) -> CGSize {
+    return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName : font], context: nil).size
+}
+
 class ZSegmentMenuViewController: UIViewController {
 
     var normalColor: UIColor = UIColor.lightGray
@@ -17,11 +21,10 @@ class ZSegmentMenuViewController: UIViewController {
     var font: UIFont = UIFont.systemFont(ofSize: 16)
     var margin: CGFloat = 16
     
-    var dataSource:[String] = ["军事","科技","军事军事新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻"]
+    var dataSource:[String] = ["军事","新闻科技新闻","新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻"]
     
     lazy var collectionView: UICollectionView = { [weak self] in
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 80, height: (self?.view.bounds.height)!)
         layout.sectionInset = UIEdgeInsetsMake(0, (self?.margin)!, 0, (self?.margin)!)
         layout.minimumInteritemSpacing = (self?.margin)!
         layout.minimumLineSpacing = (self?.margin)!
@@ -44,7 +47,12 @@ class ZSegmentMenuViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        collectionView.frame = view.bounds;
+        collectionView.frame = view.bounds
+        collectionView.reloadData()
+        if dataSource.count > 0 {
+            let indexPath = IndexPath(item: 0, section: 0)
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        }
     }
 }
 
@@ -56,11 +64,18 @@ extension ZSegmentMenuViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ZSegmentCell
-        cell.titleLabel.text = dataSource[indexPath.row]
+        cell.titleLabel.text = dataSource[indexPath.item]
         cell.titleLabel.font = font
         cell.normalColor = normalColor
         cell.selectColor = selectColor
         return cell
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+extension ZSegmentMenuViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: textSize(text: dataSource[indexPath.item], font: font, maxSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: view.frame.height)).width, height: view.frame.height)
     }
 }
 
@@ -75,11 +90,6 @@ extension ZSegmentMenuViewController: UICollectionViewDelegate {
 extension ZSegmentMenuViewController {
     fileprivate func setupUI() {
         view.addSubview(collectionView)
-        collectionView.reloadData()
-        if dataSource.count > 0 {
-            let indexPath = IndexPath(item: 0, section: 0)
-            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        }
     }
 }
 
@@ -89,14 +99,12 @@ class ZSegmentCell: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = { [weak self] in
         let titleLabel: UILabel = UILabel(frame: (self?.bounds)!)
-        titleLabel.textColor = self?.normalColor
-        titleLabel.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         return titleLabel
     }()
     
     lazy var line: UIView = { [weak self] in
         let line: UIView = UIView(frame: (self?.bounds)!)
-        line.backgroundColor = .red
+        line.isHidden = true
         return line
     }()
     
@@ -125,8 +133,13 @@ class ZSegmentCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         titleLabel.frame = bounds
-        line.frame = CGRect(x: 0, y: 0, width: 80, height: 10)
+        titleLabel.textColor = isSelected ? selectColor : normalColor
+        
+        line.backgroundColor = selectColor
+        let lineHeight: CGFloat = 2.0
+        line.frame = CGRect(x: 0, y: bounds.height - lineHeight - 1, width: bounds.width, height: lineHeight)
     }
     
     override var isSelected: Bool {

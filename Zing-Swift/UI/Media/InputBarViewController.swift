@@ -19,7 +19,7 @@ import Snippets
     lazy var addButton: UIButton = {
         let addButton = UIButton(type: .custom);
         addButton.setImage(UIImage(named:"release_add"), for: .normal)
-        addButton.addTarget(self, action: #selector(adddAction), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(addAction), for: .touchUpInside)
         return addButton;
     }()
     
@@ -119,7 +119,7 @@ import Snippets
         reloadInputView()
     }
     
-    func adddAction() {
+    func addAction() {
         print("添加")
     }
     

@@ -31,12 +31,12 @@ class DiscoveryViewController: BaseViewController {
         super.viewDidLoad()
         
         addChildViewController(menu)
-        menu.selectColor = UIColor.green
-        menu.normalColor = UIColor.black
+        menu.selectColor = UIColor.red
+        menu.normalColor = UIColor.lightGray
         view.addSubview(menu.view)
         menu.view.snp.makeConstraints { (make) in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(44)
+            make.height.equalTo(40)
         }
 
         addChildViewController(pageVC)
