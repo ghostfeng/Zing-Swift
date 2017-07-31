@@ -13,8 +13,11 @@ import SnapKit
 
 class SensesViewController: BaseViewController {
     
-    lazy var inputbarVC: InputBarViewController = {
+    fileprivate var senses:[String] = ["感言0","感言1","感言2","感言3","感言4","感言5","感言6","感言7","感言8","感言9","感言10"];
+    
+    lazy var inputbarVC: InputBarViewController = { [weak self] in
         let inputbarVC = InputBarWithSpeechViewController()
+        inputbarVC.delegate = self
         return inputbarVC
     }()
     
@@ -61,6 +64,15 @@ class SensesViewController: BaseViewController {
     }
 }
 
+extension SensesViewController: InputBarDelegate {
+    func inputBar(_ inputBar: InputBarViewController, didSendText aText: String) {
+        senses.append(aText)
+        let indexPath = IndexPath(row: senses.count-1, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+}
+
 extension SensesViewController: KeyboardServiceDelegate {
     func keyboardFrameChange(withInfo info: KeyboardInfo) {
         inputbarVC.view.snp.updateConstraints { (make) in
@@ -74,7 +86,7 @@ extension SensesViewController: KeyboardServiceDelegate {
 
 extension SensesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return senses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,7 +95,7 @@ extension SensesViewController: UITableViewDelegate, UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: identifier)
         }
-        cell?.textLabel?.text = "感言\(indexPath.row)"
+        cell?.textLabel?.text = senses[indexPath.row];
         return cell!
     }
 }

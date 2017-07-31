@@ -11,7 +11,7 @@ import WebKit
 
 import ZingCommon
 
-class WebViewController: BaseViewController {
+class WebViewController: UIViewController {
     
     let url: URL
     let web = WKWebView()

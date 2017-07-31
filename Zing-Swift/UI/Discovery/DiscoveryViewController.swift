@@ -19,12 +19,16 @@ class DiscoveryViewController: BaseViewController {
         return pageVC
     }()
     
-    lazy var menu: ZSegmentMenuViewController = {
+    lazy var menu: ZSegmentMenuViewController = { [weak self] in
         let menu = ZSegmentMenuViewController()
+        menu.delegate = self
+        menu.dataSource = self
         return menu
     }()
     
     var vcs: [UIViewController] = [UIViewController]()
+    
+    var selectChannels: [String] = ["军事","新闻","科技","段子","图片","视频","音乐","搞笑"]
     
 
     override func viewDidLoad() {
@@ -32,7 +36,7 @@ class DiscoveryViewController: BaseViewController {
         
         addChildViewController(menu)
         menu.selectColor = UIColor.red
-        menu.normalColor = UIColor.lightGray
+        menu.normalColor = UIColor.gray
         view.addSubview(menu.view)
         menu.view.snp.makeConstraints { (make) in
             make.top.leading.trailing.equalToSuperview()
@@ -45,29 +49,35 @@ class DiscoveryViewController: BaseViewController {
             make.top.equalTo(menu.view.snp.bottom)
             make.leading.bottom.trailing.equalToSuperview()
         }
-        for _ in 0..<5 {
+        for _ in 0 ..< selectChannels.count {
             let vc = ChannelViewController()
             vcs.append(vc)
         }
-        pageVC.setViewControllers([vcs.first!], direction: .reverse, animated: true)
+        pageVC.setViewControllers([vcs.first!], direction: .reverse, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension DiscoveryViewController: ZSegmentMenuDataSource {
+    func unSelectedChannels(_ segmentMenu: ZSegmentMenuViewController) -> [String] {
+        return []
     }
-    */
 
+    func selectedChannels(_ segmentMenu: ZSegmentMenuViewController) -> [String] {
+        return ["军事","新闻","科技","段子","图片","视频","音乐","搞笑"]
+    }
+}
+
+extension DiscoveryViewController: ZSegmentMenuDelegate {
+    func segmentMenu(_ segmentMenu: ZSegmentMenuViewController, didSelectItemAt indexPath: IndexPath) {
+        if let index = vcs.index(of: (pageVC.viewControllers?.last)!) {
+            pageVC.setViewControllers([vcs[indexPath.item]], direction: indexPath.item > index ? .forward : .reverse, animated: true)
+        }
+    }
 }
 
 extension DiscoveryViewController: UIPageViewControllerDataSource {
@@ -75,6 +85,7 @@ extension DiscoveryViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let now = vcs.index(of: viewController)
         if let now = now {
+            menu.selectItemAt(indexPath: IndexPath(item: now, section: 0))
             if now - 1 < 0 {
                 return nil
             } else {
@@ -88,6 +99,7 @@ extension DiscoveryViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let now = vcs.index(of: viewController)
         if let now = now {
+            menu.selectItemAt(indexPath: IndexPath(item: now, section: 0))
             if now + 1 >= vcs.count {
                 return nil
             } else {

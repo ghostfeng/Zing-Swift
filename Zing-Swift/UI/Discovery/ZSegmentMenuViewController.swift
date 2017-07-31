@@ -10,18 +10,28 @@ import UIKit
 
 let reuseIdentifier = "\(ZSegmentCell.self)"
 
+protocol ZSegmentMenuDataSource: NSObjectProtocol {
+    func selectedChannels(_ segmentMenu: ZSegmentMenuViewController) -> [String];
+    func unSelectedChannels(_ segmentMenu: ZSegmentMenuViewController) -> [String];
+}
+
+protocol ZSegmentMenuDelegate: NSObjectProtocol {
+    func segmentMenu(_ segmentMenu:ZSegmentMenuViewController, didSelectItemAt indexPath: IndexPath);
+}
+
 func textSize(text: String, font: UIFont, maxSize: CGSize) -> CGSize {
     return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName : font], context: nil).size
 }
 
 class ZSegmentMenuViewController: UIViewController {
+    
+    weak var delegate: ZSegmentMenuDelegate?
+    weak var dataSource: ZSegmentMenuDataSource?
 
     var normalColor: UIColor = UIColor.lightGray
     var selectColor: UIColor = UIColor.red
     var font: UIFont = UIFont.systemFont(ofSize: 16)
     var margin: CGFloat = 16
-    
-    var dataSource:[String] = ["军事","新闻科技新闻","新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻","科技","新闻"]
     
     lazy var collectionView: UICollectionView = { [weak self] in
         let layout = UICollectionViewFlowLayout()
@@ -49,7 +59,7 @@ class ZSegmentMenuViewController: UIViewController {
         
         collectionView.frame = view.bounds
         collectionView.reloadData()
-        if dataSource.count > 0 {
+        if (dataSource?.selectedChannels(self).count)! > 0 {
             let indexPath = IndexPath(item: 0, section: 0)
             collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         }
@@ -59,12 +69,12 @@ class ZSegmentMenuViewController: UIViewController {
 //MARK: - UICollectionViewDataSource
 extension ZSegmentMenuViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
+        return (dataSource?.selectedChannels(self).count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ZSegmentCell
-        cell.titleLabel.text = dataSource[indexPath.item]
+        cell.titleLabel.text = dataSource?.selectedChannels(self)[indexPath.item]
         cell.titleLabel.font = font
         cell.normalColor = normalColor
         cell.selectColor = selectColor
@@ -75,7 +85,7 @@ extension ZSegmentMenuViewController: UICollectionViewDataSource {
 //MARK: - UICollectionViewDelegateFlowLayout
 extension ZSegmentMenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: textSize(text: dataSource[indexPath.item], font: font, maxSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: view.frame.height)).width, height: view.frame.height)
+        return CGSize(width: textSize(text: (dataSource?.selectedChannels(self)[indexPath.item])!, font: font, maxSize: CGSize(width: CGFloat.greatestFiniteMagnitude, height: view.frame.height)).width, height: view.frame.height)
     }
 }
 
@@ -84,12 +94,17 @@ extension ZSegmentMenuViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        delegate?.segmentMenu(self, didSelectItemAt: indexPath)
     }
 }
 
 extension ZSegmentMenuViewController {
     fileprivate func setupUI() {
         view.addSubview(collectionView)
+    }
+    
+    func selectItemAt(indexPath: IndexPath?) {
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
     }
 }
 

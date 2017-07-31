@@ -12,8 +12,14 @@ import SnapKit
 import IQKeyboardManagerSwift
 import Snippets
 
+protocol InputBarDelegate: NSObjectProtocol {
+    func inputBar(_ inputBar: InputBarViewController, didSendText aText: String);
+}
+
 @IBDesignable class InputBarViewController: UIViewController {
     var inputViewDefaultHeight: CGFloat = 0.0
+    
+    weak var delegate: InputBarDelegate?
     
     /// 添加媒体按钮
     lazy var addButton: UIButton = {
@@ -115,6 +121,7 @@ import Snippets
     
     //MARK: - buttonAction
     func sendAction() {
+        delegate?.inputBar(self, didSendText: textView.text)
         textView.text = ""
         reloadInputView()
     }
